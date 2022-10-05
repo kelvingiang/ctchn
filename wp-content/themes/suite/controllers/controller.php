@@ -25,20 +25,20 @@ class Controller_Main
 
     public function page_about()
     {
-        // if ($this->_controller_options['controller_about'] == true) {
-        //     require_once(DIR_CONTROLLER . 'controller-about.php');
-        //     new Admin_Controller_About();
-        // }
+        if ($this->_controller_options['controller_about'] == true) {
+            require_once(DIR_CONTROLLER . 'controller-about.php');
+            new Admin_Controller_About();
+        }
     }
 
 
 
     public function post_slider()
     {
-        // if ($this->_controller_options['controller_slider'] == true) {
-        //     require_once(DIR_CONTROLLER . 'controller-slider.php');
-        //     new Admin_Controller_Slider();
-        // }
+        if ($this->_controller_options['controller_slider'] == true) {
+            require_once(DIR_CONTROLLER . 'controller-slider.php');
+            new Admin_Controller_Slider();
+        }
     }
 
     //=== FUNCTION NAY GIAI QUYET CHUYEN TRANG BI LOI 

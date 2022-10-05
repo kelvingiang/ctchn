@@ -1,0 +1,66 @@
+@import './scss/admin-color.scss';
+/*
+    This file use admin
+    Create date (mm-dd-yy): 10/4/22 
+*/
+
+/*item input cell*/
+.title-cell{
+  padding-top: 15px;
+  label {
+    font-size: 15px;
+    font-weight: bold;
+    color: $lbl_color;
+    padding: auto;
+    width: 10%;
+  }
+}
+.type{
+  width: 50%;
+  height: 40px;
+  border-radius:2px;
+  box-shadow: 1px 2px #888888;
+  border: 1px lavender solid;
+}
+.text-cell .type-number , td .type-text, td .type-phone, td .type-email{ 
+  @extend .type;
+  margin-top: 3px; 
+}
+
+/* metabox */
+.checkbox-label {
+  font-size: 15px;
+  font-weight: bold;
+  color: $lbl_color;
+  padding: auto;
+}
+
+/* message*/
+.error {
+  font-size: 15px;
+  color: $lbl_error_color;
+  margin-left: 10px; }
+  .error ::after {
+      content: "!"; }
+
+/* button */
+.btn{
+  &-nav-cn{
+    color: $btn_nav_color;
+    background-color: $btn_bg_nav_cn_color;
+    margin-right: 1%;
+    font-size: 18px;
+  }
+  &-nav-vn{
+    color: $btn_nav_color;
+    background-color: $btn_bg_nav_vn_color;
+    margin-right: 1%;
+    font-size: 18px;
+  }
+  &-nav-en{
+    color: $btn_nav_color;
+    background-color: $btn_bg_nav_en_color;
+    margin-right: 1%;
+    font-size: 18px;
+  }
+}      

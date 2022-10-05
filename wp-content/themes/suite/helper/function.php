@@ -44,7 +44,11 @@ function cmp($a, $b)
     return strcmp($b['order'], $a['order']);
 }
 
-
+//============= FUNCTION GET HINH =============================
+function get_image($name = '')
+{
+    return get_template_directory_uri() . '/images/' . $name;
+}
 
 //==== GET PARAM TREN URL============================================
 function getParams($name = null)

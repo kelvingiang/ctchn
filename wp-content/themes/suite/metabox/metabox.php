@@ -31,42 +31,42 @@ class Meta_box_Main
 
     public function meta_box_special()
     {
-        // if ($this->_controller_options['meta_box_special'] == true) {
-        //     require_once(DIR_META_BOX . 'metabox-special.php');
-        //     new Meta_Box_Special();
-        // }
+        if ($this->_controller_options['meta_box_special'] == true) {
+            require_once(DIR_META_BOX . 'metabox-special.php');
+            new Meta_Box_Special();
+        }
     }
 
     public function meta_box_language()
     {
-        // if ($this->_controller_options['meta_box_language'] == true) {
-        //     require_once(DIR_META_BOX . 'metabox-language.php');
-        //     new Meta_Box_Language();
-        // }
+        if ($this->_controller_options['meta_box_language'] == true) {
+            require_once(DIR_META_BOX . 'metabox-language.php');
+            new Meta_Box_Language();
+        }
     }
 
     public function meta_box_president()
     {
-        // if ($this->_controller_options['meta_box_president'] == TRUE) {
-        //     require_once(DIR_META_BOX . 'metabox-president.php');
-        //     new Meta_Box_President();
-        // }
+        if ($this->_controller_options['meta_box_president'] == TRUE) {
+            require_once(DIR_META_BOX . 'metabox-president.php');
+            new Meta_Box_President();
+        }
     }
 
     public function meta_box_website()
     {
-        // if ($this->_controller_options['meta_box_website'] == true) {
-        //     require_once(DIR_META_BOX . 'metabox-website.php');
-        //     new Meta_Box_Website();
-        // }
+        if ($this->_controller_options['meta_box_website'] == true) {
+            require_once(DIR_META_BOX . 'metabox-website.php');
+            new Meta_Box_Website();
+        }
     }
 
     public function meta_box_order()
     {
-        // if ($this->_controller_options['meta_box_order'] == true) {
-        //     require_once(DIR_META_BOX . 'metabox-order.php');
-        //     new Meta_Box_Order();
-        // }
+        if ($this->_controller_options['meta_box_order'] == true) {
+            require_once(DIR_META_BOX . 'metabox-order.php');
+            new Meta_Box_Order();
+        }
     }
 
     //=== FUNCTION NAY GIAI QUYET CHUYEN TRANG BI LOI 

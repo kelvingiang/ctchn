@@ -46,7 +46,7 @@ function change_translate_text($translated)
 }
 
 add_filter('gettext', 'change_translate_text', 20);
-
+add_theme_support('post-thumbnails');
 
 // function of  theme ==============================================================================================
 // add_action('after_setup_theme', 'blankslate_setup');

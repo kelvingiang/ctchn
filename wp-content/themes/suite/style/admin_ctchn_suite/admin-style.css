@@ -1,0 +1,58 @@
+/*
+    This file use admin
+    Create date (mm-dd-yy): 10/4/22 
+*/
+/*item input cell*/
+.title-cell {
+  padding-top: 15px; }
+  .title-cell label {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ee8585;
+    padding: auto;
+    width: 10%; }
+
+.type, .text-cell .type-number, td .type-text, td .type-phone, td .type-email {
+  width: 50%;
+  height: 40px;
+  border-radius: 2px;
+  box-shadow: 1px 2px #888888;
+  border: 1px lavender solid; }
+
+.text-cell .type-number, td .type-text, td .type-phone, td .type-email {
+  margin-top: 3px; }
+
+/* metabox */
+.checkbox-label {
+  font-size: 15px;
+  font-weight: bold;
+  color: #ee8585;
+  padding: auto; }
+
+/* message*/
+.error {
+  font-size: 15px;
+  color: #ff1919;
+  margin-left: 10px; }
+
+.error ::after {
+  content: "!"; }
+
+/* button */
+.btn-nav-cn {
+  color: dimgray;
+  background-color: #ea9df1;
+  margin-right: 1%;
+  font-size: 18px; }
+.btn-nav-vn {
+  color: dimgray;
+  background-color: #ffe344;
+  margin-right: 1%;
+  font-size: 18px; }
+.btn-nav-en {
+  color: dimgray;
+  background-color: #6cb8ff;
+  margin-right: 1%;
+  font-size: 18px; }
+
+/*# sourceMappingURL=admin-style.css.map */

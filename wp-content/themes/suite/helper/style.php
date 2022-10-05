@@ -110,12 +110,18 @@ function style_header_scripts()
         } else {
 
                 //====PHAN ADMIN=========================================================
-                wp_register_style('admin-style', THEME_PART . '/style/admin/admin-style.css', array(), '1.0', 'all');
+                wp_register_style('admin-style', THEME_PART . '/style/admin_ctchn_suite/admin-style.css', array(), '1.0', 'all');
                 wp_enqueue_style('admin-style');
                 if (get_current_user_id() != 1) {
                         wp_register_style('admin-denied', THEME_PART . '/style/admin/admin-denied.css', array(), '1.0', 'all');
                         wp_enqueue_style('admin-denied');
                 }
+
+                //==== bootstrap ===============
+                wp_register_style('bootstrap-css', THEME_PART . '/style/bootstrap.min.css', array(), '1.0', 'all');
+                wp_enqueue_style('bootstrap-css');
+                wp_register_script('bootstrap-script', THEME_PART . '/js/bootstrap.min.js', array('jquery'));
+                wp_enqueue_script('bootstrap-script');
         }
 
         // ==ADD CHO CA ADMIN VA CLIENT=========================================================
