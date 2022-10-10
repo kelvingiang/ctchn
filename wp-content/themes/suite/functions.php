@@ -48,6 +48,60 @@ function change_translate_text($translated)
 add_filter('gettext', 'change_translate_text', 20);
 add_theme_support('post-thumbnails');
 
+// thay doi cac cot mac dinh cua post
+add_filter('manage_posts_columns', 'set_custom_edit_columns');
+function set_custom_edit_columns($columns)
+{
+    $date_label = _x('創建日期', 'suite');
+    //unset($columns['author']);
+    //            unset($columns['categories']);
+    unset($columns['tags']);
+    unset($columns['comments']);
+    unset($columns['date']);
+    // $columns['content'] = __('內容');
+    $columns['author'] = __('Author');
+    $columns['category'] = __('Category');
+    $columns['home'] = __('首頁');
+    $columns['langguage'] = __('Language');
+    $columns['setorder'] = __('Show Order');
+    //$columns['date'] = __('日期');
+    //$columns['publisher'] = __('Publisher', 'your_text_domain');
+
+
+    $columns['date'] = $date_label;
+    return $columns;
+}
+add_action('manage_posts_custom_column', 'Custom_Post_RenderCols');
+function Custom_post_RenderCols($columns)
+{
+    global $post;
+    switch ($columns) {
+
+        case 'home':
+            if ((get_post_meta($post->ID, '_metabox_home', true))) {
+                echo "<div class='show-home'></div>";
+            }
+            break;
+        case 'category':
+            $terms = wp_get_post_terms($post->ID, 'solutions_category');
+            if (count($terms) > 0) {
+                foreach ($terms as $key => $term) {
+                    echo '<a href=' . custom_redirect($term->slug) . '&' . $term->taxonomy . '=' . $term->slug . '>' . $term->name . '</a></br>';
+                }
+            }
+            break;
+        case 'langguage':
+            _e(get_post_meta($post->ID, '_meta_box_language', true));
+            break;
+
+        case 'setorder':
+            echo get_post_meta($post->ID, '_meta_box_order', true);
+            break;
+        default:
+            break;
+    }
+}
+
 // function of  theme ==============================================================================================
 // add_action('after_setup_theme', 'blankslate_setup');
 // function blankslate_setup()

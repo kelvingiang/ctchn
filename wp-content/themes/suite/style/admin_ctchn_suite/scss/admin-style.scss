@@ -41,26 +41,4 @@
   color: $lbl_error_color;
   margin-left: 10px; }
   .error ::after {
-      content: "!"; }
-
-/* button */
-.btn{
-  &-nav-cn{
-    color: $btn_nav_color;
-    background-color: $btn_bg_nav_cn_color;
-    margin-right: 1%;
-    font-size: 18px;
-  }
-  &-nav-vn{
-    color: $btn_nav_color;
-    background-color: $btn_bg_nav_vn_color;
-    margin-right: 1%;
-    font-size: 18px;
-  }
-  &-nav-en{
-    color: $btn_nav_color;
-    background-color: $btn_bg_nav_en_color;
-    margin-right: 1%;
-    font-size: 18px;
-  }
-}      
+      content: "!"; }      

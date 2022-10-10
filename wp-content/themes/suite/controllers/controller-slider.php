@@ -58,6 +58,7 @@ class Admin_Controller_Slider{
         //==== THEM COT VA BAN
         $columns['img'] = __('Image', 'suite');
         $columns['category'] = __('Category');
+        $columns['language'] = __('Language');
         $columns['setorder'] = __('Show Order', 'suite');
         return $columns;
     }
@@ -78,6 +79,10 @@ class Admin_Controller_Slider{
 
         if ($columns == 'setorder') {
             echo get_post_meta($post->ID, '_meta_box_order', true);
+        }
+
+        if ($columns == 'language') {
+            echo get_post_meta($post->ID, '_meta_box_language', true);
         }
 
         if ($columns == 'category') {
