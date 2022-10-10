@@ -12,11 +12,14 @@ class Controller_Main
         $default_option = array(
             'controller_about' => true,
             'controller_slider' => true,
+            'controller_schedule' => true,
         );
 
         $this->_controller_options = get_option($this->_controller_name, $default_option);
         $this->post_slider();
         $this->page_about();
+        $this->page_schedule();
+
         add_action('admin_init', array($this, 'do_output_buffer'));
     }
 
@@ -30,6 +33,16 @@ class Controller_Main
             new Admin_Controller_About();
         }
     }
+
+    public function page_schedule()
+    {
+        if ($this->_controller_options['controller_schedule'] == true) {
+            require_once(DIR_CONTROLLER . 'controller-schedule.php');
+            new Admin_Controller_Schedule();
+        }
+    }
+
+
 
 
 

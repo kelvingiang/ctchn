@@ -17,6 +17,6 @@ define('DIR_HELPER', THEME_URL . DS . 'helper' . DS);
 
 // duong part
 define('PART_IMAGES', THEME_PART . '/images/');
-define('PART_ICON', PART_IMAGES . '/icon/');
+define('PART_ICON', PART_IMAGES . 'icon/');
 define('PART_FILE', THEME_PART . '/file/');
 define('PART_CLASS', THEME_PART . '/class/');
