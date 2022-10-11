@@ -1,13 +1,13 @@
 <?php 
 
-class Admin_Controller_Slider{
+class Admin_Controller_Activity{
     public function __construct()
     {
         add_action('init', array($this, 'register_custom_post'));
-        add_action('manage_edit-slider_columns', array($this, 'manage_columns'));
-        add_action('manage_slider_posts_custom_column', array($this, 'render_columns'));
+        add_action('manage_edit-activity_columns', array($this, 'manage_columns'));
+        add_action('manage_activity_posts_custom_column', array($this, 'render_columns'));
 
-        add_filter('manage_edit-slider_sortable_columns', array($this, 'sortable_views_column'));
+        add_filter('manage_edit-activity_sortable_columns', array($this, 'sortable_views_column'));
         add_filter('request', array($this, 'sort_views_column'));
 
         add_action('init', array($this, 'create_taxonomies'));
@@ -16,8 +16,8 @@ class Admin_Controller_Slider{
     public function register_custom_post()
     {
         $labels = array(
-            'name' => __('Slider', 'dp'),
-            'singular_name' => __('Slider', 'dp'),
+            'name' => __('商會活動', 'dp'),
+            'singular_name' => __('商會活動', 'dp'),
             'add_new' => __('Add Item', 'dp'),
             'add_new_item' => __('Add Item', 'dp'),
             'edit_item' => __('Edit', 'dp'),
@@ -28,7 +28,7 @@ class Admin_Controller_Slider{
             'not_found' => __('No slides found.', 'dp'),
             'not_found_in_trash' => __('No found in Trash.', 'dp'),
             'parent_item_colon' => '',
-            'menu_name' => __('Slider', 'dp') . '944 x 300'
+            'menu_name' => __('商會活動', 'dp') 
         );
         $args = array(
             'labels' => $labels,
@@ -37,16 +37,16 @@ class Admin_Controller_Slider{
             'publicly_queryable' => true,
             'show_ui' => true,
             'show_in_menu' => TRUE,
-            'menu_icon' => PART_ICON . 'slider-icon.png',
+            'menu_icon' => PART_ICON . 'web-icon.png',
             'query_var' => true,
             'rewrite' => true,
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 5,
-            'supports' => array('title', 'thumbnail'),
+            'menu_position' => 7,
+            'supports' => array('title','editor', 'thumbnail'),
         );
-        register_post_type('slider', $args);
+        register_post_type('activity', $args);
     }
 
     //==== QUAN LY COT HIEN THI TRON BANG   
@@ -59,7 +59,9 @@ class Admin_Controller_Slider{
         unset($columns['author']);
         //==== THEM COT VA BANG
         $columns['img'] = __('Image', 'suite');
+        //$columns['content'] = __('Content');
         $columns['category'] = __('Category');
+        $columns['special'] = __('Special');
         return $columns;
     }
 
@@ -67,6 +69,10 @@ class Admin_Controller_Slider{
     public function render_columns($columns)
     {
         global $post;
+        // if ($columns == 'content') {
+        //     the_content();
+        // }
+
         if ($columns == 'img') {
             echo '<a href="' . get_admin_url() . 'post.php?post=' . $post->ID . '&action=edit">';
             if (has_post_thumbnail()) {
@@ -79,13 +85,17 @@ class Admin_Controller_Slider{
 
         if ($columns == 'category') {
             global $post;
-            $terms = wp_get_post_terms($post->ID, 'slide_category');
+            $terms = wp_get_post_terms($post->ID, 'activity_category');
 
             if (count($terms) > 0) {
                 foreach ($terms as $key => $term) {
                     echo '<a href=' . custom_redirect($term->slug) . '&' . $term->taxonomy . '=' . $term->slug . '>' . $term->name . '</a></br>';
                 }
             }
+        }
+
+        if ($columns == 'special') {
+            get_post_meta($post->ID,'_meta_box_special',true);
         }
     }
 
@@ -126,14 +136,14 @@ class Admin_Controller_Slider{
             'new_item_name' => __('Add New'),
             'menu_name' => __('Category')
         );
-        register_taxonomy('slide_category', 'slider', array(
+        register_taxonomy('activity_category', 'activity', array(
             'hierarchical' => true,
             'labels' => $labels,
             'show_ui' => true,
             'query_var' => true,
             'taxonomy' => 'category',
             'rewrite' => array(
-                'slug' => 'slide-category',
+                'slug' => 'activity-category',
                 'hierarchical' => true,
             )
         ));

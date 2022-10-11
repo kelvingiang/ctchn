@@ -1,16 +1,16 @@
 <?php 
 
-class Meta_Box_Special{
+class Meta_Box_Current{
     public function __construct() {
         add_action('add_meta_boxes', array($this, 'create'));
         add_action('save_post', array($this, 'save'));
     }
 
     public function create() {
-        $id = 'tw-metabox-special';
-        $title = translate('Special');
+        $id = 'tw-metabox-current';
+        $title = translate('Current');
         $callback = array($this, 'display');
-        $screen = array('activity'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
+        $screen = array('post'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
         add_meta_box($id, $title, $callback, $screen);
         // FUNCTION NAY DE O DAY, DE KHI NAO DUNG DE METABOX THI TA MOI GOI FILE CSS NAY VO 
         //  add_action('admin_enqueue_scripts', array($this, 'add_css_file'));
@@ -26,18 +26,18 @@ class Meta_Box_Special{
 
 
         // Tao text box
-        if(get_post_meta($post->ID, '_meta_box_special', true) == 1){ //1: show, 0: hide
-            ?> <label class="checkbox-label"> Special </label>
+        if(get_post_meta($post->ID, '_meta_box_current', true) == 1){ //1: show, 0: hide
+            ?> <label class="checkbox-label"> Current </label>
             <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-special"> <?php translate('Special') ?> </label>
-                <input class="form-check-input mt-1" type="checkbox" id=" metabox-special" name="metabox-special" value="1" checked />
+                <label class="form-check-label mr-3" for="metabox-current"> <?php translate('Current') ?> </label>
+                <input class="form-check-input mt-1" type="checkbox" id=" metabox-current" name="metabox-current" value="1" checked />
             </div>
             <?php
         }else{
-            ?> <label class="checkbox-label"> Special </label>
+            ?> <label class="checkbox-label"> Current </label>
             <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-special"> <?php translate('Special') ?> </label>
-                <input class="form-check-input mt-1" type="checkbox" id=" metabox-special" name="metabox-special" value="1" />
+                <label class="form-check-label mr-3" for="metabox-current"> <?php translate('Current') ?> </label>
+                <input class="form-check-input mt-1" type="checkbox" id=" metabox-current" name="metabox-current" value="1" />
             </div>
             <?php
         }   
@@ -52,10 +52,10 @@ class Meta_Box_Special{
         if (is_admin()) {
             $check = 1;
             //su dung cho nhieu trang
-            if (isset($_POST['metabox-special']) == $check) {
-                update_post_meta($post_id, '_meta_box_special', $_POST['metabox-special']);
+            if (isset($_POST['metabox-president']) == $check) {
+                update_post_meta($post_id, '_meta_box_president', $_POST['metabox-president']);
             }else{
-                update_post_meta($post_id, '_meta_box_special', $_POST['metabox-special']);
+                update_post_meta($post_id, '_meta_box_president', $_POST['metabox-president']);
             }
         }
     }

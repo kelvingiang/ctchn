@@ -49,6 +49,8 @@ add_filter('gettext', 'change_translate_text', 20);
 add_theme_support('post-thumbnails');
 
 // thay doi cac cot mac dinh cua post
+// cac cot home,language,setorder se duoc dung chung
+// nen ta khong can khai bao chung trong cac slider, news,... dung metabox
 add_filter('manage_posts_columns', 'set_custom_edit_columns');
 function set_custom_edit_columns($columns)
 {
@@ -58,11 +60,11 @@ function set_custom_edit_columns($columns)
     unset($columns['tags']);
     unset($columns['comments']);
     unset($columns['date']);
-    // $columns['content'] = __('內容');
+    //$columns['content'] = __('內容');
     $columns['author'] = __('Author');
-    $columns['category'] = __('Category');
+   // $columns['category'] = __('Category');
     $columns['home'] = __('首頁');
-    $columns['langguage'] = __('Language');
+    $columns['language'] = __('Language');
     $columns['setorder'] = __('Show Order');
     //$columns['date'] = __('日期');
     //$columns['publisher'] = __('Publisher', 'your_text_domain');
@@ -82,15 +84,15 @@ function Custom_post_RenderCols($columns)
                 echo "<div class='show-home'></div>";
             }
             break;
-        case 'category':
-            $terms = wp_get_post_terms($post->ID, 'solutions_category');
-            if (count($terms) > 0) {
-                foreach ($terms as $key => $term) {
-                    echo '<a href=' . custom_redirect($term->slug) . '&' . $term->taxonomy . '=' . $term->slug . '>' . $term->name . '</a></br>';
-                }
-            }
-            break;
-        case 'langguage':
+        // case 'category':
+        //     $terms = wp_get_post_terms($post->ID, 'solutions_category');
+        //     if (count($terms) > 0) {
+        //         foreach ($terms as $key => $term) {
+        //             echo '<a href=' . custom_redirect($term->slug) . '&' . $term->taxonomy . '=' . $term->slug . '>' . $term->name . '</a></br>';
+        //         }
+        //     }
+        //     break;
+        case 'language':
             _e(get_post_meta($post->ID, '_meta_box_language', true));
             break;
 

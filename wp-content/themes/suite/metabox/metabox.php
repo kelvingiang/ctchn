@@ -14,6 +14,7 @@ class Meta_box_Main
             'meta_box_president' => TRUE,
             'meta_box_order' => TRUE,
             'meta_box_website' => TRUE,
+            'meta_box_current' => TRUE,
         );
 
         $this->_controller_options = get_option($this->_controller_name, $default_option);
@@ -23,6 +24,7 @@ class Meta_box_Main
         $this->meta_box_president();
         $this->meta_box_order();
         $this->meta_box_website();
+        $this->meta_box_current();
 
 
         add_action('admin_init', array($this, 'do_output_buffer'));
@@ -66,6 +68,14 @@ class Meta_box_Main
         if ($this->_controller_options['meta_box_order'] == true) {
             require_once(DIR_META_BOX . 'metabox-order.php');
             new Meta_Box_Order();
+        }
+    }
+
+    public function meta_box_current()
+    {
+        if ($this->_controller_options['meta_box_current'] == true) {
+            require_once(DIR_META_BOX . 'metabox-current.php');
+            new Meta_Box_Current();
         }
     }
 
