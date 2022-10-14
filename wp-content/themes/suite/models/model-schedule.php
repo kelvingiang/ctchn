@@ -398,7 +398,7 @@ class Admin_Model_Schedule extends WP_List_Table
         $content .= '<p><i>時間 :</i> ' . $contentData['timeStart'] . ' - ' . $contentData['timeEnd'] . '</p>';
         $content .= '<p><i>地點 :</i> ' . $contentData['branch'] . ' - ' . $contentData['place'] . '</p>';
         $content .= '<p>' . $contentData['note'] . '</p>';
-        $content .= '<a href="http://ctcvn.vn/schedule/"><h3>' . 台灣商會總會網站 . '</h3></a>';
+        $content .= '<a href="http://ctcvn.vn/schedule/"><h3>' . '台灣商會總會網站' . '</h3></a>';
 
         wp_mail($arrMailTo, $subj, $content);
         //    SAU KHI SEND XONG CHUYEN VE TRANG SHOW

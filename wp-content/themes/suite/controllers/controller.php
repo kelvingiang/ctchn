@@ -15,10 +15,13 @@ class Controller_Main
             'controller_advertising' => true,
             'controller_activity' => true,
             'controller_friendly_link' => true,
+            'controller_president' => true,
 
             //page
             'controller_about' => true,
             'controller_schedule' => true,
+            'controller_member' => true,
+            'controller_member_industry' => true,
         );
 
         $this->_controller_options = get_option($this->_controller_name, $default_option);
@@ -26,8 +29,12 @@ class Controller_Main
         $this->post_advertising();
         $this->post_activity();
         $this->post_friendly_link();
+        $this->post_president();
+
         $this->page_about();
         $this->page_schedule();
+        $this->page_member();
+        $this->page_member_industry();
 
         add_action('admin_init', array($this, 'do_output_buffer'));
     }
@@ -48,6 +55,22 @@ class Controller_Main
         if ($this->_controller_options['controller_schedule'] == true) {
             require_once(DIR_CONTROLLER . 'controller-schedule.php');
             new Admin_Controller_Schedule();
+        }
+    }
+
+    public function page_member()
+    {
+        if ($this->_controller_options['controller_member'] == true) {
+            require_once(DIR_CONTROLLER . 'controller-member.php');
+            new Admin_Controller_Member();
+        }
+    }
+
+    public function page_member_industry()
+    {
+        if ($this->_controller_options['controller_member_industry'] == true) {
+            require_once(DIR_CONTROLLER . 'controller-member-industry.php');
+            new Admin_Controller_Member_Industry();
         }
     }
 
@@ -82,6 +105,14 @@ class Controller_Main
         if ($this->_controller_options['controller_friendly_link'] == true) {
             require_once(DIR_CONTROLLER . 'controller-friendly-link.php');
             new Admin_Controller_Friendly_Link();
+        }
+    }
+
+    public function post_president()
+    {
+        if ($this->_controller_options['controller_president'] == true) {
+            require_once(DIR_CONTROLLER . 'controller-president.php');
+            new Admin_Controller_President();
         }
     }
 

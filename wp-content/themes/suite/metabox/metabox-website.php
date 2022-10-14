@@ -10,7 +10,7 @@ class Meta_Box_Website{
         $id = 'tw-metabox-website';
         $title = translate('Website');
         $callback = array($this, 'display');
-        $screen = array('advertising','friendly-link'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
+        $screen = array('advertising','friendly-link','president'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
         add_meta_box($id, $title, $callback, $screen);
         // FUNCTION NAY DE O DAY, DE KHI NAO DUNG DE METABOX THI TA MOI GOI FILE CSS NAY VO 
         //  add_action('admin_enqueue_scripts', array($this, 'add_css_file'));

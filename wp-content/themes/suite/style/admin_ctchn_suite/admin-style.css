@@ -12,15 +12,46 @@
     padding: auto;
     width: 10%; }
 
-.type, .text-cell .type-number, .text-cell .type-web, td .type-text, td .type-phone, td .type-email {
+.type, .text-cell .type-number, .text-cell .type-web, .text-cell .type-text,
+.text-cell .type-phone, .text-cell .type-email,
+td .type-text, td .type-phone, td .type-email {
   width: 50%;
   height: 40px;
   border-radius: 2px;
   box-shadow: 1px 2px #888888;
   border: 1px lavender solid; }
 
-.text-cell .type-number, .text-cell .type-web, td .type-text, td .type-phone, td .type-email {
+.text-cell .type-number, .text-cell .type-web, .text-cell .type-text,
+.text-cell .type-phone, .text-cell .type-email,
+td .type-text, td .type-phone, td .type-email {
   margin-top: 3px; }
+
+/* two column*/
+.meta-row-two-column {
+  height: 60px;
+  margin: 10px 0px 20px; }
+
+.meta-row-two-column .col {
+  float: left;
+  width: 33.2%; }
+
+.meta-row-two-column .col .title-cell {
+  height: 22px; }
+
+.meta-row-two-column .col .text-cell {
+  width: 100%; }
+
+/* three column */
+.meta-row-three-column {
+  height: 60px;
+  margin: 10px 0px 20px; }
+  .meta-row-three-column .col {
+    float: left;
+    width: 20%; }
+    .meta-row-three-column .col .title-cell {
+      height: 22px; }
+    .meta-row-three-column .col .text-cell {
+      width: 100%; }
 
 /* metabox */
 .checkbox-label {
@@ -37,5 +68,44 @@
 
 .error ::after {
   content: "!"; }
+
+/* member-category tbl*/
+.category_list {
+  border: 1px solid;
+  margin: 5px;
+  border-radius: 2px; }
+  .category_list li {
+    border-bottom: 1px solid;
+    line-height: 30px;
+    padding: 0px;
+    margin: 0px;
+    height: 35px; }
+  .category_list li:last-child {
+    border-bottom: 0px; }
+  .category_list li:first-child {
+    height: 50px;
+    background-color: peachpuff;
+    color: black;
+    line-height: 50px;
+    font-size: 15px;
+    font-weight: bold; }
+  .category_list li:nth-child(even) {
+    background-color: white;
+    display: block; }
+  .category_list li div {
+    float: left;
+    text-align: center;
+    height: 30px; }
+  .category_list li div:nth-child(1) {
+    width: 15%; }
+  .category_list li div:nth-child(2) {
+    width: 50%; }
+  .category_list li div:nth-child(3) {
+    width: 20%; }
+  .category_list li div:nth-child(4) {
+    width: 15%; }
+  .category_list li div a {
+    text-decoration: none;
+    font-weight: bold; }
 
 /*# sourceMappingURL=admin-style.css.map */
