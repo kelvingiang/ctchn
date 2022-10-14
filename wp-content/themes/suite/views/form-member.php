@@ -37,7 +37,7 @@ if ((getParams('action')=='edit')) {
             </div>
             <div class="text-cell">
                 <input type="text" name="txt_mem_order" id="txt_mem_order" class="type-text"  
-                    value="<?php echo $data['order']; ?>" placeholder="10" />
+                    value="<?php echo $data['order'] != '' ? $data['order'] : 10 ?>" />
             </div>
         </div>
         <div class="col">
