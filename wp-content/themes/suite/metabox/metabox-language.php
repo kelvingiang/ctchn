@@ -24,54 +24,43 @@ class Meta_Box_Language{
         $name = 'dn-metabox-data-nonce';
         wp_nonce_field($action, $name);
 
-        ?> <div class="row" style="margin-left: 4px;"> <?php
         if(get_post_meta($post->ID, '_meta_box_language',true) == 'en'){
             ?> 
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 中文 (cn) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="cn"/>
-            </div>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 越文 (vn) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="vn"/>
-            </div>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 英文 (en) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="en" checked/>
-            </div>                        
+                <label class="radio-inline checkbox-label" style="margin-right:10px;">
+                    <input type="radio" id=" metabox-language" name="metabox-language" value="cn" checked>中文 (cn)
+                </label>
+                <label class="radio-inline checkbox-label" style="margin-right:10px;">
+                    <input type="radio" id="metabox-language" name="metabox-language" value="vn">越文 (vn)
+                </label>
+                <label class="radio-inline checkbox-label">
+                    <input type="radio" id="metabox-language" name="metabox-language" value="en" checked>英文 (en)
+                </label>            
             <?php
         }elseif(get_post_meta($post->ID, '_meta_box_language',true) == 'vn'){
             ?>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 中文 (cn) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="cn"/>
-            </div>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 越文 (vn) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="vn" checked/>
-            </div>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 英文 (en) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="en"/>
-            </div>
+                <label class="radio-inline checkbox-label" style="margin-right:10px;">
+                    <input type="radio" id=" metabox-language" name="metabox-language" value="cn">中文 (cn)
+                </label>
+                <label class="radio-inline checkbox-label" style="margin-right:10px;">
+                    <input type="radio" id="metabox-language" name="metabox-language" value="vn" checked>越文 (vn)
+                </label>
+                <label class="radio-inline checkbox-label">
+                    <input type="radio" id="metabox-language" name="metabox-language" value="en">英文 (en)
+                </label>
             <?php
         }else{
             ?>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 中文 (cn) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="cn" checked/>
-            </div>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 越文 (vn) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="vn"/>
-            </div>
-            <div class="form-check col-md-3">
-                <label class="form-check-label checkbox-label mr-3"> 英文 (en) </label>
-                <input class="form-check-input mt-1" type="radio" id=" metabox-language" name="metabox-language" value="en"/>
-            </div>
+                <label class="radio-inline checkbox-label" style="margin-right:10px;">
+                    <input type="radio" id=" metabox-language" name="metabox-language" value="cn" checked>中文 (cn)
+                </label>
+                <label class="radio-inline checkbox-label" style="margin-right:10px;">
+                    <input type="radio" id="metabox-language" name="metabox-language" value="vn">越文 (vn)
+                </label>
+                <label class="radio-inline checkbox-label">
+                    <input type="radio" id="metabox-language" name="metabox-language" value="en">英文 (en)
+                </label>
             <?php
         }
-        ?> </div> <?php
     }
 
     public function save($post_id)

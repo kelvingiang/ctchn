@@ -105,7 +105,7 @@ function style_header_scripts()
                 // wp_enqueue_script('prefixfree-js');
 
                 //====== MY STYLE ==================================================================
-                wp_register_style('my-main-css', THEME_PART . '/style/style/main.css', array(), '1.0', 'all');
+                wp_register_style('my-main-css', THEME_PART . '/style/frontend_ctchn_suite/main-style.css', array(), '1.0', 'all');
                 wp_enqueue_style('my-main-css');
         } else {
 

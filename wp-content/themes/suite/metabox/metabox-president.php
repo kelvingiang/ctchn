@@ -27,18 +27,18 @@ class Meta_Box_President{
 
         // Tao text box
         if(get_post_meta($post->ID, '_meta_box_president', true) == 1){ //1: show, 0: hide
-            ?> <label class="checkbox-label"> 總統 </label>
-            <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-president"> <?php translate('President') ?> </label>
-                <input class="form-check-input mt-1" type="checkbox" id=" metabox-president" name="metabox-president" value="1" checked />
-            </div>
+            ?> 
+                <div class="form-check">
+                    <input class="form-check-input mt-1" type="checkbox" id="metabox-president" name="metabox-president" value="1" checked />
+                    <label class="checkbox-label" for="metabox-president"> 總統 </label>
+                </div>
             <?php
         }else{
-            ?> <label class="checkbox-label"> 總統 </label>
-            <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-president"> <?php translate('President') ?> </label>
-                <input class="form-check-input mt-1" type="checkbox" id=" metabox-president" name="metabox-president" value="1" />
-            </div>
+            ?>
+                <div class="form-check">
+                    <input class="form-check-input mt-1" type="checkbox" id="metabox-president" name="metabox-president" value="1" />
+                    <label class="checkbox-label" for="metabox-president"> 總統 </label>
+                </div>
             <?php
         }   
 

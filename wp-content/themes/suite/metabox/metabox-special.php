@@ -27,17 +27,17 @@ class Meta_Box_Special{
 
         // Tao text box
         if(get_post_meta($post->ID, '_meta_box_special', true) == 1){ //1: show, 0: hide
-            ?> <label class="checkbox-label"> Special </label>
+            ?> 
             <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-special"> <?php translate('Special') ?> </label>
-                <input class="form-check-input mt-1" type="checkbox" id=" metabox-special" name="metabox-special" value="1" checked />
+                <input class="form-check-input mt-1" type="checkbox" id="metabox-special" name="metabox-special" value="1" checked />
+                <label class="checkbox-label" for="metabox-special"> Special </label>
             </div>
             <?php
         }else{
-            ?> <label class="checkbox-label"> Special </label>
+            ?> 
             <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-special"> <?php translate('Special') ?> </label>
                 <input class="form-check-input mt-1" type="checkbox" id=" metabox-special" name="metabox-special" value="1" />
+                <label class="checkbox-label" for="metabox-special"> Special </label>
             </div>
             <?php
         }   

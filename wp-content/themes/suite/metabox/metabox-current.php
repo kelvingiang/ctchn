@@ -27,17 +27,17 @@ class Meta_Box_Current{
 
         // Tao text box
         if(get_post_meta($post->ID, '_meta_box_current', true) == 1){ //1: show, 0: hide
-            ?> <label class="checkbox-label"> Current </label>
+            ?> 
             <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-current"> <?php translate('Current') ?> </label>
-                <input class="form-check-input mt-1" type="checkbox" id=" metabox-current" name="metabox-current" value="1" checked />
+                <input class="form-check-input mt-1" type="checkbox" id="metabox-current" name="metabox-current" value="1" checked />
+                <label class="checkbox-label" for="metabox-current">Current</label>
             </div>
             <?php
         }else{
-            ?> <label class="checkbox-label"> Current </label>
+            ?> 
             <div class="form-check">
-                <label class="form-check-label mr-3" for="metabox-current"> <?php translate('Current') ?> </label>
-                <input class="form-check-input mt-1" type="checkbox" id=" metabox-current" name="metabox-current" value="1" />
+                <input class="form-check-input mt-1" type="checkbox" id="metabox-current" name="metabox-current" value="1" />
+                <label class="checkbox-label" for="metabox-current">Current</label>
             </div>
             <?php
         }   
