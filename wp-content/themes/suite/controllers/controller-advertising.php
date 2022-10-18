@@ -83,7 +83,7 @@ class Admin_Controller_Advertising{
         }
 
         if ($columns == 'website') {
-            get_post_meta($post->ID,'_meta_box_website',true);
+            echo get_post_meta($post->ID,'_meta_box_website',true);
         }
     }
 

@@ -16,17 +16,23 @@
   }
 }
 .type{
-  width: 50%;
-  height: 40px;
-  border-radius:2px;
+  border-radius:5px;
   box-shadow: 1px 2px #888888;
-  border: 1px lavender solid;
+  border: 1px rgb(135, 135, 138) solid;
 }
 .text-cell .type-number, .text-cell .type-web, .text-cell .type-text, 
 .text-cell .type-phone, .text-cell .type-email,
-td .type-text, td .type-phone, td .type-email{ 
+td .type-text, td .type-phone, td .type-email { 
   @extend .type;
+  width: 50%;
+  height: 40px;
   margin-top: 3px; 
+}
+/*schedule cell*/
+.text-cell .type-date, .text-cell .type-time{
+  @extend .type;
+  width: 24%;
+  height: 40px;
 }
 
 /* two column*/

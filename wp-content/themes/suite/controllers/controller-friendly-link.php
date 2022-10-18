@@ -42,7 +42,7 @@ class Admin_Controller_Friendly_Link{
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 8,
+            'menu_position' => 5,
             'supports' => array('title','editor', 'thumbnail'),
         );
         register_post_type('friendly-link', $args);
@@ -83,7 +83,7 @@ class Admin_Controller_Friendly_Link{
         }
 
         if ($columns == 'website') {
-            get_post_meta($post->ID,'_meta_box_website',true);
+            echo get_post_meta($post->ID,'_meta_box_website',true);
         }
     }
 

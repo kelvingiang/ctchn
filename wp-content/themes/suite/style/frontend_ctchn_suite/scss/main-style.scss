@@ -1,0 +1,57 @@
+@import 'main-color.scss';
+/*
+    This file use frontend
+    Create date( dd-mm-yy ) : 17/10/2022
+    page, template,..
+*/
+// ============= HEADER - FOOTER =====================
+#header{
+    height: 70px;
+    //background-color: $head_bg_color;
+
+    #menu{
+        clear: both;
+        width: 100%;
+    }
+}
+
+#footer{
+    background: -moz-linear-gradient(top, $foo_bg_color 0%, $foo_bg_color 44%, $foo_bg_color 100%) !important; /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ) !important; /* IE6-9 */
+    overflow:  hidden;
+    padding-top: 10px;
+    margin-top: 10px;
+
+    #copyright{
+        margin-right: 5px;
+        font-size: 13px;
+        padding: 10px;
+        label{
+            color: $foo_color;
+        }
+        a{
+            color: $foo_color;
+            text-decoration: none;
+        }
+    }
+}
+
+.company-language{
+    a{
+        text-decoration: none;
+        text-align: right;
+        font-size: 16px;
+        font-weight: 400;
+        color: $change_lang_color;
+    }
+    a:hover{
+        color: $change_lang_color_hover;
+    }
+    
+}
+
+.lang-color{
+    color: rgb(252, 240, 218);
+}

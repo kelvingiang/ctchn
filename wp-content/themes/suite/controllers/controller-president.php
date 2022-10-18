@@ -42,7 +42,7 @@ class Admin_Controller_President{
             'capability_type' => 'post',
             'has_archive' => true,
             'hierarchical' => false,
-            'menu_position' => 8,
+            'menu_position' => 2,
             'supports' => array('title','editor', 'thumbnail'),
         );
         register_post_type('president', $args);
@@ -60,7 +60,7 @@ class Admin_Controller_President{
         //==== THEM COT VA BANG
         $columns['img'] = __('Image', 'suite');
         //$columns['content] = __('Content);
-        $columns['website'] = __('Website');
+        $columns['current'] = __('Current');
         return $columns;
     }
 
@@ -82,8 +82,8 @@ class Admin_Controller_President{
             echo '</a>';
         }
 
-        if ($columns == 'website') {
-            get_post_meta($post->ID,'_meta_box_website',true);
+        if ($columns == 'current') {
+            echo get_post_meta($post->ID,'_meta_box_current',true);
         }
     }
 

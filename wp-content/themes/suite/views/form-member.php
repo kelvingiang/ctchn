@@ -145,20 +145,20 @@ if ((getParams('action')=='edit')) {
     <div class="meta-row-two-column">
         <div class="col">
             <div class="title-cell">
-                <label><?php echo __('Email'); ?><i class="error" id="error-email"></i></label>
+                <label><?php echo __('Email'); ?><i id="error-email" class="error" ></i></label>
             </div>
             <div class="text-cell">
-                <input class="type-email email" type="text" name="txt_mem_email" id="txt_mem_email" 
+                <input class="type-email" type="text" name="txt_email" id="txt_email" 
                 value="<?php echo $data['email'] ?>"/> 
             </div>
         </div>
         <div class="col">
             <div class="title-cell">
-                <label><?php echo __('Website'); ?></label>
+                <label><?php echo __('Website'); ?><i id="error-web" class="error"></i></label>
             </div>
             <div class="text-cell">
                 <input class="type-text" type="text" name="txt_mem_website" id="txt_mem_website" 
-                placeholder="http://" value="<?php echo $data['website'] ?>"/> 
+                placeholder="http://domain.com" value="<?php echo $data['website'] ?>"/> 
             </div>
         </div>
     </div>
@@ -258,6 +258,15 @@ if ((getParams('action')=='edit')) {
             if (industry === '') {
                 jQuery('#error-indus-id').text('<?php echo __('請選擇會員行業 !') ?>');
                 e.preventDefault();
+            }
+
+            var website = jQuery('#txt_mem_website').val();
+            var filter = /^(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(website.value)) {
+                jQuery('#error-web').text('請 輸 入 正 確 網 站 地 址 ! ');
+                website.focus;
+            } else {
+                jQuery('#error-web').text('');
             }
         });
  

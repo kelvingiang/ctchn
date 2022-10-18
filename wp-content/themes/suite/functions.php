@@ -18,16 +18,20 @@ require_once(HELPER . 'require.php');
 require_once(DIR_CLASS . 'rewrite.class.php');
 new Rewrite_Url();
 
+//================ CHANGE LANGUAGE =================
 if (!isset($_SESSION['languages'])) {
     $_SESSION['languages'] = 'cn';
 }
 
+global $languages;
 function change_translate_text($translated)
 {
     if ($_SESSION['languages'] == 'cn') {
         $languages = 'zh_TW';
-    } else {
+    } elseif ($_SESSION['languages'] == 'vn') {
         $languages = 'vi_VN';
+    } else {
+        $languages = 'en_EN';
     }
 
     if (is_admin()) {

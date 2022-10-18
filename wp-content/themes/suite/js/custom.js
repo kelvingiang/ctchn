@@ -67,9 +67,8 @@ jQuery(document).ready(function () {
     return true;
   }
 
-  jQuery(".email").focusout(function (e) {
-    //var email = document.getElementById("txt_email");
-    var email = jQuery(this).val();
+  jQuery(".type-email").focusout(function (e) {
+    var email = document.getElementById("txt_email");
     var filter =
       /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
     if (!filter.test(email.value)) {
@@ -141,16 +140,23 @@ jQuery(document).ready(function () {
     return true;
   }
 
-  jQuery('.type-web').focusout(function(e) {
-    //var web = document.getElementById('txt_web');
-    var web = jQuery(this).val();
-    var filter = /^(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-    if (!filter.test(web.value)) {
-        jQuery('#error_web').text('請 輸 入 正 確 網 站 地 址 ! ');
-        web.focus;
+  jQuery(".type-web").focusout(function(e) {
+    var value = jQuery(this).val().replace(/\s+/g, ''); // LOAI BO CAC KHOANG TRANG 
+    if (value.toLowerCase().indexOf("http:") >= 0 || value.toLowerCase().indexOf("https:") >= 0) {
+        jQuery(this).val(value);
     } else {
-        jQuery('#error_web').text('');
+        jQuery(this).val('http://' + value);
     }
+
+    // var web = document.getElementById("txt_website");
+    // var filter = /^(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    // if (!filter.test(web.value)) {
+    //   console.log('aa');
+    //   jQuery('#error_web').text('請 輸 入 正 確 網 站 地 址 ! ');
+    //   web.focus;
+    // } else {
+    //   jQuery('#error_web').text('');
+    // }
 });
 
   // waiting function

@@ -117,7 +117,7 @@ class Admin_Model_Member_Function {
             'mobile' => $arrData['txt_mem_mobile'],
             'phone' => $arrData['txt_mem_phone'],
             'fax' => $arrData['txt_mem_fax'],
-            'email' => $arrData['txt_mem_email'],
+            'email' => $arrData['txt_email'],
             'region' => trim($arrData['txt_mem_region']),
             'service' => $arrData['txt_mem_service'],
             'industry' => trim($arrData['sel_mem_industry']),

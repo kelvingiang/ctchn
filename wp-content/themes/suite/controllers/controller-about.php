@@ -38,7 +38,7 @@ class Admin_Controller_About{
     //khởi tạo url
     public function createUrl()
     {
-        echo $url = 'admin.php?page=' . getParams('page'); //admin.php?page=page_setting
+        echo $url = 'admin.php?page=' . getParams('page'); //admin.php?page=page_about
         if(mb_strlen(getParams('s'))) {
             $url .= '&s=' . getParams('s');
         }

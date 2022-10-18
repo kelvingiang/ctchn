@@ -95,7 +95,7 @@ class Admin_Controller_Activity{
         }
 
         if ($columns == 'special') {
-            get_post_meta($post->ID,'_meta_box_special',true);
+            echo get_post_meta($post->ID,'_meta_box_special',true);
         }
     }
 

@@ -14,17 +14,22 @@
 
 .type, .text-cell .type-number, .text-cell .type-web, .text-cell .type-text,
 .text-cell .type-phone, .text-cell .type-email,
-td .type-text, td .type-phone, td .type-email {
-  width: 50%;
-  height: 40px;
-  border-radius: 2px;
+td .type-text, td .type-phone, td .type-email, .text-cell .type-date, .text-cell .type-time {
+  border-radius: 5px;
   box-shadow: 1px 2px #888888;
-  border: 1px lavender solid; }
+  border: 1px #87878a solid; }
 
 .text-cell .type-number, .text-cell .type-web, .text-cell .type-text,
 .text-cell .type-phone, .text-cell .type-email,
 td .type-text, td .type-phone, td .type-email {
+  width: 50%;
+  height: 40px;
   margin-top: 3px; }
+
+/*schedule cell*/
+.text-cell .type-date, .text-cell .type-time {
+  width: 24%;
+  height: 40px; }
 
 /* two column*/
 .meta-row-two-column {

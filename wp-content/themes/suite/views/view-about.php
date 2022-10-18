@@ -6,6 +6,19 @@
             </tr>
             <tr>
                 <td>
+                    <div class="title-cell">
+                        <label>聯絡電話</label>
+                        <input class="type-phone" type="text" name="txt_phone" id="txt_phone" value="<?php echo get_option('about_phone') ?>" />
+                    </div>
+                    <div class="title-cell">
+                        <label>E-Mail</label>
+                        <input class="type-email" type="text" name="txt_email" id="txt_email" value="<?php echo get_option('about_email') ?>" />
+                        <i id="error-email" class="error"></i>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
                     <div id="tabs_about">
                         <ul>
                             <li><a href="#tabs-cn">中文 (cn)</a></li>
@@ -23,15 +36,6 @@
                                 <label>地址 (cn)</label>
                                 <input class="type-text" style="margin-right: 10px;" type="text" name="txt_address_cn" id="txt_address_cn" value="<?php echo get_option('about_address_cn') ?>" />
                                 <i id="error-address-cn" class="error"></i>
-                            </div>
-                            <div class="title-cell">
-                                <label>聯絡電話</label>
-                                <input class="type-phone" type="text" name="txt_phone" id="txt_phone" value="<?php echo get_option('about_phone') ?>" />
-                            </div>
-                            <div class="title-cell">
-                                <label>E-Mail</label>
-                                <input class="type-email email" type="text" name="txt_email" id="txt_email" value="<?php echo get_option('about_email') ?>" />
-                                <i id="error-email" class="error"></i>
                             </div>
                             <div class="title-cell"> 
                                 <label>台灣商會簡介 (cn)<i id="error-introduction" class="error"></i></label>
@@ -56,15 +60,6 @@
                                 <i id="error-address-vn" class="error"></i>
                             </div>
                             <div class="title-cell">
-                                <label>聯絡電話</label>
-                                <input class="type-phone" type="text" name="txt_phone" id="txt_phone" value="<?php echo get_option('about_phone') ?>" />
-                            </div>
-                            <div class="title-cell">
-                                <label>E-Mail</label>
-                                <input class="type-email email" type="text" name="txt_email" id="txt_email" value="<?php echo get_option('about_email') ?>" />
-                                <i id="error-email" class="error"></i>
-                            </div>
-                            <div class="title-cell">
                                 <label>台灣商會簡介 (vn)<i id="error-introduction" class="error"></i></label>
                                 <?php wp_editor(get_post_meta('1', '_introduction_vn', TRUE), 'txt_introduction_vn', array('wpautop' => false, 'editor_height' => '300px')); ?>
                             </div>
@@ -82,15 +77,6 @@
                             <div class="title-cell">
                                 <label>地址 (en) <i id="error-address" class="error"></i></label>  
                                 <input class="type-text" type="text" name="txt_address_en" id="txt_address_en" value="<?php echo get_option('about_address_en') ?>" />
-                            </div>
-                            <div class="title-cell">
-                                <label>聯絡電話</label>
-                                <input class="type-phone" type="text" name="txt_phone" id="txt_phone" value="<?php echo get_option('about_phone') ?>" />
-                            </div>
-                            <div class="title-cell">
-                                <label>E-Mail</label>
-                                <input class="type-email email" type="text" name="txt_email" id="txt_email" value="<?php echo get_option('about_email') ?>" />
-                                <i id="error-email" class="error"></i>
                             </div>
                             <div class="title-cell">
                                 <label>台灣商會簡介 (en) <i id="error-introduction" class="error"></i></label>

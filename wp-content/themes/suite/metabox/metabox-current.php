@@ -10,7 +10,7 @@ class Meta_Box_Current{
         $id = 'tw-metabox-current';
         $title = translate('Current');
         $callback = array($this, 'display');
-        $screen = array('post'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
+        $screen = array('president'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
         add_meta_box($id, $title, $callback, $screen);
         // FUNCTION NAY DE O DAY, DE KHI NAO DUNG DE METABOX THI TA MOI GOI FILE CSS NAY VO 
         //  add_action('admin_enqueue_scripts', array($this, 'add_css_file'));
@@ -52,10 +52,10 @@ class Meta_Box_Current{
         if (is_admin()) {
             $check = 1;
             //su dung cho nhieu trang
-            if (isset($_POST['metabox-president']) == $check) {
-                update_post_meta($post_id, '_meta_box_president', $_POST['metabox-president']);
+            if (isset($_POST['metabox-current']) == $check) {
+                update_post_meta($post_id, '_meta_box_current', $_POST['metabox-current']);
             }else{
-                update_post_meta($post_id, '_meta_box_president', $_POST['metabox-president']);
+                update_post_meta($post_id, '_meta_box_current', $_POST['metabox-current']);
             }
         }
     }
