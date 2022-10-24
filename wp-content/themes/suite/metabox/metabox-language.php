@@ -24,43 +24,20 @@ class Meta_Box_Language{
         $name = 'dn-metabox-data-nonce';
         wp_nonce_field($action, $name);
 
-        if(get_post_meta($post->ID, '_meta_box_language',true) == 'en'){
-            ?> 
-                <label class="radio-inline checkbox-label" style="margin-right:10px;">
-                    <input type="radio" id=" metabox-language" name="metabox-language" value="cn" checked>中文 (cn)
-                </label>
-                <label class="radio-inline checkbox-label" style="margin-right:10px;">
-                    <input type="radio" id="metabox-language" name="metabox-language" value="vn">越文 (vn)
-                </label>
-                <label class="radio-inline checkbox-label">
-                    <input type="radio" id="metabox-language" name="metabox-language" value="en" checked>英文 (en)
-                </label>            
-            <?php
-        }elseif(get_post_meta($post->ID, '_meta_box_language',true) == 'vn'){
-            ?>
-                <label class="radio-inline checkbox-label" style="margin-right:10px;">
-                    <input type="radio" id=" metabox-language" name="metabox-language" value="cn">中文 (cn)
-                </label>
-                <label class="radio-inline checkbox-label" style="margin-right:10px;">
-                    <input type="radio" id="metabox-language" name="metabox-language" value="vn" checked>越文 (vn)
-                </label>
-                <label class="radio-inline checkbox-label">
-                    <input type="radio" id="metabox-language" name="metabox-language" value="en">英文 (en)
-                </label>
-            <?php
-        }else{
-            ?>
-                <label class="radio-inline checkbox-label" style="margin-right:10px;">
-                    <input type="radio" id=" metabox-language" name="metabox-language" value="cn" checked>中文 (cn)
-                </label>
-                <label class="radio-inline checkbox-label" style="margin-right:10px;">
-                    <input type="radio" id="metabox-language" name="metabox-language" value="vn">越文 (vn)
-                </label>
-                <label class="radio-inline checkbox-label">
-                    <input type="radio" id="metabox-language" name="metabox-language" value="en">英文 (en)
-                </label>
-            <?php
-        }
+        $lang = get_post_meta($post->ID, '_meta_box_language', true);
+        ?><label class="radio-inline checkbox-label" style="margin-right:10px;">
+                <input type="radio" id=" metabox-language" name="metabox-language" value="cn"
+                <?php echo $lang == '' ? 'checked' : ($lang == 'cn' ? 'checked' : '') ?>/>中文 (cn)
+            </label>
+            <label class="radio-inline checkbox-label" style="margin-right:10px;">
+                <input type="radio" id="metabox-language" name="metabox-language" value="vn"
+                <?php echo $lang == 'vn' ? 'checked' : '' ?>/>越文 (vn)
+            </label>
+            <label class="radio-inline checkbox-label">
+                <input type="radio" id="metabox-language" name="metabox-language" value="en"
+                <?php echo $lang == 'en' ? 'checked' : '' ?>/>英文 (en)
+            </label>            
+        <?php
     }
 
     public function save($post_id)

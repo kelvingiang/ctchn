@@ -4,9 +4,10 @@
  */
 ?>
 <?php get_header() ?>
-<div class="meta-row">
-    <div class="title-cell">
-        <label><?php echo _e('台灣商會規則'); ?>: </label> <span><?php echo get_post_meta('1', '_rule_cn', TRUE) ?></span>
+<div class="container">
+    <div class="row">
+        <h2 class="about-title"><?php echo _e('Rules'); ?></h2> 
+        <p class="about-content"><?php echo get_post_meta('1', '_rule_' . $_SESSION['languages'], TRUE) ?></p>
     </div>
 </div>
 <?php get_footer() ?>

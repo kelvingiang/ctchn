@@ -3,45 +3,92 @@
 function getTranslate()
 {
     $data = array(
-        'Member' => "Khách Hàng",
-        "Home Page" => "Trang chủ",
+        //==== A
+        "Active" => "Sự Kiện",
         "About" => "Giới Thiệu",
-        "Event" => "Hoạt Động",
         "Article" => "Văn Bản",
-        "Schedule" => "Lịch",
-        "Contact" => "Liên Lạc ",
-        "Download" => "DownLoad",
+        "Address" => "Địa Chỉ",
+
+        //==== B
+
+        //==== C
+        "Cases Tudies" => "Dự Án",
         "Contact Digiwin" => "Liên Hệ",
-        "Solutions" => "Giải Pháp",
+        "Contact" => "Liên Lạc ",
+        'Column Article' => 'Chuyên Mục',
+        'Classic Case' => 'Mô Hình Thành Công ',
+        "Contact Us" => "Liên Hệ Chúng Tôi",
+        'Corporate management focus' => "Trọng Tâm Quản Lý Doanh Nghiệp",
+
+        //==== D
+        "Download" => "DownLoad",
+
+        //==== E
+        "Event" => "Hoạt Động",
+        'Enterprise model success case' => 'Mô Hình Doanh Nghiệp Thành Công',
+
+        //==== F
+
+        //==== G
+
+        //==== H
+        "Home Page" => "Trang chủ",
+
+        //==== I
         "Industries" => "Ngành Nghề",
         "Industries Challenge" => 'Thách Thức Quản Lý',
         "Industries Solution" => 'Giải Pháp',
-        "Cases Tudies" => "Dự Án",
-        "Operating" => "Kinh Doanh Vững Bền",
+        'Information Request' => 'Dữ Liệu Thu Thập',
+        "Introduction" => "Giới Thiệu",
+        
+        //==== J
+        'Join Digiwin' => 'Tuyển Dụng',
+
+        //==== K
+
+        //==== L
+        "Latest News" => "Thông Tin Mới Nhất",
+        'Latest Event' => 'Sự Kiện Gần Đây ',
+        'Link' => 'Liên Kết',
         "Location" => "Trung Tâm Dịch Vụ",
+
+        //==== M
+        'Member' => "Khách Hàng",
+
+        //==== N
+        'News Center' => 'Tin Tức',
+
+        //==== O
+        'Online User' => 'Người Đang Truy Cập',
+        'Office' => 'Văn Phòng',
+        "Operating" => "Kinh Doanh Vững Bền",
+
+        //==== P
         "Product Value" => "Ưu Điểm Sản Phẩm",
         "Product Features" => "Giới Thiệu Chức Năng",
         "Product Service" => "Dịch Vụ Tư Vấn",
-        "Contact Us" => "Liên Hệ Chúng Tôi",
         "Phone" => "Điện Thoại",
-        "Address" => "Địa Chỉ",
-        "Service" => "Dịch Vụ",
-        "Resources" => "Tài Liệu",
-        "Active" => "Sự Kiện",
-        "Latest News" => "Thông Tin Mới Nhất",
-        "Specialize in the industry" => "Ngành Nghề Chuyên Môn",
-        'Corporate management focus' => "Trọng Tâm Quản Lý Doanh Nghiệp",
-        'Enterprise model success case' => 'Mô Hình Doanh Nghiệp Thành Công',
-        'Information Request' => 'Dữ Liêu Thu Thập',
-        'News Center' => 'Tin Tức',
-        'Column Article' => 'Chuyên Mục',
-        'Classic Case' => 'Mô Hình Thành Công ',
-        'Latest Event' => 'Sự Kiện Gần Đây ',
+
+        //==== Q
+
+        //==== R
         'Read More' => "Nhiều Hơn",
-        'link' => 'Liên Kết',
-        'Office' => 'Văn Phòng',
-        'Join Digiwin' => 'Tuyển Dụng',
-        'So Happy can support You!' => 'Rất vui khi được hỗ trợ bạn!'
+        "Resources" => "Tài Liệu",
+        "Rules" => "Quy Định",
+
+        //==== S
+        "Schedule" => "Lịch",
+        "Solutions" => "Giải Pháp",
+        "Service" => "Dịch Vụ",
+        "Specialize in the industry" => "Ngành Nghề Chuyên Môn",
+        'So Happy can support You!' => 'Rất vui khi được hỗ trợ bạn!',
+
+        //==== T
+        'Taiwan Chamber of Commerce in Hanoi, Vietnam' => "Hiệp Hội Thương Mại Đài Loan tại Hà Nội, Việt Nam",
+        'Total User' => 'Tổng Lượt Người Truy Cập',
+        //==== U
+
+        //==== V
     );
     return array_merge($data);
 }

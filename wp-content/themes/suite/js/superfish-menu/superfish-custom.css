@@ -1,0 +1,57 @@
+/*
+    Document: superfish custom
+    Create date(dd/mm/YY) : 21/10/2022
+    This file use menu, purpose of the stylesheet follows
+*/
+
+root{
+    display: block;
+}
+
+.sf-menu{
+    float: right !important;
+    margin-right: 0px;
+}
+
+.sf-menu > li:last-child{
+    border-radius: 0 0 0 8px;
+}
+
+.sf-menu > lis:first-child{
+    border-radius: 0 0 0 8px;
+    border-left: 0px #666 solid;
+}
+
+.sf-menu > li{
+    border-left: 1px rgb(247, 243, 243) solid;
+    border-top: 6px rgb(255, 251, 251) solid;
+}
+
+.sf-menu > li:hover{
+    background-color: #f4f8fa !important;
+    border-top: 7px rgb(255, 252, 252) solid;
+}
+
+/* menu */
+.sf-menu li{
+    background-color: #fff !important;
+}
+
+.sf-menu li:hover{
+    background-color: #e3e9ee !important;
+}
+
+.sf-menu a{
+    color: #7e7b7b !important;
+    font-weight: bold;
+    border-left: 0px solid #000 !important;
+    font-size: 15px;
+}
+
+.sf-arrows .sf-with-ul::after{
+    border-color: rgb(141, 140, 140) transparent transparent !important;
+}
+
+.sf-with-ul{
+    letter-spacing: 2px;
+}

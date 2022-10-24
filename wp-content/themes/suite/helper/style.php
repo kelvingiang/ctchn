@@ -37,10 +37,13 @@ function style_header_scripts()
                 wp_register_style('skitter-styles', THEME_PART . '/js/slider/skitter.styles.css', 'all');
                 wp_enqueue_style('skitter-styles');
 
+                wp_register_style('skitter-default-styles', THEME_PART . '/js/slider/skitter.css', 'all');
+                wp_enqueue_style('skitter-default-styles');
+
                 wp_register_script('jquery.easing-js', THEME_PART . '/js/slider/jquery.easing.1.3.js', array('jquery'), '1.0.0'); // Custom scripts
                 wp_enqueue_script('jquery.easing-js');
 
-                wp_register_script('jquery.skitter-js', THEME_PART . '/js/slider/jquery.skitter.js', array('jquery'), '1.0.0'); // Custom scripts
+                wp_register_script('jquery.skitter-js', THEME_PART . '/js/slider/jquery.skitter.min.js', array('jquery'), '1.0.0'); // Custom scripts
                 wp_enqueue_script('jquery.skitter-js');
 
 
@@ -61,6 +64,9 @@ function style_header_scripts()
                 //============SUPER FISH MENU ============
                 wp_register_style('superfish-menu-styles', THEME_PART . '/js/superfish-menu/superfish.css', 'all');
                 wp_enqueue_style('superfish-menu-styles');
+
+                wp_register_style('superfish-custom-menu-styles', THEME_PART . '/js/superfish-menu/superfish-custom.css', 'all');
+                wp_enqueue_style('superfish-custom-menu-styles');
 
                 wp_register_script('superfish-menu-js', THEME_PART . '/js/superfish-menu/superfish.js', array('jquery'), '1.0.0'); // Custom scripts
                 wp_enqueue_script('superfish-menu-js');

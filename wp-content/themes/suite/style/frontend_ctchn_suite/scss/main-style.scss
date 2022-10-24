@@ -4,41 +4,21 @@
     Create date( dd-mm-yy ) : 17/10/2022
     page, template,..
 */
-// ============= HEADER - FOOTER =====================
+// ==================== HEADER - FOOTER =====================
 #header{
-    height: 70px;
-    //background-color: $head_bg_color;
-
-    #menu{
-        clear: both;
-        width: 100%;
+    margin: auto;
+    padding: 10px;
+    &-logo{
+        background-color: $head_bg_color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
     }
 }
-
-#footer{
-    background: -moz-linear-gradient(top, $foo_bg_color 0%, $foo_bg_color 44%, $foo_bg_color 100%) !important; /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ) !important; /* IE6-9 */
-    overflow:  hidden;
-    padding-top: 10px;
+.header-language{
     margin-top: 10px;
-
-    #copyright{
-        margin-right: 5px;
-        font-size: 13px;
-        padding: 10px;
-        label{
-            color: $foo_color;
-        }
-        a{
-            color: $foo_color;
-            text-decoration: none;
-        }
-    }
-}
-
-.company-language{
+    margin-bottom: 10px;
     a{
         text-decoration: none;
         text-align: right;
@@ -49,9 +29,101 @@
     a:hover{
         color: $change_lang_color_hover;
     }
-    
+}
+
+#footer{
+    width: 100%;
+    // background: -moz-linear-gradient(top, $foo_bg_color 0%, $foo_bg_color 44%, $foo_bg_color 100%) !important; /* FF3.6-15 */
+    // background: -webkit-linear-gradient(top, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* Chrome10-25,Safari5.1-6 */
+    // background: linear-gradient(to bottom, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ) !important; /* IE6-9 */
+    //overflow:  hidden;
+    background-color: $foo_bg_color;
+    background-position: center;
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    padding: 2rem 1rem 0rem;
+
+    .copyright{
+        margin-right: 5px;
+        font-size: 13px;
+        padding: 10px;
+        label{
+            color: $foo_color;
+            font-weight: 400;
+            padding-bottom: 10px;
+            font-size: 15px;
+        }
+    }
+
+    a{
+        font-size: 0.8rem;
+        font-weight: bold; 
+        color: $foo_color;
+        opacity: 0.5;
+        text-decoration: none;
+        text-align: center;
+    }
 }
 
 .lang-color{
     color: rgb(252, 240, 218);
+}
+
+//==================== ABOUT PAGE ===================
+.about {
+    &-title{
+        font-size: 25px;
+        font-weight: 400;
+    }
+    &-content{
+        font-size: 20px;
+        padding: auto;
+        text-align: left;
+    }
+}
+
+//======================== SLIDER ======================
+@media only screen and (max-device-width : 1920px) {
+    .border_box {
+        background-color:  #fff;
+        height: 560px;
+    }
+    .skitter {
+        max-width: 100% !important;
+        height: 550px !important;
+
+    }
+    .container_skitter .image_main{
+        height: 550px !important;
+    }
+}
+
+@media only screen and (max-device-width : 1366px)  {
+    .border_box {
+        background-color:  #fff;
+        height: 410px;
+    }
+    .skitter {
+        max-width: 100% !important;
+        height: 400px !important;
+
+    }
+    .container_skitter .image_main{
+        height: 400px !important;
+    }
+}
+@media only screen and (max-device-width : 1280px)  {
+    .border_box {
+        background-color: #fff;
+        height: 360px;
+    }
+    .skitter {
+        max-width: 100% !important;
+        height: 350px !important;
+
+    }
+    .container_skitter .image_main{
+        height: 350px !important;
+    }
 }
