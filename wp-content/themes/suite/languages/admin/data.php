@@ -109,6 +109,8 @@ function getTranslate()
         'Update Member Info' => '更新會員資料',
         'Add New Member' => '新增會員',
         'Note' => '備註',
+
+        'President' => '會長',
     );
     return array_merge($data);
 }

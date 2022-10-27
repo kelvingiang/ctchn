@@ -2,21 +2,7 @@
 <div class="skitter skitter-large with-dots">
     <ul>
     <?php
-        $args = array(
-            'post_type' => 'slider',
-            'posts_per_page' => -1,
-            'post_status' => 'publish',
-            'slide-category' => 'home',
-            // 'meta_query' => array(
-            //     array(
-            //         'key' => '',
-            //         'value' => '',
-            //         'compare' => '='
-            //     )
-            // 
-        );
-        $wp_query = new WP_Query($args);
-        //print_r($wp_query);
+        $wp_query = new WP_Query(getPostTypeSlider('slider', 4, -1));
         if ($wp_query->have_posts()):
             while ($wp_query->have_posts()):
                 $wp_query->the_post();
@@ -31,8 +17,8 @@
                     $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
                     ?>
                     <img src="<?php echo $url[0]; ?>" class="<?php echo $a[$random_keys] ?>"/> 
-                    <div class="slider">
-                        <p> <?php the_title() ?> </p>
+                    <div class="label_text">
+                        <p> <?php the_title(); ?> </p>                            
                     </div>
                 </li>
                 <?php
@@ -49,6 +35,7 @@
         jQuery('.skitter-large').skitter({
             dots: false,
             interval: 5000, //thoi gian chuyen man hinh
+            label: true,
         });
     })
 </script>

@@ -61,6 +61,7 @@ class Admin_Controller_President{
         $columns['img'] = __('Image', 'suite');
         //$columns['content] = __('Content);
         $columns['current'] = __('Current');
+        $columns['president'] = __('President');
         return $columns;
     }
 
@@ -84,6 +85,10 @@ class Admin_Controller_President{
 
         if ($columns == 'current') {
             echo get_post_meta($post->ID,'_meta_box_current',true);
+        }
+
+        if($columns == 'president') {
+            echo get_post_meta($post->ID,'_meta_box_president',true);
         }
     }
 

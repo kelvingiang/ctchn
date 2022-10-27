@@ -10,7 +10,7 @@ class Meta_Box_President{
         $id = 'tw-metabox-president';
         $title = translate('President');
         $callback = array($this, 'display');
-        $screen = array('post'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
+        $screen = array('president'); // CAC POST VA CUSTOMER POST CHO PHEP METABOX NAY HIEN THI
         add_meta_box($id, $title, $callback, $screen);
         // FUNCTION NAY DE O DAY, DE KHI NAO DUNG DE METABOX THI TA MOI GOI FILE CSS NAY VO 
         //  add_action('admin_enqueue_scripts', array($this, 'add_css_file'));
@@ -30,14 +30,14 @@ class Meta_Box_President{
             ?> 
                 <div class="form-check">
                     <input class="form-check-input mt-1" type="checkbox" id="metabox-president" name="metabox-president" value="1" checked />
-                    <label class="checkbox-label" for="metabox-president"> 總統 </label>
+                    <label class="checkbox-label" for="metabox-president"> <?php _e('President') ?> </label>
                 </div>
             <?php
         }else{
             ?>
                 <div class="form-check">
                     <input class="form-check-input mt-1" type="checkbox" id="metabox-president" name="metabox-president" value="1" />
-                    <label class="checkbox-label" for="metabox-president"> 總統 </label>
+                    <label class="checkbox-label" for="metabox-president"> <?php _e('President') ?> </label>
                 </div>
             <?php
         }   

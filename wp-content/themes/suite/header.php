@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width" />
@@ -61,6 +61,6 @@
                           height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- End Google Tag Manager (noscript) -->
         <div id="wrapper" class="hfeed">
-            <div class="header"><?php get_template_part('templates/template', 'header'); ?></div>   
+            <div><?php get_template_part('templates/template', 'header'); ?></div>   
   
         <div id="container">

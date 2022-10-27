@@ -13,6 +13,7 @@ require_once(HELPER . 'define.php');
 require_once(HELPER . 'function.php');
 require_once(HELPER . 'style.php');
 require_once(HELPER . 'require.php');
+require_once(HELPER . 'function-frontend.php');
 
 
 require_once(DIR_CLASS . 'rewrite.class.php');
@@ -52,8 +53,8 @@ function change_translate_text($translated)
 add_filter('gettext', 'change_translate_text', 20);
 add_theme_support('post-thumbnails');
 
-// thay doi cac cot mac dinh cua post
-// cac cot home,language,setorder se duoc dung chung
+//================= COT MAC DINH CUA POST ====================
+// thay doi cac cot mac dinh cua post, cac cot home,language,setorder se duoc dung chung
 // nen ta khong can khai bao chung trong cac slider, news,... dung metabox
 add_filter('manage_posts_columns', 'set_custom_edit_columns');
 function set_custom_edit_columns($columns)
@@ -106,6 +107,62 @@ function Custom_post_RenderCols($columns)
         default:
             break;
     }
+}
+
+// ================ XU LY LOAD MORE SCROLL PHIA SERVER ================
+add_action( 'wp_ajax_nopriv_article_scrolling_loadmore', 'prefix_article_scrolling_load_more' );
+add_action( 'wp_ajax_article_scrolling_loadmore', 'prefix_article_scrolling_load_more' );
+function prefix_article_scrolling_load_more(){
+    $paged = $_POST['page'];
+    $offset = $_POST['id'];
+    $cateID = $_POST['cate'];
+    $showNum = 3;
+    $wp_query = new WP_Query(
+        $args = array(
+            'post_type' => 'post',
+            'posts_per_page' => $showNum,
+            'post_status' => 'publish',
+            'meta_query' => array(
+                array(
+                    'key' => '_meta_box_language',
+                    'value' => $_SESSION['languages'],
+                    'compare' => '=='
+                )
+            ),  
+            'paged' => $paged,
+            'cat' => $cateID,
+        )
+    );
+    if($paged){
+        if ($wp_query->have_posts()):
+            while ($wp_query->have_posts()):
+                $wp_query->the_post();
+                ?>
+                <div class="page-item col-md-4" data_id = "<?php echo ++$offset; ?>">
+                    <div class="page-img">
+                    <?php 
+                        // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                        $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                        ?>
+                    <img src="<?php echo $url[0]; ?>" class="w-100 img" />
+                    </div>
+                    <div class="page-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                    </div>
+                    <div class="page-content">
+                        <span ><?php the_content() ?></span>
+                    </div>
+                    <div class="page-read-more">
+                        <a href="<?php echo get_the_permalink()?>"><?php esc_html_e('Read More', 'ntl-csw') ?></a>
+                    </div>
+                </div>
+                <?php
+            endwhile;
+        endif;
+        wp_reset_postdata();
+        wp_reset_query(); 
+    }
+    die();
 }
 
 // function of  theme ==============================================================================================
