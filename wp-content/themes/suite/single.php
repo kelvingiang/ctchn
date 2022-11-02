@@ -1,9 +1,10 @@
 <?php get_header(); ?>
-<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-<?php get_template_part( 'entry' ); ?>
-<?php if ( comments_open() && !post_password_required() ) { comments_template( '', true ); } ?>
-<?php endwhile; endif; ?>
-<footer class="footer">
-<?php get_template_part( 'nav', 'below-single' ); ?>
-</footer>
+    <div>
+        <span class="single-head"><?php echo get_the_date(); ?> | <?php _e('By'); echo get_the_author() ?></span>
+        <div>
+            <h2 class="single-title"><?php the_title() ?></h2>
+            <div class="single-content"><?php the_content() ?></div>
+            <?php get_template_part('templates/template', 'single-articles-category') ?>
+        </div>
+    </div>
 <?php get_footer(); ?>

@@ -10,6 +10,7 @@ function getTranslate()
         "Address" => "Địa Chỉ",
 
         //==== B
+        "By" => "Bởi ",
 
         //==== C
         "Cases Tudies" => "Dự Án",
@@ -74,6 +75,7 @@ function getTranslate()
         //==== R
         'Read More' => "Nhiều Hơn",
         "Resources" => "Tài Liệu",
+        "Relate Post" => "Bài Viết Liên Quan",
         "Rules" => "Quy Định",
 
         //==== S

@@ -10,7 +10,7 @@ function getTranslate()
         "Article" => "文章",
 
         //==== B
-
+        "By" => "By ",
         //==== C
         "Cases Tudies" => "成功案例",
         "Contact" => "聯絡我們",
@@ -73,6 +73,7 @@ function getTranslate()
         //==== R
         'Read More' => "更多",
         "Resources" => "有料資源",
+        "Relate Post" => "相關文章", //Xiāngguān wénzhāng
         "Rules" => "台灣商會規則 ",
 
         //==== S

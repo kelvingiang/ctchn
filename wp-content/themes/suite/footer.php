@@ -1,11 +1,6 @@
 <div class="clear"></div>
 </div>
-<?php if(! is_category()) { ?>
-<footer role="contentinfo" class="footer">
-    <div id="info" class="row">
-        
-    </div> 
-    <div class="clear"></div>
+<footer id="footers" role="contentinfo" class="footer">
     <div class="row info">
         <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
             <label><?php //_e('Address'); ?><i class="fas fa-map-marker-alt"></i> : <?php echo get_option('about_address_' . $_SESSION['languages']) ?></label><br>
@@ -31,21 +26,22 @@
         </div>
     </div>
 </footer>
-<?php } ?>
 <div id="back-top-wrapper" >
     <a id="back-top" ><i class="fas fa-chevron-circle-up"></i>
 </div>
 <script type="text/javascript">
+    var elements = document.querySelectorAll("#footers");
     jQuery(document).ready( function () {
         window.onscroll = function() {
             // phan an hien menu
             // kiem tra header khac none moi thuc hien
             if(jQuery('#header').css('display') !== 'none') {
                 menuAnimation();
-            }
+            } 
+            // load them du lieu khi gan den footer
+            //displayElements();  
         }
     });
-    
 </script>
 </body>
 </html>

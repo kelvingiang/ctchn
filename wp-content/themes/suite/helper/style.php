@@ -135,6 +135,9 @@ function style_header_scripts()
 
         wp_register_script('jquery-custom-js', THEME_PART . '/js/custom.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('jquery-custom-js');
+
+        wp_register_script('jquery-loadmore-js', THEME_PART . '/js/loadmore.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_enqueue_script('jquery-loadmore-js');
 }
 
 //add_action('wp_enqueue_scripts', 'style_header_scripts'); 

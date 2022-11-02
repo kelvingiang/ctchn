@@ -10,6 +10,7 @@ function getTranslate()
         "Article" => "Article", //"文章",
 
         //==== B
+        "By" => "By ",
 
         //==== C
         "Cases Tudies" => "Case Tudies", //"成功案例",
@@ -74,6 +75,7 @@ function getTranslate()
         //==== R
         "Resources" => "Resources", //"有料資源",
         'Read More' => "Read More", //"更多",
+        "Relate Post" => "Relate Post",
         "Rules" => "Rules",
 
         //==== S

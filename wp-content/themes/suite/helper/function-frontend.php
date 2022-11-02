@@ -163,7 +163,7 @@ function seo()
 }
 
 //=================== GET POST TYPE ===============
-function getPostType($postType,$cateID,$showNum)
+function getPostType($postType,$cateID,$showNum,$offset)
 {
     $args = array(
         'post_type' => $postType,
@@ -176,8 +176,9 @@ function getPostType($postType,$cateID,$showNum)
                 'compare' => '=='
             )
         ),  
-        'paged' => 1,
+        'paged' => '',
         'cat' => $cateID,
+        'offset' => $offset,
     );
     return $args;
 }
@@ -200,6 +201,24 @@ function getPostTypeSlider($postType,$cateID, $showNum)
     return $args;
 }
 
+//================= RELATE POST TYPE =================
+function getRelatePostType($showNum, $cate_id)
+{
+    $args = array(
+        'category__in' => wp_get_post_categories(get_the_ID()),
+        'posts_per_page' => $showNum,
+        'post__not_in' => array(get_the_ID()),
+        'cat' => $cate_id,
+        'meta_query' => array(
+            array(
+                'key' => '_meta_box_language',
+                'value' => $_SESSION['languages'],
+                'compare' => '=='
+            )
+        ),
+    );
+    return $args;
+}
 
 
 
