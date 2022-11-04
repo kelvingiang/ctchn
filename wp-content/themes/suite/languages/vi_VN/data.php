@@ -8,7 +8,8 @@ function getTranslate()
         "About" => "Giới Thiệu",
         "Article" => "Văn Bản",
         "Address" => "Địa Chỉ",
-
+        "Articles" => "BÀI VIẾT",
+        
         //==== B
         "By" => "Bởi ",
 

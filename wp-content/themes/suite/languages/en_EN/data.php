@@ -8,7 +8,8 @@ function getTranslate()
         "Address" => "Address", //"地址",
         "Active" => "Active", //"活動快訊",
         "Article" => "Article", //"文章",
-
+        "Articles" => "ARTICLES",
+        
         //==== B
         "By" => "By ",
 

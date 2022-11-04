@@ -74,6 +74,13 @@ td .type-text, td .type-phone, td .type-email {
   padding: auto;
 }
 
+.show-home {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: rgb(238, 133, 133);
+}
+
 /* message*/
 .error {
   font-size: 15px;

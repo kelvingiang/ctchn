@@ -85,7 +85,7 @@ function Custom_post_RenderCols($columns)
     switch ($columns) {
 
         case 'home':
-            if ((get_post_meta($post->ID, '_metabox_home', true))) {
+            if ((get_post_meta($post->ID, '_meta_box_home', true)) == 1) {
                 echo "<div class='show-home'></div>";
             }
             break;
@@ -110,6 +110,7 @@ function Custom_post_RenderCols($columns)
 }
 
 // ================ XU LY LOAD MORE BUTTON PHIA SERVER ====================
+// article page
 add_action( 'wp_ajax_nopriv_article_loadmore', 'prefix_load_more' );
 add_action( 'wp_ajax_article_loadmore', 'prefix_load_more' );
 function prefix_load_more(){
@@ -167,7 +168,7 @@ function prefix_load_more(){
     }
     die();
 }
-
+//single article page
 add_action( 'wp_ajax_nopriv_single_article_loadmore', 'prefix_single_article_loadmore' );
 add_action( 'wp_ajax_single_article_loadmore', 'prefix_single_article_loadmore' );
 function prefix_single_article_loadmore(){
@@ -177,7 +178,7 @@ function prefix_single_article_loadmore(){
     if($offset) {
         $wp_query = new WP_Query(
             $args = array(
-                //'post_type' => 'post',
+                'post_type' => 'post',
                 'category__in' => wp_get_post_categories(get_the_ID()),
                 'posts_per_page' => $showNum,
                 'post__not_in' => array(get_the_ID()),

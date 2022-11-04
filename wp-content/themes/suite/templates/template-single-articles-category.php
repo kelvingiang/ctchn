@@ -9,6 +9,7 @@
             foreach($current_category as $cc){
                 $cate_id[] = $cc->term_id;
             }
+            //print_r($cate_id);
             $wp_query = new WP_Query(getRelatePostType(3, $cate_id));
             $counts = $wp_query->found_posts; //dem so bai viet vua goi 
             if ($wp_query->have_posts()) :
@@ -61,10 +62,10 @@
         </svg>
     </div>
 </div>
-    <script type="text/javascript">
-        jQuery(document).ready(function() {
-            jQuery('#single-load-more').click(function() {
-                loadNewSingleArticle(<?php echo $counts ?>, <?php echo $cate_id ?> ,'#single-article-list'); 
-            })
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        jQuery('#single-load-more').click(function() {
+            loadNewSingleArticle(<?php echo $counts ?>, <?php echo $cate_id ?> ,'#single-article-list'); 
         })
+    })
 </script>

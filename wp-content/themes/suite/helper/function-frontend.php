@@ -183,6 +183,31 @@ function getPostType($postType,$cateID,$showNum,$offset)
     return $args;
 }
 
+function getPostTypeShowAtHome($postType,$cateID,$showNum,$offset)
+{
+    $args = array(
+        'post_type' => $postType,
+        'posts_per_page' => $showNum,
+        'post_status' => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => '_meta_box_language',
+                'value' => $_SESSION['languages'],
+                'compare' => '=='
+            ),
+            array(
+                'key' => '_meta_box_home',
+                'value' => 1,
+                'compare' => '='
+            ),
+        ),  
+        'paged' => '',
+        'cat' => $cateID,
+        'offset' => $offset,
+    );
+    return $args;
+}
+
 function getPostTypeSlider($postType,$cateID, $showNum)
 {
     $args = array(

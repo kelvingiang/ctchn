@@ -1,7 +1,7 @@
 <div id="header" style="margin-top: 0px !important;">
     <div id="header-logo">
         <a href="<?php echo home_url(''); ?>">
-            <img src="<?php echo get_image('ctcdn_logo.png') ?>" title="ctchn_logo"/>
+            <img src="<?php echo get_image('ctchn_logo.png') ?>" title="ctchn_logo"/>
         </a>
         <div class="header-language"> 
             <a href="" class="link-languages" data-type="cn" onclick="changeLanguages(this)">
@@ -64,7 +64,8 @@
     <div class="show-on-scroll">
         <div>
             <a href="<?php echo home_url(''); ?>">
-                <img src="<?php echo get_image('ctcdn_logo.png') ?>" alt="ctchn_logo" title="ctchn_logo" width="60px" />
+                <img src="<?php echo get_image('ctchn_logo.png') ?>" alt="ctchn_logo" 
+                title="ctchn_logo" width="60px" style="padding: 5px;" />
             </a>
         </div>
         <div class="menu-computer"><?php get_template_part('templates/template', 'menu'); ?></div>
@@ -82,5 +83,6 @@
     </div> 
     <div class="menu-computer"><?php get_template_part('templates/template', 'menu'); ?></div>   
 </div>
-
+<?php //if( !is_single()) {?>
 <div><?php get_template_part('templates/template', 'slider'); ?></div>
+<?php //} ?>

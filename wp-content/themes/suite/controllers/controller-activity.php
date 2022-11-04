@@ -55,7 +55,7 @@ class Admin_Controller_Activity{
         unset($columns['date']); // an cot ngay mac dinh
         unset($columns['modified']); // an cot ngay mac dinh
         unset($columns['postdate']); // an cot ngay mac dinh
-        unset($columns['home']);
+        //unset($columns['home']);
         unset($columns['author']);
         //==== THEM COT VA BANG
         $columns['img'] = __('Image', 'suite');

@@ -65,6 +65,12 @@ td .type-text, td .type-phone, td .type-email {
   color: #7a7878;
   padding: auto; }
 
+.show-home {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: #ee8585; }
+
 /* message*/
 .error {
   font-size: 15px;

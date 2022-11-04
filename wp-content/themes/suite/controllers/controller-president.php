@@ -54,7 +54,7 @@ class Admin_Controller_President{
         unset($columns['date']); // an cot ngay mac dinh
         unset($columns['modified']); // an cot ngay mac dinh
         unset($columns['postdate']); // an cot ngay mac dinh
-        unset($columns['home']);
+        //unset($columns['home']);
         unset($columns['author']);
         unset($columns['language']);
         //==== THEM COT VA BANG

@@ -8,6 +8,7 @@ function getTranslate()
         "Active" => "活動快訊",
         "Address" => "地址",
         "Article" => "文章",
+        "Articles" => "文章",
 
         //==== B
         "By" => "By ",
