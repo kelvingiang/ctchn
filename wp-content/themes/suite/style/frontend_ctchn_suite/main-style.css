@@ -192,6 +192,20 @@
   text-align: center;
   color: #afaaaa; }
 
+/* member */
+.member-title {
+  font-size: 25px; }
+  .member-title a {
+    font-size: 25px;
+    text-decoration: none; }
+.member-item a {
+  font-size: 18px;
+  color: #7d8aff;
+  padding-left: 10px;
+  text-decoration: none; }
+.member-item a:hover {
+  color: #eeb987; }
+
 .single {
   /* relate */ }
   .single-head {
@@ -334,7 +348,8 @@
   opacity: 1; }
 
 /* load more button */
-#load-more, #single-load-more {
+#load-more, #single-load-more, #member-load-more,
+#activity-load-more, #single-activity-load-more {
   margin-top: 2rem;
   cursor: pointer;
   opacity: 0.7;

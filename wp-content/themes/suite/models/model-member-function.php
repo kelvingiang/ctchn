@@ -153,4 +153,14 @@ class Admin_Model_Member_Function {
         $row = $wpdb->get_results($sql, ARRAY_A);
         return $row;
     }
+
+    //function lat tat ca data cua member
+    public function getAllDataMemberByIndustry($item)
+    {
+        global $wpdb;
+        $item == '' ? $sql = "SELECT * FROM $this->table LIMIT 20 " : 
+            $sql = "SELECT * FROM $this->table LIMIT 20 WHERE industry_id = $item";   
+        $row = $wpdb->get_results($sql, ARRAY_A);
+        return $row;
+    }
 }

@@ -201,6 +201,24 @@ function getPostTypeSlider($postType,$cateID, $showNum)
     return $args;
 }
 
+function getPostTypeActivity($postType,$cateID, $showNum)
+{
+    $args = array(
+        'post_type' => $postType,
+        'posts_per_page' => $showNum,
+        'post_status' => 'publish',
+        'activity-cat' => $cateID,
+        'meta_query' => array(
+            array(
+                'key' => '_meta_box_language',
+                'value' => $_SESSION['languages'],
+                'compare' => '=='
+            )
+        )
+    );
+    return $args;
+}
+
 function getPostTypeShowAtHome($postType,$showNum,$offset)
 {
     $args = array(
@@ -234,6 +252,24 @@ function getRelatePostType($showNum, $cate_id)
         'posts_per_page' => $showNum,
         'post__not_in' => array(get_the_ID()),
         'cat' => $cate_id,
+        'meta_query' => array(
+            array(
+                'key' => '_meta_box_language',
+                'value' => $_SESSION['languages'],
+                'compare' => '=='
+            )
+        ),
+    );
+    return $args;
+}
+
+function getRelatePostTypeActivity($showNum, $cate_id)
+{
+    $args = array(
+        'category__in' => wp_get_post_categories(get_the_ID()),
+        'posts_per_page' => $showNum,
+        'post__not_in' => array(get_the_ID()),
+        'activity-cat' => $cate_id,
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',

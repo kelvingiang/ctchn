@@ -230,6 +230,127 @@ function prefix_single_article_loadmore(){
     die();
 }
 
+//activity page
+add_action( 'wp_ajax_nopriv_activity_loadmore', 'prefix_activity_load_more' );
+add_action( 'wp_ajax_activity_loadmore', 'prefix_activity_load_more' );
+function prefix_activity_load_more(){
+    $showNum = 4; //6;
+    $cateID = $_POST['cate'];
+    $offset = isset($_POST['offset']) ? (int)( $_POST['offset'] ) : 0; //lay du lieu gui len client 
+    if($offset) {
+        $wp_query = new WP_Query(
+            $args = array(
+                'post_type' => 'activity',
+                'posts_per_page' => $showNum,
+                'post_status' => 'publish',
+                'activity-cat' => $cateID,
+                'offset' => $offset,
+                'meta_query' => array(
+                    array(
+                        'key' => '_meta_box_language',
+                        'value' => $_SESSION['languages'],
+                        'compare' => '=='
+                    )
+                ),
+                'post__not_in' => array(get_the_ID()),
+            )
+        );
+        if($wp_query->have_posts()) : 
+            while ($wp_query->have_posts()):
+                $wp_query->the_post();
+                ?>
+                <div class="page-item col-md-3" data_id = "<?php echo ++$offset; ?>">
+                    <div class="page-img">
+                        <?php 
+                            // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                            $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                        if($url != '') {?>
+                            <img src="<?php echo $url[0]; ?>" class="w-100 img" />
+                        <?php } else{ ?>
+                            <img src="<?php echo PART_IMAGES . 'no-image.jpg'; ?>" class="w-100 img" />
+                        <?php } ?>   
+                    </div>
+                    <div class="page-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                    </div>
+                    <div class="page-content">
+                        <span><?php the_content() ?></span>
+                    </div>
+                    <div class="page-read-more">
+                        <a href="<?php echo get_the_permalink()?>"><?php esc_html_e('Read More', 'ntl-csw') ?></a>
+                    </div>
+                </div>
+                <?php
+            endwhile;
+            endif;
+        wp_reset_postdata();
+        wp_reset_query();    
+    }
+    die();
+}
+
+//single activity page
+add_action( 'wp_ajax_nopriv_single_activity_loadmore', 'prefix_single_activity_loadmore' );
+add_action( 'wp_ajax_single_activity_loadmore', 'prefix_single_activity_loadmore' );
+function prefix_single_activity_loadmore(){
+    $showNum = 2;
+    $cate_id = $_POST['cateID'];
+    $offset = !empty($_POST['offset']) ? intval( $_POST['offset'] ) : ''; //lay du lieu gui len client 
+    if($offset) {
+        $wp_query = new WP_Query(
+            $args = array(
+                'post_type' => 'activity',
+                'category__in' => wp_get_post_terms(get_the_ID(), 'activity_category'),
+                'posts_per_page' => $showNum,
+                'post__not_in' => array(get_the_ID()),
+                'offset' => $offset,
+                'activity-cat' => $cate_id,
+                'meta_query' => array(
+                    array(
+                        'key' => '_meta_box_language',
+                        'value' => $_SESSION['languages'],
+                        'compare' => '=='
+                    )
+                ),
+            )
+        );
+        if($wp_query->have_posts()) : 
+            while ($wp_query->have_posts()):
+                $wp_query->the_post();
+                ?>
+                <div class="row single-relate" data_id = "<?php echo ++$offset; ?>">
+                        <div class="single-relate-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <?php 
+                                // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                                $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                                if($url != ''){ ?>
+                                    <div class="single-relate-image-col">
+                                        <img src="<?php echo $url[0]; ?>" class="single-relate-image" title="<?php the_title(); ?>" />
+                                    </div>
+                                    <div class="single-relate-content">
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <hr class="hr2">
+                                <?php }else { ?>  
+                                    <div class="single-relate-content">
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <hr class="hr2">
+                            <?php } ?>   
+                        </div>
+                    </div>
+                <?php
+            endwhile;
+            endif;
+        wp_reset_postdata();
+        wp_reset_query();    
+    }
+    die();
+}
+
 // ================ XU LY LOAD MORE SCROLL PHIA SERVER ================
 // add_action( 'wp_ajax_nopriv_article_scrolling_loadmore', 'prefix_article_scrolling_load_more' );
 // add_action( 'wp_ajax_article_scrolling_loadmore', 'prefix_article_scrolling_load_more' );

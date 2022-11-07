@@ -27,6 +27,10 @@ class Rewrite_Url
         $redirect3 = 'index.php?pagename=$matches[1]&cate=$matches[2]&tag=$matches[3]';
         add_rewrite_rule($regex3, $redirect3, 'top');
 
+        $regex4 = '([^/]*)/industry/([^/]*)/?';
+        $redirect4 = 'index.php?pagename=$matches[1]&industry=$matches[2]';
+        add_rewrite_rule($regex4, $redirect4, 'top');
+
         flush_rewrite_rules(true);
     }
 
@@ -45,6 +49,7 @@ class Rewrite_Url
         $vars[] = 'cat';
         $vars[] = 'ts';
         $vars[] = 'active';
+        $vars[] = 'industry';
         return $vars;
     }
 }

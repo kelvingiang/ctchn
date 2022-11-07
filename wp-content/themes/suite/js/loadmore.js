@@ -109,3 +109,70 @@ function loadNewSingleArticle($counts, $cateID, $listID)
         }
     })
 }
+
+//function su dung button load more cho activity page
+function loadNewActivity($counts, $cateID, $listID)
+{
+    var lastID = jQuery('.page-item:last').attr('data_id');
+    var offset = lastID;
+    jQuery.ajax({
+        //url: '<?php //echo get_template_directory_uri() . '/ajax/load_news.php' ?>',
+        url: 'http://localhost/ctchn/wp-admin/admin-ajax.php', 
+        type: "post",
+        dataType: 'html',
+        cache: false,
+        data: {
+            cate : $cateID,
+            action: 'activity_loadmore',
+            offset : offset, //offset lay so luong bai viet cuoi cung qua last id
+        },
+        success: function(res) {
+            jQuery($listID).append(res);
+            var $target = jQuery('html,body');
+            $target.animate({
+                scrollTop: $target.height()
+            }, 2000);
+
+            //ẩn button khi không còn bài viết hiển thị 
+            if(offset >= $counts){
+                jQuery('#activity-load-more').hide(); 
+            }
+        },
+        error: function (xhr) {
+            console.log(xhr.reponseText);
+        }
+    });
+}
+
+//function su dung button load more cho single activity
+function loadNewSingleActivity($counts, $cateID, $listID)
+{
+    var lastID = jQuery('.single-relate:last').attr('data_id');
+    var offset = lastID;
+    jQuery.ajax({
+        url: 'http://localhost/ctchn/wp-admin/admin-ajax.php',
+        type: "post",
+        dataType: 'html',
+        cache: false,
+        data: {
+            action: 'single_activity_loadmore',
+            offset : offset,
+            cateID : $cateID,
+        },
+        success: function(res) {
+            jQuery($listID).append(res);
+            var $target = jQuery('html,body');
+            $target.animate({
+                scrollTop: $target.height()
+            }, 2000);
+
+            //ẩn button khi không còn bài viết hiển thị 
+            if(offset >= $counts ){
+                jQuery('#single-activity-load-more').hide(); 
+            }
+        },
+        error: function (xhr) {
+            console.log(xhr.reponseText);
+        }
+    })
+}

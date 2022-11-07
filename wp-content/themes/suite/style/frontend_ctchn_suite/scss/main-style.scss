@@ -244,6 +244,28 @@
     }
 }
 
+/* member */
+.member{
+    &-title {
+        font-size: 25px;
+        a{
+            font-size: 25px;
+            text-decoration: none;
+        }
+    }
+    &-item {
+        a {
+        font-size: 18px;
+        color: $mem_color;
+        padding-left: 10px;
+        text-decoration: none;
+        }
+        a:hover {
+        color: $mem_color_hover;
+        }
+    }    
+}
+
 //=================== SINGLE =================
 .single{
     &-head{
@@ -422,7 +444,8 @@
 }
 
 /* load more button */
-#load-more, #single-load-more{
+#load-more, #single-load-more, #member-load-more, 
+#activity-load-more, #single-activity-load-more{
     margin-top: 2rem;
     cursor: pointer;
     opacity: 0.7;
