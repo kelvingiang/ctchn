@@ -4,13 +4,13 @@
         <?php 
             //$cateName = '政經時事';
             $itemCount = 1;
-            $wp_query = new WP_Query(getPostType('post', 6, 3, 0));
+            $wp_query = new WP_Query(getPostType('post', 6, 12, 0));
             $counts = $wp_query->found_posts; //dem so bai viet vua goi 
             if($wp_query->have_posts()):
                 while($wp_query->have_posts()):
                     $wp_query->the_post();
                     ?>
-                        <div class="page-item col-md-4" data_id = "<?php echo $itemCount++; ?>">
+                        <div class="page-item col-md-3" data_id = "<?php echo $itemCount++; ?>">
                             <div class="page-img">
                                 <?php 
                                 // [0]: url, [1]: width, [2]: height, [4]:is_intermediate

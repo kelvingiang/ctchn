@@ -4,14 +4,14 @@
         <?php 
             //$cateName = '商情資訊';
             $itemCount = 1;
-            $wp_query = new WP_Query(getPostType('post', 5, 3, 0));
+            $wp_query = new WP_Query(getPostType('post', 5, 12, 0));
             $counts = $wp_query->found_posts; //dem so bai viet vua goi 
             //print_r($counts);
             if($wp_query->have_posts()):
                 while($wp_query->have_posts()):
                     $wp_query->the_post();
                     ?>
-                        <div class="page-item col-md-4" data_id = "<?php echo $itemCount++; ?>">
+                        <div class="page-item col-md-3" data_id = "<?php echo $itemCount++; ?>">
                             <div class="page-img">
                                 <?php 
                                 // [0]: url, [1]: width, [2]: height, [4]:is_intermediate

@@ -9,6 +9,7 @@ function getTranslate()
         "Address" => "地址",
         "Article" => "文章",
         "Articles" => "文章",
+        "Activity" => "商會活動",
 
         //==== B
         "By" => "By ",
@@ -68,6 +69,7 @@ function getTranslate()
         "Product Value" => "產品價值",
         "Product Features" => "功能介紹",
         "Product Service" => "顧問服務",
+        "President" => "歷屆會長",
         
         //==== Q
 

@@ -9,7 +9,8 @@ function getTranslate()
         "Article" => "Văn Bản",
         "Address" => "Địa Chỉ",
         "Articles" => "BÀI VIẾT",
-        
+        "Activity" => "HOẠT ĐỘNG",
+
         //==== B
         "By" => "Bởi ",
 
@@ -70,7 +71,8 @@ function getTranslate()
         "Product Features" => "Giới Thiệu Chức Năng",
         "Product Service" => "Dịch Vụ Tư Vấn",
         "Phone" => "Điện Thoại",
-
+        "President" => "THÀNH VIÊN ĐƯƠNG NHIỆM",
+        
         //==== Q
 
         //==== R

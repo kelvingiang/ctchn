@@ -183,7 +183,25 @@ function getPostType($postType,$cateID,$showNum,$offset)
     return $args;
 }
 
-function getPostTypeShowAtHome($postType,$cateID,$showNum,$offset)
+function getPostTypeSlider($postType,$cateID, $showNum)
+{
+    $args = array(
+        'post_type' => $postType,
+        'posts_per_page' => $showNum,
+        'post_status' => 'publish',
+        'slide-cat' => $cateID,
+        'meta_query' => array(
+            array(
+                'key' => '_meta_box_language',
+                'value' => $_SESSION['languages'],
+                'compare' => '=='
+            )
+        )
+    );
+    return $args;
+}
+
+function getPostTypeShowAtHome($postType,$showNum,$offset)
 {
     $args = array(
         'post_type' => $postType,
@@ -202,26 +220,8 @@ function getPostTypeShowAtHome($postType,$cateID,$showNum,$offset)
             ),
         ),  
         'paged' => '',
-        'cat' => $cateID,
+        //'cat' => $cateID,
         'offset' => $offset,
-    );
-    return $args;
-}
-
-function getPostTypeSlider($postType,$cateID, $showNum)
-{
-    $args = array(
-        'post_type' => $postType,
-        'posts_per_page' => $showNum,
-        'post_status' => 'publish',
-        'slide-cat' => $cateID,
-        'meta_query' => array(
-            array(
-                'key' => '_meta_box_language',
-                'value' => $_SESSION['languages'],
-                'compare' => '=='
-            )
-        )
     );
     return $args;
 }

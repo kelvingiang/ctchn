@@ -1,7 +1,7 @@
-<div id="president-articles">
+<div id="president-activity">
     <div class="owl-carousel owl-theme">
         <?php
-            $wp_query = new WP_Query(getPostTypeShowAtHome('post', 10, ''));
+            $wp_query = new WP_Query(getPostTypeShowAtHome('activity', 10, ''));
             if ($wp_query->have_posts()):
                 while ($wp_query->have_posts()):
                     $wp_query->the_post();
@@ -31,7 +31,7 @@
 </div>
 <script>
     jQuery(document).ready(function() {
-         jQuery('#president-articles .owl-carousel').owlCarousel({
+         jQuery('#president-activity .owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
@@ -39,7 +39,7 @@
             auotplayTimeout: 5000,
             dots: false,
             autoplayHoverPause: true,
-            items: 4,
+            items: 3,
             navText: ["<i class='fas fa-chevron-left nav-button art-left'></i>",
                 "<i class='fas fa-chevron-right nav-button art-right'></i>"
             ],

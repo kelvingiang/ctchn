@@ -114,7 +114,7 @@ function Custom_post_RenderCols($columns)
 add_action( 'wp_ajax_nopriv_article_loadmore', 'prefix_load_more' );
 add_action( 'wp_ajax_article_loadmore', 'prefix_load_more' );
 function prefix_load_more(){
-    $showNum = 3;
+    $showNum = 6;
     $cateID = $_POST['cate'];
     $offset = isset($_POST['offset']) ? (int)( $_POST['offset'] ) : 0; //lay du lieu gui len client 
     if($offset) {
@@ -139,7 +139,7 @@ function prefix_load_more(){
             while ($wp_query->have_posts()):
                 $wp_query->the_post();
                 ?>
-                <div class="page-item col-md-4" data_id = "<?php echo ++$offset; ?>">
+                <div class="page-item col-md-3" data_id = "<?php echo ++$offset; ?>">
                     <div class="page-img">
                         <?php 
                             // [0]: url, [1]: width, [2]: height, [4]:is_intermediate

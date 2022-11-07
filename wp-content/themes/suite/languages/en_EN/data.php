@@ -9,7 +9,8 @@ function getTranslate()
         "Active" => "Active", //"活動快訊",
         "Article" => "Article", //"文章",
         "Articles" => "ARTICLES",
-        
+        "Activity" => "ACTIVITY",
+
         //==== B
         "By" => "By ",
 
@@ -70,6 +71,7 @@ function getTranslate()
         "Product Features" => "Product Features", //"功能介紹",
         "Product Service" => "Product Service", //"顧問服務",
         "Phone" => "Phone", //"電話",
+        "President" => "PRESIDENT",
         
         //==== Q
 
