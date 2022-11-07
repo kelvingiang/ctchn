@@ -266,6 +266,40 @@
     }    
 }
 
+/* friend - link */
+.friend-link{
+    &-head{
+        background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 50%, rgba(37, 156, 236, 0.568) 95%);
+        border-radius: 0.3rem;
+        font-size: 2.5rem;
+        h1{
+          font-size: 1.5rem;
+          letter-spacing: 0.5rem;
+          font-weight: bold;
+          padding: 1rem 1.5rem;
+          text-shadow: 2px 2px 5px #797878;
+        } 
+    }
+    &-list{
+        padding: 5px;
+    }
+    &-item{
+        font-size: 20px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        display: block;
+        
+        a{
+            color: $friend_link_color;
+            text-decoration: none;
+        }
+        a:hover{
+            color: $friend_link_color_hover;
+        }
+    }
+}
+    
+
 //=================== SINGLE =================
 .single{
     &-head{

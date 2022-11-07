@@ -206,6 +206,30 @@
 .member-item a:hover {
   color: #eeb987; }
 
+/* friend - link */
+.friend-link-head {
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 50%, rgba(37, 156, 236, 0.568) 95%);
+  border-radius: 0.3rem;
+  font-size: 2.5rem; }
+  .friend-link-head h1 {
+    font-size: 1.5rem;
+    letter-spacing: 0.5rem;
+    font-weight: bold;
+    padding: 1rem 1.5rem;
+    text-shadow: 2px 2px 5px #797878; }
+.friend-link-list {
+  padding: 5px; }
+.friend-link-item {
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Times New Roman', Times, serif;
+  display: block; }
+  .friend-link-item a {
+    color: #2c9ac5;
+    text-decoration: none; }
+  .friend-link-item a:hover {
+    color: #05688f; }
+
 .single {
   /* relate */ }
   .single-head {

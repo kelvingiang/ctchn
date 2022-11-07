@@ -273,12 +273,6 @@ function prefix_activity_load_more(){
                     <div class="page-title">
                         <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
                     </div>
-                    <div class="page-content">
-                        <span><?php the_content() ?></span>
-                    </div>
-                    <div class="page-read-more">
-                        <a href="<?php echo get_the_permalink()?>"><?php esc_html_e('Read More', 'ntl-csw') ?></a>
-                    </div>
                 </div>
                 <?php
             endwhile;

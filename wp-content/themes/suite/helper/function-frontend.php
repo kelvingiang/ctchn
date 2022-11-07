@@ -219,6 +219,27 @@ function getPostTypeActivity($postType,$cateID, $showNum)
     return $args;
 }
 
+function getPostTypeFriendLink($postType, $showNum)
+{
+    $args = array(
+        'post_type' => $postType,
+        'posts_per_page' => $showNum,
+        'post_status' => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => '_meta_box_language',
+                'value' => $_SESSION['languages'],
+                'compare' => '=='
+            ),
+            array(
+                'key' => '_meta_box_website',
+            )
+        ),
+        'order' => 'DESC'
+    );
+    return $args;
+}
+
 function getPostTypeShowAtHome($postType,$showNum,$offset)
 {
     $args = array(

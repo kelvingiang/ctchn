@@ -56,7 +56,7 @@ class Admin_Controller_Friendly_Link{
         unset($columns['postdate']); // an cot ngay mac dinh
         unset($columns['home']);
         unset($columns['author']);
-        unset($columns['language']);
+        //unset($columns['language']);
         //==== THEM COT VA BANG
         $columns['img'] = __('Image', 'suite');
         //$columns['content] = __('Content);
