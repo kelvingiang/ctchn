@@ -143,7 +143,7 @@ class Admin_Controller_Activity{
             'query_var' => true,
             'taxonomy' => 'category',
             'rewrite' => array(
-                'slug' => 'activity-category',
+                'slug' => 'activity_category',
                 'hierarchical' => true,
             )
         ));

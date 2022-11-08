@@ -294,7 +294,6 @@ function prefix_single_activity_loadmore(){
         $wp_query = new WP_Query(
             $args = array(
                 'post_type' => 'activity',
-                'category__in' => wp_get_post_terms(get_the_ID(), 'activity_category'),
                 'posts_per_page' => $showNum,
                 'post__not_in' => array(get_the_ID()),
                 'offset' => $offset,
@@ -305,6 +304,11 @@ function prefix_single_activity_loadmore(){
                         'value' => $_SESSION['languages'],
                         'compare' => '=='
                     )
+                ),
+                'tax_query' => array(
+                    'taxonomy' => 'activity_category',
+                    'field' => 'id',
+                    'terms' => $cate_id,
                 ),
             )
         );

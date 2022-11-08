@@ -133,7 +133,7 @@ class Admin_Controller_Slider{
             'query_var' => true,
             'taxonomy' => 'category',
             'rewrite' => array(
-                'slug' => 'slide-category',
+                'slug' => 'slide_category',
                 'hierarchical' => true,
             )
         ));

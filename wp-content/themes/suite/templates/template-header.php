@@ -83,6 +83,6 @@
     </div> 
     <div class="menu-computer"><?php get_template_part('templates/template', 'menu'); ?></div>   
 </div>
-<?php //if( !is_single()) {?>
+<?php if( !is_single()) {?>
 <div><?php get_template_part('templates/template', 'slider'); ?></div>
-<?php //} ?>
+<?php } ?>
