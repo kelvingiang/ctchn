@@ -3,6 +3,9 @@ jQuery(document).ready(function () {
     
 })
 
+//khai bao url
+$urls = 'http://localhost/ctchn/wp-admin/admin-ajax.php';
+
 //function su dung infinity scroll
 function loadmore(e, $cateID, $page, $listID){
     // lay vi tri top & bottom cua element
@@ -50,7 +53,7 @@ function loadNewArticle($counts, $cateID, $listID)
     var offset = lastID;
     jQuery.ajax({
         //url: '<?php //echo get_template_directory_uri() . '/ajax/load_news.php' ?>',
-        url: 'http://localhost/ctchn/wp-admin/admin-ajax.php', 
+        url: $urls, 
         type: "post",
         dataType: 'html',
         cache: false,
@@ -83,7 +86,7 @@ function loadNewSingleArticle($counts, $cateID, $listID)
     var lastID = jQuery('.single-relate:last').attr('data_id');
     var offset = lastID;
     jQuery.ajax({
-        url: 'http://localhost/ctchn/wp-admin/admin-ajax.php',
+        url: $urls,
         type: "post",
         dataType: 'html',
         cache: false,
@@ -117,7 +120,7 @@ function loadNewActivity($counts, $cateID, $listID)
     var offset = lastID;
     jQuery.ajax({
         //url: '<?php //echo get_template_directory_uri() . '/ajax/load_news.php' ?>',
-        url: 'http://localhost/ctchn/wp-admin/admin-ajax.php', 
+        url: $urls, 
         type: "post",
         dataType: 'html',
         cache: false,
@@ -150,7 +153,7 @@ function loadNewSingleActivity($counts, $cateID, $listID)
     var lastID = jQuery('.single-relate:last').attr('data_id');
     var offset = lastID;
     jQuery.ajax({
-        url: 'http://localhost/ctchn/wp-admin/admin-ajax.php',
+        url: $urls,
         type: "post",
         dataType: 'html',
         cache: false,
