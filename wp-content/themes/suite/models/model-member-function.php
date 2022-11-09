@@ -158,8 +158,27 @@ class Admin_Model_Member_Function {
     public function getAllDataMemberByIndustry($item)
     {
         global $wpdb;
-        $item == '' ? $sql = "SELECT * FROM $this->table LIMIT 20 " : 
-            $sql = "SELECT * FROM $this->table LIMIT 20 WHERE industry_id = $item";   
+        // $item == '' ? $sql = "SELECT * FROM $this->table LIMIT 20 " : 
+        // $sql = "SELECT * FROM $this->table WHERE industry_id LIKE '%,$item,%' LIMIT 20"; 
+ 
+        if($item == ''){
+            $sql = "SELECT * FROM $this->table LIMIT 20 ";
+        }else{
+            $sql = "SELECT * FROM $this->table WHERE industry_id LIKE '%,$item,%' LIMIT 20";  
+        }     
+        $row = $wpdb->get_results($sql, ARRAY_A);
+        return $row;
+    }
+
+    //function lay them 10 item cua member
+    public function getMoreDataMemberByIndustry($item, $offset)
+    {
+        global $wpdb;
+        if($item == ''){
+            $sql = "SELECT * FROM $this->table LIMIT 10 OFFSET $offset";
+        }else{
+            $sql = "SELECT * FROM $this->table WHERE industry_id LIKE '%,$item,%' LIMIT 10 OFFSET $offset";  
+        } 
         $row = $wpdb->get_results($sql, ARRAY_A);
         return $row;
     }

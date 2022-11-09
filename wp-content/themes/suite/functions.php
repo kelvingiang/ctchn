@@ -349,6 +349,51 @@ function prefix_single_activity_loadmore(){
     die();
 }
 
+//member page
+add_action( 'wp_ajax_nopriv_member_loadmore', 'prefix_member_loadmore' );
+add_action( 'wp_ajax_member_loadmore', 'prefix_member_loadmore' );
+function prefix_member_loadmore(){
+    $offset = $_POST['id']; 
+    $industry = $_POST['indus'];
+    $industryName = $_POST['indusName'];
+
+    require_once(DIR_MODEL . 'model-member-function.php');
+    $model = new Admin_Model_Member_Function();
+    $data = $model->getMoreDataMemberByIndustry($industry, $offset);
+    if (!empty($data)) {
+        foreach ($data as $key => $val) {
+            ?>
+            <div class="member-item" data_id = "<?php echo ++$offset; ?>">
+                <div class="member-head" onclick="showContent()">
+                    <div class="member-title">
+                        <i><?php echo $val['serial'] . ' </i> ' . $val['company_cn'] ?>
+                    </div>
+                    <div class="member-icon">
+                        <a class="show-icon"><i class="fas fa-angle-double-down"></i></a>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="row">
+                        <div class="col-lg-12"><label><?php echo $val['company_vn'] ?></label></div>
+                        <div class="col-lg-12"><label><?php echo $val['address_cn'] ?></label></div>
+                        <div class="col-lg-12"><label><?php echo $val['address_vn'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Full Name') . ' : ' . $val['contact'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Regency') . ' : ' . $val['position'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Phone') . ' : ' . $val['phone'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Email') . ' : ' . $val['email'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Service List') . ' : ' . $val['service'] ?></label></div>
+                        <div class="col-lg-12"><label><?php echo _e('Industry') . ' : ' . $industryName ?></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+    }
+    die();
+    
+}
+
 // ================ XU LY LOAD MORE SCROLL PHIA SERVER ================
 // add_action( 'wp_ajax_nopriv_article_scrolling_loadmore', 'prefix_article_scrolling_load_more' );
 // add_action( 'wp_ajax_article_scrolling_loadmore', 'prefix_article_scrolling_load_more' );
@@ -424,7 +469,7 @@ function blankslate_footer()
                 $("html").addClass("opera");
             }
         });
-    </script>
+    </scrip>
 <?php
 }
 add_filter('document_title_separator', 'blankslate_document_title_separator');

@@ -30,6 +30,7 @@ function getTranslate()
         "Event" => "活動",
         
         //==== F
+        "Full Name" => "聯絡我們",
 
         //==== G
 
@@ -78,6 +79,7 @@ function getTranslate()
         "Resources" => "有料資源",
         "Relate Post" => "相關文章", //Xiāngguān wénzhāng
         "Rules" => "台灣商會規則 ",
+        "Regency" => "位置", //Wèizhì
 
         //==== S
         "Schedule" => "計劃",
@@ -85,7 +87,8 @@ function getTranslate()
         "Solutions" => "產品方案",
         "Specialize in the industry" => "專精行業，淬鍊智慧",
         'So Happy can support You!' => '很高興為您服務',
-
+        'Service List' => '客戶服務',
+        
         //==== T
         'Taiwan Chamber of Commerce in Hanoi, Vietnam' => '越南河内台灣商會',
         'Total User' => '瀏覽人數', //Liúlǎn rénshù

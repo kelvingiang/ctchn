@@ -1,8 +1,8 @@
 <?php
 $param = getParams();
 if ($param['action'] == 'edit') {
-    require_once(DIR_MODEL . 'model-schedule.php');
-    $getID = new Admin_Model_Schedule();
+    require_once(DIR_MODEL . 'model-schedule-function.php');
+    $getID = new Admin_Model_Schedule_Function();
     $data = $getID->get_item(getParams());
 
     $vTitle = $data['title'];

@@ -27,10 +27,12 @@ function getTranslate()
         "Download" => "DownLoad",
 
         //==== E
+        "Email" => "Email",
         "Event" => "Hoạt Động",
         'Enterprise model success case' => 'Mô Hình Doanh Nghiệp Thành Công',
 
         //==== F
+        "Full Name" => "Họ Tên",
 
         //==== G
 
@@ -80,6 +82,7 @@ function getTranslate()
         "Resources" => "Tài Liệu",
         "Relate Post" => "Bài Viết Liên Quan",
         "Rules" => "Quy Định",
+        "Regency" => "Chức Vụ",
 
         //==== S
         "Schedule" => "Lịch",
@@ -87,6 +90,7 @@ function getTranslate()
         "Service" => "Dịch Vụ",
         "Specialize in the industry" => "Ngành Nghề Chuyên Môn",
         'So Happy can support You!' => 'Rất vui khi được hỗ trợ bạn!',
+        "Service List" => "Danh Sách Dịch Vụ",
 
         //==== T
         'Taiwan Chamber of Commerce in Hanoi, Vietnam' => "Hiệp Hội Thương Mại Đài Loan tại Hà Nội, Việt Nam",

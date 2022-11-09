@@ -28,7 +28,8 @@ function getTranslate()
 
         //==== E
         'Enterprise model success case' => "Enterprise model success case", //'企業典範成功案例',
-        "Event" =>  "Event", //"活動",
+        "Event" => "Event", //"活動",
+        "Email" => "Email",
 
         //==== F
 

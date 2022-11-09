@@ -189,7 +189,7 @@ function getPostTypeSlider($postType,$cateID, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
-        'slide-cat' => $cateID,
+        'slide_cat' => $cateID,
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',
@@ -207,14 +207,26 @@ function getPostTypeActivity($postType,$cateID, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
-        'activity-cat' => $cateID,
+        //'activity_category' => $cateID,
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',
                 'value' => $_SESSION['languages'],
                 'compare' => '=='
+            ),
+            array(
+                'key' => '_meta_box_special',
+                'value' => 1,
+                'compare' => '='
             )
-        )
+        ),
+        'tax_query' => array(
+            array(
+                'taxonomy' => 'activity_category',
+                'field' => 'term_id',
+                'terms'    => $cateID
+            ),
+        ),
     );
     return $args;
 }
@@ -236,6 +248,39 @@ function getPostTypeFriendLink($postType, $showNum)
             )
         ),
         'order' => 'DESC'
+    );
+    return $args;
+}
+
+function getPostTypeAdvertising($postType, $showNum)
+{
+    $args = array(
+        'post_type' => $postType,
+        'posts_per_page' => $showNum,
+        'post_status' => 'publish',
+        'meta_query' => '_meta_box_website',
+    );
+    return $args;
+}
+
+function getPostTypePresident($postType, $showNum)
+{
+    $args = array(
+        'post_type' => $postType,
+        'posts_per_page' => $showNum,
+        'post_status' => 'publish',
+        'meta_query' => array(
+            array(
+                'key' => '_meta_box_current',
+                'value' => '1',
+                'compare' => '='
+            ),
+            array(
+                'key' => '_meta_box_president',
+                'value' => '1',
+                'compare' => '='
+            ),
+        )
     );
     return $args;
 }
@@ -284,19 +329,23 @@ function getRelatePostType($showNum, $cate_id)
     return $args;
 }
 
-function getRelatePostTypeActivity($showNum, $cate_id)
+function getRelatePostTypeActivity($postType, $showNum, $cate_id)
 {
     $args = array(
-        'category__in' => wp_get_post_categories(get_the_ID()),
+        'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post__not_in' => array(get_the_ID()),
-        'activity-cat' => $cate_id,
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',
                 'value' => $_SESSION['languages'],
                 'compare' => '=='
             )
+        ),
+        'tax_query' => array(
+            'taxonomy' => 'activity_category',
+            'field' => 'id',
+            'terms' => $cate_id,
         ),
     );
     return $args;
