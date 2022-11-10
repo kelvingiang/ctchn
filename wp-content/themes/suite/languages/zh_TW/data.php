@@ -59,7 +59,7 @@ function getTranslate()
 
         //==== N
         'News Center' => '新聞中心',
-
+        'Note' => '備註', //Bèizhù
         //==== O
         "Online User" => '在線人數', //Zàixiàn rénshù
         'Office' => '辦公室',
@@ -71,7 +71,7 @@ function getTranslate()
         "Product Features" => "功能介紹",
         "Product Service" => "顧問服務",
         "President" => "歷屆會長",
-        
+        "Place" => "地點", //Dìdiǎn
         //==== Q
 
         //==== R

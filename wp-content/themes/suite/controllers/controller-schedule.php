@@ -75,7 +75,7 @@ class Admin_Controller_Schedule
     public function saveAction()
     {
         if (isPost()) {
-            $save = new Admin_Model_Schedule();
+            $save = new Admin_Model_Schedule_Function();
             $save->save_item($_POST, array('action' => $_GET['action']));
             toBack(1);
         }
@@ -94,7 +94,7 @@ class Admin_Controller_Schedule
         //     wp_verify_nonce('_wpnonce');
         // }
 
-        $model = new Admin_Model_Schedule();
+        $model = new Admin_Model_Schedule_Function();
         $model->deleteItem($arrParam);
         ToBack();
     }
@@ -104,7 +104,7 @@ class Admin_Controller_Schedule
 
         $arrParam = getParams();
         // GOI DEN MODEL 
-        $model = new Admin_Model_Schedule();
+        $model = new Admin_Model_Schedule_Function();
         $model->changeStatus($arrParam);
 
         ToBack();

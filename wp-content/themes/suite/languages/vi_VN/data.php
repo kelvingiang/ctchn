@@ -62,7 +62,8 @@ function getTranslate()
 
         //==== N
         'News Center' => 'Tin Tức',
-
+        'Note' => 'Ghi Chú',
+        
         //==== O
         'Online User' => 'Người Đang Truy Cập',
         'Office' => 'Văn Phòng',
@@ -74,7 +75,8 @@ function getTranslate()
         "Product Service" => "Dịch Vụ Tư Vấn",
         "Phone" => "Điện Thoại",
         "President" => "THÀNH VIÊN ĐƯƠNG NHIỆM",
-        
+        "Place" => "Địa Chỉ",
+
         //==== Q
 
         //==== R

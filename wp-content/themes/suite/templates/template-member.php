@@ -10,7 +10,8 @@
             foreach ($data as $key => $val) {
                 ?>
                 <div class="member-item" data_id = "<?php echo $itemCount++; ?>" >
-                    <div class="member-head" onclick="showContent()">
+                    <div class="member-head <?php echo $itemCount; ?> " data_id = "<?php echo $itemCount; ?>" 
+                    onclick="showContent(<?php echo $itemCount++; ?>)">
                         <div class="member-title">
                             <i><?php echo $val['serial'] . ' </i> ' . $val['company_cn'] ?>
                         </div>
@@ -71,20 +72,21 @@
     </svg>
 </div>
 <script type="text/javascript">
-    function showContent(){
-        jQuery('.member-head').on('click', function() {
-            console.log('aa');
-            var contentDisplay = jQuery(this).siblings(".member-content").css('display');
-            if(contentDisplay === 'none'){
-                jQuery(this).siblings(".member-content").slideDown('slow');
-                jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-down');
-                jQuery(this).children().children().children('i').addClass('fas fa-angle-double-up');
-            } else {
-                jQuery(this).siblings(".member-content").slideUp('30');
-                jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-up');
-                jQuery(this).children().children().children('i').addClass('fas fa-angle-double-down');
-            }
-        })
+    function showContent(id){
+        //dong cac content dang mo
+        jQuery(".member-content").css('display', 'none');
+        //hien thi content duoc click
+        var ids = '.' + id;
+        var contentDisplay = jQuery(ids).siblings(".member-content").css('display');
+        if(contentDisplay == 'none'){
+            jQuery(ids).siblings(".member-content").slideDown('slow');
+            jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-down');
+            jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-up');  
+        } else {
+            jQuery(ids).siblings(".member-content").slideUp('30');
+            jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-up');
+            jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-down');
+        }
     }
     jQuery(document).ready(function() {
         jQuery('#member-load-more').click(function() {
@@ -105,7 +107,7 @@
             //     },
             //     success: function(res) {
             //         if(res.status === 'done'){
-            //             jQuery($listID).append(res.html);
+            //             jQuery("#member-list).append(res.html);
             //             var $target = jQuery('html,body');
             //             $target.animate({
             //                 scrollTop: $target.height()
@@ -122,21 +124,5 @@
             //     }
             // });
         })
-
-        // jQuery('.member-head').on("click", function() {
-        //     console.log('hi');
-        //     var contentDisplay = jQuery(this).siblings(".member-content").css('display');
-        //     if(contentDisplay === 'none'){
-        //         jQuery(this).siblings(".member-content").slideDown('slow');
-        //         jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-down');
-        //         jQuery(this).children().children().children('i').addClass('fas fa-angle-double-up');
-        //     } else {
-        //         jQuery(this).siblings(".member-content").slideUp('30');
-        //         jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-up');
-        //         jQuery(this).children().children().children('i').addClass('fas fa-angle-double-down');
-        //     }
-            
-        // });
-        
     })
 </script>  

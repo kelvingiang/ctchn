@@ -364,7 +364,8 @@ function prefix_member_loadmore(){
         foreach ($data as $key => $val) {
             ?>
             <div class="member-item" data_id = "<?php echo ++$offset; ?>">
-                <div class="member-head" onclick="showContent()">
+            <div class="member-head <?php echo $offset; ?> " data_id = "<?php echo $offset; ?>" 
+                onclick="showContent(<?php echo $offset++; ?>)">
                     <div class="member-title">
                         <i><?php echo $val['serial'] . ' </i> ' . $val['company_cn'] ?>
                     </div>
