@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
     This file use frontend
     Create date( dd-mm-yy ) : 17/10/2022
@@ -83,12 +84,17 @@
 .about {
   margin-bottom: 20px; }
   .about-title {
-    font-size: 25px;
-    font-weight: 400; }
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "DFKai-SB", 宋体b8b体, Microsoft YaHei, Arial, sans-serif;
+    color: #646668;
+    padding: 0.5rem;
+    text-align: center; }
   .about-content {
-    font-size: 20px;
-    padding: auto;
-    text-align: left; }
+    padding: 2rem;
+    border-radius: 0 0 5px 5px;
+    color: #666;
+    word-wrap: break-word; }
 
 .page-head {
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 50%, rgba(156, 156, 156, 0.568) 95%);
@@ -111,23 +117,27 @@
   padding: 0.3rem 1rem 0.5rem; }
 .page-title {
   padding-bottom: 1rem;
-  text-align: center;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
   font-size: 22px;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif; }
   .page-title a {
+    color: #0145A9;
     text-decoration: none; }
   .page-title a:hover {
-    color: #2d63b4;
+    color: #4b83d8;
     text-decoration: none; }
 .page-content {
   text-align: center;
   font-size: 18px;
-  font-family: 'Times New Roman', Times, serif; }
+  padding: 0 10px 0 10px; }
 .page-read-more {
   text-align: right;
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif; }
+  font-family: 'Times New Roman', Times, serif;
+  padding-right: 1rem; }
   .page-read-more a {
     text-decoration: none; }
   .page-read-more a:hover {
@@ -241,6 +251,8 @@
     line-height: 40px;
     border-bottom: 1px solid #f7f2f2;
     cursor: pointer; }
+  .member-head:hover {
+    background-color: #f1f1f1; }
   .member-title {
     position: absolute;
     left: 5px;
@@ -304,9 +316,9 @@
   .friend-link-list li:hover {
     background-color: #ebf4f7; }
 .friend-link-item {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
   display: block; }
   .friend-link-item a {
     color: #2c9ac5;
@@ -315,20 +327,17 @@
     color: #05688f; }
 
 /* schedule */
-.schedule-month {
-  height: 2.5rem;
-  background-color: #286090;
-  color: white;
-  margin-top: 20px;
-  padding: 5px 20px 10px;
-  font-weight: bold;
-  border-radius: 0.3rem 0.3rem 0 0; }
 .schedule-item {
-  border-bottom: 1px solid #e9edf9;
-  padding: 10px;
-  font-size: 14px; }
-.schedule-item:nth-child(even) {
-  background-color: #f5f7fd; }
+  background-color: #fff;
+  letter-spacing: 2px;
+  border-bottom: 1px #d8d8d8 solid;
+  padding: 10px 5px;
+  margin-bottom: 2px;
+  margin-left: -1px !important;
+  width: 100%;
+  cursor: pointer; }
+.schedule-item:hover {
+  background-color: #f1f1f1; }
 .schedule-title {
   font-size: 16px;
   font-weight: bold;
@@ -350,6 +359,9 @@
   display: none;
   margin-top: 6px;
   font-size: 14px; }
+  .schedule-content b {
+    font-weight: 700;
+    color: #636363; }
 
 .single {
   /* relate */ }
@@ -361,7 +373,7 @@
     font-size: 25px;
     font-weight: bold;
     text-align: center;
-    color: #69b0f3;
+    color: #bdbdbd;
     margin-bottom: 10px; }
   .single-content {
     font-size: 20px;
@@ -376,12 +388,13 @@
     width: 33%; }
   .single-relate-title {
     font-size: 20px;
-    font-weight: bold; }
+    font-weight: bold;
+    color: #636161; }
     .single-relate-title a {
       text-decoration: none;
-      color: #2daf79; }
+      color: #0145A9; }
     .single-relate-title a:hover {
-      color: #1d803c; }
+      color: #4284e7; }
   .single-relate-content {
     font-size: 15px;
     font-style: italic;

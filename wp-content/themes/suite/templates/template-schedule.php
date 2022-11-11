@@ -18,56 +18,52 @@
                 $tmp[$arg['note']] = $arg['note'];
             }
         }
-        //print_r($tmp);
+        //lay group month/year va cac data theo id
         $output = array();
         foreach($tmp as $type => $labels){
             $output[] = array(
                 'month' => $type,
                 'id' => $labels,
-                //'title', 'weekdays', 'day', 'time', 'note', 'place',
-                // 'title' => $labels,
-                // 'weekdays' => $labels,
-                // 'day' => $labels,
-                // 'time' => $labels,
-                // 'note' => $labels,
-                // 'place' => $labels
             );
         }
-        print_r($output);
+        //lay data theo group month/year
         $ids = array();
         foreach($output as $val){
             $ids = $val['id'];
-            //print_r($val['id']);
-            //lay thoi gian dau cuoi
-            if ($val['time']) {
-                $time = explode('-', $val['time']);
-                $vTimeStart = $time[0];
-                $vTimeEnd = $time[1];
-            } else {
-                $vTimeStart = $val['timeStart'];
-                $vTimeEnd = $val['timeEnd'];
-            }
-            
-            ?>
-            <div class="schedule-month"><?php echo $val['month'] ?></div>
-            <div class="schedule-item">
-                <div class="schedule-head">
-                    <div class="schedule-title">
-                        <div><?php echo $val['title'] ?></div>
-                        <div><i class="fas fa-angle-double-down"></i></div>
+            ?><div class="group-title"><?php echo $val['month'] ?></div><?php
+            //dua theo ids, ta co dinh dang Array[0][column] => value
+            foreach($ids as $id){
+                $data1 = $model->getDataScheduleByID($id);
+                //lay thoi gian dau cuoi
+                if ($data1[0]['time']) {
+                    $time = explode('-', $data1[0]['time']);
+                    $vTimeStart = $time[0];
+                    $vTimeEnd = $time[1];
+                } else {
+                    $vTimeStart = $data1[0]['timeStart'];
+                    $vTimeEnd = $data1[0]['timeEnd'];
+                }
+                
+                ?>
+                <div class="schedule-item">
+                    <div class="schedule-head">
+                        <div class="schedule-title">
+                            <div><?php echo $data1[0]['title'] ?></div>
+                            <div><i class="fas fa-angle-double-down"></i></div>
+                        </div>
+                        <div class="schedule-time">
+                            <?php echo $data1[0]['weekdays'] . ' ' . $data1[0]['day'] . '-' . $data1[0]['month'] . '-' . $data1[0]['year'] ?>
+                            &nbsp;&nbsp;
+                            <?php echo _e('Time') . ' : ' . $vTimeStart . ' -- ' . $vTimeEnd ?>
+                        </div>
+                    </div>    
+                    <div class="schedule-content">
+                        <div><label><b><?php _e('Place') ?> :</b></label> <?php echo $data1[0]['place'] ?></div>
+                        <div><label><b><?php _e('Note') ?> :</b></label> <?php echo $data1[0]['note'] ?></div>
                     </div>
-                    <div class="schedule-time">
-                        <?php echo $val['weekdays'] . ' ' . $val['day'] . '-' . $val['month'] . '-' . $val['year'] ?>
-                        &nbsp;&nbsp;
-                        <?php echo _e('Time') . ' : ' . $vTimeStart . ' -- ' . $vTimeEnd ?>
-                    </div>
-                </div>
-                <div class="schedule-content">
-                    <div><label><b><?php _e('Place') ?> :</b></label> <?php echo $val['place'] ?></div>
-                    <div><label><b><?php _e('Note') ?> :</b></label> <?php echo $val['note'] ?></div>
-                </div>
-            </div>
+                </div>    
             <?php
+            }
         } 
     ?>       
 </div>
@@ -75,7 +71,7 @@
     jQuery(document).ready(function () {
         jQuery('.schedule-title').click(function () {
             //dong cac content dang mo
-            jQuery(".schedule-content").css('display', 'none');
+            //jQuery(".schedule-content").css('display', 'none');
             //mo content duoc click
             var contentDisplay = jQuery(this).parent().next(".schedule-content").css('display');
             if (contentDisplay === 'none') {

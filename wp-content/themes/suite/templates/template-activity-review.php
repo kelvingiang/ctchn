@@ -4,7 +4,7 @@
         <?php 
             //$cateName = '活動回顧';
             $itemCount = 1;
-            $wp_query = new WP_Query(getPostTypeActivity('activity', 11, 5));
+            $wp_query = new WP_Query(getPostTypeActivity('activity', 11, 12));
             $counts = $wp_query->found_posts; //dem so bai viet vua goi 
             //print_r($counts);
             if($wp_query->have_posts()):

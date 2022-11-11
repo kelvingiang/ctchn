@@ -164,4 +164,12 @@ class Admin_Model_Schedule_Function
         return $row;
     }
 
+    //LAY DATA CUA SCHEDULE THEO ID
+    public function getDataScheduleByID($id)
+    {
+        global $wpdb;
+        $sql = "SELECT * FROM $this->table WHERE id = $id AND status = 1 ORDER BY year DESC, month DESC, day DESC";
+        $row = $wpdb->get_results($sql, ARRAY_A);
+        return $row;
+    }
 }
