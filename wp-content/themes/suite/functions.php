@@ -234,7 +234,7 @@ function prefix_single_article_loadmore(){
 add_action( 'wp_ajax_nopriv_activity_loadmore', 'prefix_activity_load_more' );
 add_action( 'wp_ajax_activity_loadmore', 'prefix_activity_load_more' );
 function prefix_activity_load_more(){
-    $showNum = 6;
+    $showNum = 4; //6;
     $cateID = $_POST['cate'];
     $offset = isset($_POST['offset']) ? (int)( $_POST['offset'] ) : 0; //lay du lieu gui len client 
     if($offset) {
@@ -297,6 +297,7 @@ function prefix_single_activity_loadmore(){
                 'posts_per_page' => $showNum,
                 'post__not_in' => array(get_the_ID()),
                 'offset' => $offset,
+                'activity-cat' => $cate_id,
                 'meta_query' => array(
                     array(
                         'key' => '_meta_box_language',
