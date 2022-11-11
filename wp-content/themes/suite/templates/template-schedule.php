@@ -1,21 +1,12 @@
-<div>
+<div class="group-border">
     <?php 
         require_once(DIR_MODEL . 'model-schedule-function.php');
         $model = new Admin_Model_Schedule_Function();
         $data = $model->getAllDataSchedule();
         $tmp = array();
-        //print_r($data);
         if(!empty($data)){
             foreach ($data as $key => $arg) {
                 $tmp[$arg['month'] . ' / ' . $arg['year']][] = $arg['id'];  
-                $tmp[$arg['title']] = $arg['title'];
-                $tmp[$arg['weekdays']] = $arg['weekdays'];
-                $tmp[$arg['day']] = $arg['day'];
-                $tmp[$arg['month']] = $arg['month'];
-                $tmp[$arg['year']] = $arg['year'];
-                $tmp[$arg['time']] = $arg['time'];
-                $tmp[$arg['place']] = $arg['place'];
-                $tmp[$arg['note']] = $arg['note'];
             }
         }
         //lay group month/year va cac data theo id
@@ -30,7 +21,7 @@
         $ids = array();
         foreach($output as $val){
             $ids = $val['id'];
-            ?><div class="group-title"><?php echo $val['month'] ?></div><?php
+            ?><div class="group-title"><label><?php echo $val['month'] ?></label></div><?php
             //dua theo ids, ta co dinh dang Array[0][column] => value
             foreach($ids as $id){
                 $data1 = $model->getDataScheduleByID($id);
@@ -43,7 +34,6 @@
                     $vTimeStart = $data1[0]['timeStart'];
                     $vTimeEnd = $data1[0]['timeEnd'];
                 }
-                
                 ?>
                 <div class="schedule-item">
                     <div class="schedule-head">
@@ -62,7 +52,7 @@
                         <div><label><b><?php _e('Note') ?> :</b></label> <?php echo $data1[0]['note'] ?></div>
                     </div>
                 </div>    
-            <?php
+                <?php
             }
         } 
     ?>       

@@ -469,7 +469,7 @@ function blankslate_footer()
                 $("html").addClass("opera");
             }
         });
-    </scrip>
+    </script>
 <?php
 }
 add_filter('document_title_separator', 'blankslate_document_title_separator');
