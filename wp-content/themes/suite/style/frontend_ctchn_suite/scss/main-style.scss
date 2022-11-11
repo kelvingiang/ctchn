@@ -112,13 +112,18 @@
 .about {
     margin-bottom: 20px;
     &-title{
-        font-size: 25px;
-        font-weight: 400;
+        font-size: 3rem;
+        font-weight: bold;
+        font-family: "DFKai-SB", 宋体b8b体, Microsoft YaHei, Arial, sans-serif;
+        color: $about_title_color;
+        padding: 0.5rem;
+        text-align: center;
     }
     &-content{
-        font-size: 20px;
-        padding: auto;
-        text-align: left;
+        padding: 2rem;
+        border-radius: 0 0 5px 5px;
+        color: $about_content_color;
+        word-wrap: break-word;
     }
 }
 
@@ -149,25 +154,32 @@
     }
     &-title{
         padding-bottom: 1rem;
-        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: left;
         font-size: 22px;
         font-weight: bold;
         font-family: 'Times New Roman', Times, serif;
-        a {text-decoration: none;}
+        a {
+            color: $page_title_color;
+            text-decoration: none;
+        }
         a:hover{
             color: $page_title_color_hover;
             text-decoration: none;
         }
     }
     &-content{
-        text-align: center;
+        text-align: left;
         font-size: 18px;
-        font-family: 'Times New Roman', Times, serif;
+        //font-family: 'Times New Roman', Times, serif;
+        padding: 0 10px 0 10px;
     }
     &-read-more{
         text-align: right;
         font-weight: bold; 
         font-family: 'Times New Roman', Times, serif;
+        padding-right: 1rem;
         a{
           text-decoration: none;
         }
@@ -293,6 +305,9 @@
         border-bottom: 1px solid #f7f2f2;
         cursor:  pointer;
     }
+    &-head:hover{
+        background-color: rgb(241, 241, 241);
+    }
     &-title{
         position: absolute;
         left: 5px;
@@ -378,9 +393,10 @@
         }
     }
     &-item{
-        font-size: 18px;
+        //font-size: calc(0.8rem + 0.6vw);
+        font-size: 20px;
         font-weight: bold;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: "DFKai-SB", Microsoft YaHei, Arial, sans-serif;
         display: block;
         
         a{
@@ -395,22 +411,18 @@
 
 /* schedule */
 .schedule{
-    &-month{
-        height: 2.5rem;
-        background-color: $schedule_bg_color;
-        color: white;
-        margin-top: 20px;
-        padding: 5px 20px 10px;
-        font-weight: bold;
-        border-radius: 0.3rem 0.3rem 0 0;
-    }
     &-item{
-        border-bottom: 1px solid #e9edf9;
-        padding: 10px;
-        font-size: 14px;
+        background-color: #fff;
+        letter-spacing: 2px;
+        border-bottom: 1px #d8d8d8 solid;
+        padding: 10px 5px;
+        margin-bottom: 2px;
+        margin-left: -1px !important;
+        width: 100%;
+        cursor: pointer;
     }    
-    &-item:nth-child(even){
-        background-color: #f5f7fd;
+    &-item:hover{
+        background-color: rgb(241, 241, 241);
     }
     &-title{
         font-size: 16px;
@@ -421,7 +433,7 @@
         line-height: 40px;
         cursor: pointer;
         display: block;
-        color: $schedule_color;
+        color: $schedule_title_color;
 
         div:first-child{
             float: left;
@@ -439,6 +451,10 @@
         display: none;
         margin-top: 6px;
         font-size: 14px;
+        b{
+            font-weight: 700;
+            color: $schedule_content_color;
+        }    
     }  
 }
   
@@ -474,6 +490,7 @@
     &-relate-title{
         font-size: 20px;
         font-weight: bold;
+        color: #636161;
         a{
             text-decoration: none;
             color: $sing_relate_title_color;
