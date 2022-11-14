@@ -1,5 +1,5 @@
 <div class="clear"></div>
-</div>
+</div></div>
 <footer id="footers" role="contentinfo" class="footer">
     <div class="row info">
         <div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">

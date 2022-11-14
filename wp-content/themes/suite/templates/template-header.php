@@ -1,4 +1,4 @@
-<div id="header" style="margin-top: 0px !important;">
+<div id="header">
     <div id="header-logo">
         <a href="<?php echo home_url(''); ?>">
             <img src="<?php echo get_image('ctchn_logo.png') ?>" title="ctchn_logo"/>
@@ -83,6 +83,9 @@
     </div> 
     <div class="menu-computer"><?php get_template_part('templates/template', 'menu'); ?></div>   
 </div>
-<?php if( !is_single()) {?>
-<div><?php get_template_part('templates/template', 'slider'); ?></div>
+
+<?php 
+    //cac single, cac page tru members,schedule khong hien thi slider
+    if( !is_single() && is_page(array('members', 'schedule'))) {?>
+        <div><?php get_template_part('templates/template', 'slider'); ?></div>
 <?php } ?>

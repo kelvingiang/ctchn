@@ -4,7 +4,7 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="container">
+<div>
     <div class="row about">
         <h2 class="about-title"><?php echo _e('Introduction'); ?> </h2> 
         <div class="about-content"><?php  echo get_post_meta('1', '_introduction_' . $_SESSION['languages'], TRUE) ?></div>

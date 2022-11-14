@@ -13,7 +13,10 @@
         <div>
             <h2 class="home-title"><?php _e('President') ?></h2>
             <div class="hr3"></div>
-            <?php get_template_part('templates/template', 'president'); ?>
+            <?php get_template_part('templates/template', 'slider-president'); ?>
+        </div>
+        <div>
+            <?php get_template_part('templates/template', 'map'); ?>
         </div>
     </div>
 <?php get_footer();

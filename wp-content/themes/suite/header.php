@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width" />
@@ -63,4 +63,4 @@
         <div id="wrapper" class="hfeed">
             <div><?php get_template_part('templates/template', 'header'); ?></div>   
   
-        <div id="container">
+        <div id="container" class="container-fluid">
