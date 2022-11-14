@@ -263,7 +263,7 @@ function getPostTypeAdvertising($postType, $showNum)
     return $args;
 }
 
-function getPostTypePresident($postType, $showNum)
+function getPostTypePresidentCurrent($postType, $showNum)
 {
     $args = array(
         'post_type' => $postType,
@@ -275,6 +275,28 @@ function getPostTypePresident($postType, $showNum)
                 'value' => '1',
                 'compare' => '='
             ),
+            // array(
+            //     'key' => '_meta_box_president',
+            //     'value' => '1',
+            //     'compare' => '='
+            // ),
+        )
+    );
+    return $args;
+}
+
+function getPostTypePresident($postType, $showNum)
+{
+    $args = array(
+        'post_type' => $postType,
+        'posts_per_page' => $showNum,
+        'post_status' => 'publish',
+        'meta_query' => array(
+            // array(
+            //     'key' => '_meta_box_current',
+            //     'value' => '',
+            //     'compare' => '='
+            // ),
             array(
                 'key' => '_meta_box_president',
                 'value' => '1',

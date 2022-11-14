@@ -59,7 +59,7 @@ class Admin_Controller_President{
         unset($columns['language']);
         //==== THEM COT VA BANG
         $columns['img'] = __('Image', 'suite');
-        //$columns['content] = __('Content);
+        $columns['content'] = __('Content');
         $columns['current'] = __('Current');
         $columns['president'] = __('President');
         return $columns;
@@ -69,9 +69,9 @@ class Admin_Controller_President{
     public function render_columns($columns)
     {
         global $post;
-        // if ($columns == 'content') {
-        //     the_content();
-        // }
+        if ($columns == 'content') {
+            the_content();
+        }
 
         if ($columns == 'img') {
             echo '<a href="' . get_admin_url() . 'post.php?post=' . $post->ID . '&action=edit">';

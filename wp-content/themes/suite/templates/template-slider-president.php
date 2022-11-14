@@ -1,7 +1,7 @@
 <div class="col-xl-12 col-lg-12 col-md-12">
     <div class="page-list">
         <?php
-            $wp_query = new WP_Query(getPostTypePresident('president', -1));
+            $wp_query = new WP_Query(getPostTypePresidentCurrent('president', -1));
             if ($wp_query->have_posts()):
                 while ($wp_query->have_posts()):
                     $wp_query->the_post();

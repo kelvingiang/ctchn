@@ -107,13 +107,14 @@
   float: right;
   margin-top: 10px; }
 .page-img {
-  padding: 0.3rem 1rem 0.5rem; }
+  padding: 0.3rem 1rem 0.5rem;
+  overflow: hidden; }
 .page-title {
   padding-bottom: 1rem;
   padding-left: 10px;
   padding-right: 10px;
   text-align: center;
-  font-size: 22px;
+  font-size: 20px;
   font-weight: bold;
   font-family: 'Times New Roman', Times, serif; }
   .page-title a {
@@ -124,8 +125,12 @@
     text-decoration: none; }
 .page-content {
   text-align: left;
-  font-size: 18px;
+  font-size: 16px;
   padding: 0 10px 0 10px; }
+.page-content-president {
+  text-align: center;
+  font-weight: 400;
+  font-size: 18px; }
 .page-read-more {
   text-align: right;
   font-weight: bold;

@@ -207,8 +207,9 @@ function loadNewMember($indus, $indusName, $listID)
             //}
             
             //ẩn button khi không còn bài viết hiển thị 
-            if(offset == ''){
+            if('' === res){
                 jQuery('#member-load-more').hide(); 
+                return;
             }
         },
         error: function (xhr) {
