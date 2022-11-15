@@ -73,16 +73,16 @@
 </div>
 <script type="text/javascript">
     function showContent(id){
-        //dong cac content dang mo
-        jQuery(".member-content").css('display', 'none');
-        //hien thi content duoc click
         var ids = '.' + id;
         var contentDisplay = jQuery(ids).siblings(".member-content").css('display');
         if(contentDisplay == 'none'){
+            //dong cac content dang mo
+            jQuery(".member-content").css('display', 'none');
             jQuery(ids).siblings(".member-content").slideDown('slow');
             jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-down');
-            jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-up');  
+            jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-up');     
         } else {
+            //hien thi content duoc click
             jQuery(ids).siblings(".member-content").slideUp('30');
             jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-up');
             jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-down');

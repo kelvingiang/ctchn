@@ -3,31 +3,33 @@
     Create date( dd-mm-yy ) : 17/10/2022
     page, template,..
 */
-#header-logo {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative; }
-  #header-logo img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain; }
-#header .show-on-scroll {
-  display: none; }
-#header .start {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background-color: white;
-  margin-top: 0;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-  animation-name: show-start;
-  animation-duration: 1s;
-  animation-timing-function: ease-out; }
+#header {
+  margin-top: 5px; }
+  #header-logo {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; }
+    #header-logo img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain; }
+  #header .show-on-scroll {
+    display: none; }
+  #header .start {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    margin-top: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    animation-name: show-start;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; }
 
 .header-language {
   margin-top: 10px;
@@ -139,7 +141,7 @@
   .page-read-more a {
     text-decoration: none; }
   .page-read-more a:hover {
-    color: #ffb477; }
+    color: #839fee; }
 
 .carousel {
   display: block;
@@ -156,8 +158,8 @@
   cursor: pointer;
   position: absolute;
   top: 110px !important;
-  color: #141414;
-  background-color: #f5f1f1; }
+  color: #363636;
+  background-color: #fffefe; }
 
 .owl-carousel .owl-prev.disabled,
 .owl-carousel .owl-next.disabled {
@@ -291,7 +293,7 @@
         font-weight: bold;
         display: block; }
       .member-industry-list li a.member-industry-item:hover {
-        color: #eeb987; }
+        color: #87b4ee; }
     .member-industry-list li:nth-child(even) {
       background-color: #e2e5e7; }
 
