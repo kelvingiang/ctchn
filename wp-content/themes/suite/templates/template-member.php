@@ -1,5 +1,5 @@
 <div class="group-border" id="member-list">
-    <div class="group-title" aria-current="true""><label><?php _e('Member') ?></label></div>
+    <div class="group-title" aria-current="true"><label><?php _e('Member') ?></label></div>
     <?php  
         require_once(DIR_MODEL . 'model-member-function.php');
         $model = new Admin_Model_Member_Function();
