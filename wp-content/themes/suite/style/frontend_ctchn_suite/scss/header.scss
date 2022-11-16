@@ -1,0 +1,59 @@
+@import 'main-color.scss';
+#header {
+    @include Respond(md) {
+        display: none;
+        visibility: hidden;
+    }
+    margin-top: 5px;
+    &-logo{
+        background-color: $head_bg_color;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        img{
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+    }
+    .show-on-scroll{
+        display: none;
+    }
+    .start{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        background-color: $head_bg_color;
+        margin-top: 0;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        z-index: 100;
+        animation-name: show-start;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+
+    }
+}
+
+.header-language {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    a{
+        text-decoration: none;
+        text-align: right;
+        font-size: 16px;
+        font-weight: 400;
+        color: $change_lang_color;
+    }
+    a:hover{
+        color: $change_lang_color_hover;
+    }
+}
+
+.lang-color {
+    color: rgb(252, 240, 218);
+}
+

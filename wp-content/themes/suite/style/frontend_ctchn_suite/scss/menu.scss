@@ -1,0 +1,9 @@
+.menu-computer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    @include Respond(md) {
+        display: none;
+        //display: visibility;
+    }
+}

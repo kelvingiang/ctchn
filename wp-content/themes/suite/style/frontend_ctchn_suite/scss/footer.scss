@@ -1,0 +1,37 @@
+@import 'main-color.scss';
+.footer {
+    width: 100%;
+    // background: -moz-linear-gradient(top, $foo_bg_color 0%, $foo_bg_color 44%, $foo_bg_color 100%) !important; /* FF3.6-15 */
+    // background: -webkit-linear-gradient(top, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* Chrome10-25,Safari5.1-6 */
+    // background: linear-gradient(to bottom, $foo_bg_color 0%,$foo_bg_color 44%,$foo_bg_color 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    // filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=0 ) !important; /* IE6-9 */
+    //overflow:  hidden;
+    background-color: $foo_bg_color;
+    background-position: center;
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    padding: 2rem 1rem 0rem;
+
+    .copyright{
+        text-align: center;
+        margin-right: 5px;
+        font-size: 13px;
+        padding: 10px;
+        a{
+            color: $foo_color;
+            font-weight: 400;
+            padding-bottom: 10px;
+            font-size: 0.8rem;
+            text-decoration: none;
+        }
+    }
+
+    .info{
+        opacity: 0.5; 
+        label{
+            font-size: 18px;
+            font-weight: 300; 
+            color: $foo_color;
+        }
+    }
+}

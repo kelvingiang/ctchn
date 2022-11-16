@@ -81,7 +81,7 @@
             </a>
         </div>
     </div> 
-    <div class="menu-computer"><?php get_template_part('templates/template', 'menu'); ?></div>   
+    <?php get_template_part('templates/template', 'menu'); ?> 
 </div>
 
 <?php 
