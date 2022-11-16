@@ -380,10 +380,18 @@
     flex-direction: column;
     align-items: center;
     position: relative; }
+    @media (max-width: 992px) {
+      #header-logo {
+        visibility: hidden; } }
     #header-logo img {
       width: 100px;
       height: 100px;
       object-fit: contain; }
+      @media (max-width: 992px) {
+        #header-logo img {
+          margin-left: 0.5rem;
+          width: 50px;
+          height: 50px; } }
   #header .show-on-scroll {
     display: none; }
   #header .start {
@@ -399,21 +407,61 @@
     animation-name: show-start;
     animation-duration: 1s;
     animation-timing-function: ease-out; }
+  #header .header-language {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    #header .header-language a {
+      text-decoration: none;
+      text-align: right;
+      font-size: 16px;
+      font-weight: 400;
+      color: #ada9a9; }
+    #header .header-language a:hover {
+      color: #7a7575; }
+  #header .lang-color {
+    color: #fcf0da; }
 
-.header-language {
-  margin-top: 10px;
-  margin-bottom: 10px; }
-  .header-language a {
-    text-decoration: none;
-    text-align: right;
-    font-size: 16px;
-    font-weight: 400;
-    color: #ada9a9; }
-  .header-language a:hover {
-    color: #7a7575; }
-
-.lang-color {
-  color: #fcf0da; }
+#header-mobile {
+  background-color: #fafafa;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 100; }
+  @media (max-width: 1200x) {
+    #header-mobile {
+      display: none; } }
+  @media (min-width: 1320px) {
+    #header-mobile {
+      display: none; } }
+  @media (max-width: 992px) {
+    #header-mobile {
+      display: block; } }
+  #header-mobile-logo {
+    width: 50%;
+    float: left;
+    display: flex;
+    flex-direction: row; }
+    #header-mobile-logo img {
+      margin-left: 0.5rem;
+      width: 50px;
+      height: 50px; }
+  #header-mobile .header-language {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 10px 0px 10px 0; }
+    #header-mobile .header-language a {
+      text-decoration: none;
+      margin: 0rem 0.3rem;
+      font-size: 14px;
+      font-weight: 400;
+      cursor: pointer;
+      color: #ada9a9; }
+    #header-mobile .header-language a:hover {
+      color: #7a7575; }
 
 .menu-computer {
   display: flex;
@@ -422,6 +470,64 @@
   @media (max-width: 992px) {
     .menu-computer {
       display: none; } }
+.menu-mobile {
+  display: block;
+  transition: top 0.3s;
+  z-index: 100; }
+  @media (min-width: 1320px) {
+    .menu-mobile {
+      display: none; } }
+  @media (max-width: 992px) {
+    .menu-mobile {
+      display: block; } }
+  .menu-mobile-icon {
+    cursor: pointer;
+    text-align: right;
+    color: #525252;
+    font-size: 1.5rem;
+    margin-right: 1.5rem; }
+  .menu-mobile-content {
+    position: absolute;
+    z-index: 1000;
+    right: -100%;
+    width: 80%;
+    background-color: #b1b1b1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem 0 0 0.5rem; }
+    .menu-mobile-content #nav-mobile-menu .sf-mobile-menu {
+      display: flex;
+      flex-direction: column; }
+      .menu-mobile-content #nav-mobile-menu .sf-mobile-menu li.menu-item-has-children > a::after {
+        font-family: FontAwesome;
+        content: "\f0d7";
+        padding-left: 1rem; }
+      .menu-mobile-content #nav-mobile-menu .sf-mobile-menu li {
+        background-color: #b1b1b1;
+        border-bottom: 1px #ccc solid;
+        margin-left: -2rem; }
+        .menu-mobile-content #nav-mobile-menu .sf-mobile-menu li a {
+          color: #ffffff;
+          text-decoration: none;
+          font-weight: bold;
+          text-align: left;
+          display: block;
+          padding: 1rem; }
+        .menu-mobile-content #nav-mobile-menu .sf-mobile-menu li:hover {
+          background-color: #eff3f3; }
+          .menu-mobile-content #nav-mobile-menu .sf-mobile-menu li:hover a {
+            color: #1b1b1b; }
+        .menu-mobile-content #nav-mobile-menu .sf-mobile-menu li .sub-menu {
+          display: none;
+          width: 100%; }
+          .menu-mobile-content #nav-mobile-menu .sf-mobile-menu li .sub-menu li {
+            background-color: #a8a8a8; }
+  .menu-mobile .show-nav {
+    animation-name: show_nav_animation;
+    animation-fill-mode: forwards;
+    animation-duration: 1s; }
+  .menu-mobile .clos-nav {
+    right: 10%; }
 
 @media only screen and (max-device-width: 1920px) {
   .border_box {

@@ -11,11 +11,19 @@
         flex-direction: column;
         align-items: center;
         position: relative;
+        @include Respond(md) {
+            visibility: hidden;
+        };
 
         img{
             width: 100px;
             height: 100px;
             object-fit: contain;
+            @include Respond(md) {
+                margin-left: 0.5rem;
+                width: 50px;
+                height: 50px;
+            }
         }
     }
     .show-on-scroll{
@@ -36,24 +44,78 @@
         animation-timing-function: ease-out;
 
     }
+
+    .header-language {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        a{
+            text-decoration: none;
+            text-align: right;
+            font-size: 16px;
+            font-weight: 400;
+            color: $change_lang_color;
+        }
+        a:hover{
+            color: $change_lang_color_hover;
+        }
+    }
+    
+    .lang-color {
+        color: rgb(252, 240, 218);
+    }
 }
 
-.header-language {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    a{
-        text-decoration: none;
-        text-align: right;
-        font-size: 16px;
-        font-weight: 400;
-        color: $change_lang_color;
-    }
-    a:hover{
-        color: $change_lang_color_hover;
-    }
-}
 
-.lang-color {
-    color: rgb(252, 240, 218);
+
+#header-mobile{
+    background-color: rgb(250, 250, 250);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: block;
+    transition: top 0.3s;
+    z-index: 100;
+
+    @include Respond(lg) {
+        display: none;
+    }
+    @include Respond(xl) {
+        display: none;
+    }
+    @include Respond(md) {
+        display: block;
+    }
+
+    &-logo{
+        width: 50%;
+        float: left;
+        display: flex;
+        flex-direction: row;
+        img{
+            margin-left: 0.5rem;
+            width: 50px;
+            height: 50px;
+        }
+    }
+
+    .header-language {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        margin: 10px 0px 10px 0;
+        a{
+            text-decoration: none;
+            margin: 0rem 0.3rem;
+            font-size: 14px;
+            font-weight: 400;
+            cursor: pointer;
+            color: $change_lang_color;
+        }
+        a:hover{
+            color: $change_lang_color_hover;
+        }
+    }
+
 }
 
