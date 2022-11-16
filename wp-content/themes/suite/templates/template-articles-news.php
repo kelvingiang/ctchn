@@ -28,7 +28,7 @@
                                 <span><?php the_content() ?></span>
                             </div>
                             <div class="page-read-more">
-                                <a href="<?php echo get_the_permalink()?>"><?php esc_html_e('Read More', 'ntl-csw') ?></a>
+                                <a href="<?php //echo get_the_permalink()?>"><?php //esc_html_e('Read More', 'ntl-csw') ?></a>
                             </div>
                         </div>
                         <?php

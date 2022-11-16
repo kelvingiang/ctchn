@@ -373,6 +373,291 @@ function getRelatePostTypeActivity($postType, $showNum, $cate_id)
     return $args;
 }
 
+// ================ XU LY LOAD MORE BUTTON PHIA SERVER ====================
+// article page
+add_action( 'wp_ajax_nopriv_article_loadmore', 'prefix_load_more' );
+add_action( 'wp_ajax_article_loadmore', 'prefix_load_more' );
+function prefix_load_more(){
+    $showNum = 6;
+    $cateID = $_POST['cate'];
+    $offset = isset($_POST['offset']) ? (int)( $_POST['offset'] ) : 0; //lay du lieu gui len client 
+    if($offset) {
+        $wp_query = new WP_Query(
+            $args = array(
+                'post_type' => 'post',
+                'posts_per_page' => $showNum,
+                'post_status' => 'publish',
+                'cat' => $cateID,
+                'offset' => $offset,
+                'meta_query' => array(
+                    array(
+                        'key' => '_meta_box_language',
+                        'value' => $_SESSION['languages'],
+                        'compare' => '=='
+                    )
+                ),
+                'post__not_in' => array(get_the_ID()),
+            )
+        );
+        if($wp_query->have_posts()) : 
+            while ($wp_query->have_posts()):
+                $wp_query->the_post();
+                ?>
+                <div class="page-item col-md-3" data_id = "<?php echo ++$offset; ?>">
+                    <div class="page-img">
+                        <?php 
+                            // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                            $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                        if($url != '') {?>
+                            <img src="<?php echo $url[0]; ?>" class="w-100 img" />
+                        <?php } else{ ?>
+                            <img src="<?php echo PART_IMAGES . 'no-image.jpg'; ?>" class="w-100 img" />
+                        <?php } ?>   
+                    </div>
+                    <div class="page-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                    </div>
+                    <div class="page-content">
+                        <span><?php the_content() ?></span>
+                    </div>
+                    <div class="page-read-more">
+                        <a href="<?php //echo get_the_permalink()?>"><?php //echo translate('Read More vvv') ?></a>
+                    </div>
+                </div>
+                <?php
+            endwhile;
+            endif;
+        wp_reset_postdata();
+        wp_reset_query();    
+    }
+    die();
+}
+//single article page
+add_action( 'wp_ajax_nopriv_single_article_loadmore', 'prefix_single_article_loadmore' );
+add_action( 'wp_ajax_single_article_loadmore', 'prefix_single_article_loadmore' );
+function prefix_single_article_loadmore(){
+    $showNum = 2;
+    $cate_id = $_POST['cateID'];
+    $offset = !empty($_POST['offset']) ? intval( $_POST['offset'] ) : ''; //lay du lieu gui len client 
+    if($offset) {
+        $wp_query = new WP_Query(
+            $args = array(
+                'post_type' => 'post',
+                'category__in' => wp_get_post_categories(get_the_ID()),
+                'posts_per_page' => $showNum,
+                'post__not_in' => array(get_the_ID()),
+                'offset' => $offset,
+                'cat' => $cate_id,
+                'meta_query' => array(
+                    array(
+                        'key' => '_meta_box_language',
+                        'value' => $_SESSION['languages'],
+                        'compare' => '=='
+                    )
+                ),
+            )
+        );
+        if($wp_query->have_posts()) : 
+            while ($wp_query->have_posts()):
+                $wp_query->the_post();
+                ?>
+                <div class="row single-relate" data_id = "<?php echo ++$offset; ?>">
+                        <div class="single-relate-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <?php 
+                                // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                                $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                                if($url != ''){ ?>
+                                    <div class="single-relate-image-col">
+                                        <img src="<?php echo $url[0]; ?>" class="single-relate-image" title="<?php the_title(); ?>" />
+                                    </div>
+                                    <div class="single-relate-content">
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <hr class="hr2">
+                                <?php }else { ?>  
+                                    <div class="single-relate-content">
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <hr class="hr2">
+                            <?php } ?>   
+                        </div>
+                    </div>
+                <?php
+            endwhile;
+            endif;
+        wp_reset_postdata();
+        wp_reset_query();    
+    }
+    die();
+}
+
+//activity page
+add_action( 'wp_ajax_nopriv_activity_loadmore', 'prefix_activity_load_more' );
+add_action( 'wp_ajax_activity_loadmore', 'prefix_activity_load_more' );
+function prefix_activity_load_more(){
+    $showNum = 6;
+    $cateID = $_POST['cate'];
+    $offset = isset($_POST['offset']) ? (int)( $_POST['offset'] ) : 0; //lay du lieu gui len client 
+    if($offset) {
+        $wp_query = new WP_Query(
+            $args = array(
+                'post_type' => 'activity',
+                'posts_per_page' => $showNum,
+                'post_status' => 'publish',
+                'activity-cat' => $cateID,
+                'offset' => $offset,
+                'meta_query' => array(
+                    array(
+                        'key' => '_meta_box_language',
+                        'value' => $_SESSION['languages'],
+                        'compare' => '=='
+                    )
+                ),
+                'post__not_in' => array(get_the_ID()),
+            )
+        );
+        if($wp_query->have_posts()) : 
+            while ($wp_query->have_posts()):
+                $wp_query->the_post();
+                ?>
+                <div class="page-item col-md-3" data_id = "<?php echo ++$offset; ?>">
+                    <div class="page-img">
+                        <?php 
+                            // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                            $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                        if($url != '') {?>
+                            <img src="<?php echo $url[0]; ?>" class="w-100 img" />
+                        <?php } else{ ?>
+                            <img src="<?php echo PART_IMAGES . 'no-image.jpg'; ?>" class="w-100 img" />
+                        <?php } ?>   
+                    </div>
+                    <div class="page-title">
+                        <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                    </div>
+                </div>
+                <?php
+            endwhile;
+            endif;
+        wp_reset_postdata();
+        wp_reset_query();    
+    }
+    die();
+}
+
+//single activity page
+add_action( 'wp_ajax_nopriv_single_activity_loadmore', 'prefix_single_activity_loadmore' );
+add_action( 'wp_ajax_single_activity_loadmore', 'prefix_single_activity_loadmore' );
+function prefix_single_activity_loadmore(){
+    $showNum = 2;
+    $cate_id = $_POST['cateID'];
+    $offset = !empty($_POST['offset']) ? intval( $_POST['offset'] ) : ''; //lay du lieu gui len client 
+    if($offset) {
+        $wp_query = new WP_Query(
+            $args = array(
+                'post_type' => 'activity',
+                'posts_per_page' => $showNum,
+                'post__not_in' => array(get_the_ID()),
+                'offset' => $offset,
+                'meta_query' => array(
+                    array(
+                        'key' => '_meta_box_language',
+                        'value' => $_SESSION['languages'],
+                        'compare' => '=='
+                    )
+                ),
+                'tax_query' => array(
+                    'taxonomy' => 'activity_category',
+                    'field' => 'id',
+                    'terms' => $cate_id,
+                ),
+            )
+        );
+        if($wp_query->have_posts()) : 
+            while ($wp_query->have_posts()):
+                $wp_query->the_post();
+                ?>
+                <div class="row single-relate" data_id = "<?php echo ++$offset; ?>">
+                        <div class="single-relate-title">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </div>
+                        <div class="row" style="margin-top: 10px;">
+                            <?php 
+                                // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                                $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                                if($url != ''){ ?>
+                                    <div class="single-relate-image-col">
+                                        <img src="<?php echo $url[0]; ?>" class="single-relate-image" title="<?php the_title(); ?>" />
+                                    </div>
+                                    <div class="single-relate-content">
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <hr class="hr2">
+                                <?php }else { ?>  
+                                    <div class="single-relate-content">
+                                        <?php the_content(); ?>
+                                    </div>
+                                    <hr class="hr2">
+                            <?php } ?>   
+                        </div>
+                    </div>
+                <?php
+            endwhile;
+            endif;
+        wp_reset_postdata();
+        wp_reset_query();    
+    }
+    die();
+}
+
+//member page
+add_action( 'wp_ajax_nopriv_member_loadmore', 'prefix_member_loadmore' );
+add_action( 'wp_ajax_member_loadmore', 'prefix_member_loadmore' );
+function prefix_member_loadmore(){
+    $offset = $_POST['id']; 
+    $industry = $_POST['indus'];
+    $industryName = $_POST['indusName'];
+
+    require_once(DIR_MODEL . 'model-member-function.php');
+    $model = new Admin_Model_Member_Function();
+    $data = $model->getMoreDataMemberByIndustry($industry, $offset);
+    if (!empty($data)) {
+        foreach ($data as $key => $val) {
+            ?>
+            <div class="member-item" data_id = "<?php echo ++$offset; ?>">
+            <div class="member-head <?php echo $offset; ?> " data_id = "<?php echo $offset; ?>" 
+                onclick="showContent(<?php echo $offset++; ?>)">
+                    <div class="member-title">
+                        <i><?php echo $val['serial'] . ' </i> ' . $val['company_cn'] ?>
+                    </div>
+                    <div class="member-icon">
+                        <a class="show-icon"><i class="fas fa-angle-double-down"></i></a>
+                    </div>
+                </div>
+                <div class="member-content">
+                    <div class="row">
+                        <div class="col-lg-12"><label><?php echo $val['company_vn'] ?></label></div>
+                        <div class="col-lg-12"><label><?php echo $val['address_cn'] ?></label></div>
+                        <div class="col-lg-12"><label><?php echo $val['address_vn'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Full Name') . ' : ' . $val['contact'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Regency') . ' : ' . $val['position'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Phone') . ' : ' . $val['phone'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Email') . ' : ' . $val['email'] ?></label></div>
+                        <div class="col-lg-6"><label><?php echo _e('Service List') . ' : ' . $val['service'] ?></label></div>
+                        <div class="col-lg-12"><label><?php echo _e('Industry') . ' : ' . $industryName ?></label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php
+        }
+    }
+    die();
+    
+}
+
 
 
 

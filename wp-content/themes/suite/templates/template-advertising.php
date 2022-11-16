@@ -1,4 +1,4 @@
-<div id="president-advertising" class="container">
+<div id="president-advertising" style="width: 90%;">
     <div class="owl-carousel owl-theme">
         <?php
             $wp_query = new WP_Query(getPostTypeAdvertising('advertising', 10));
