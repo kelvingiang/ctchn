@@ -18,8 +18,15 @@
     })
 </script>
 <script type="text/javascript">
-    var elements = document.querySelectorAll("#footers");
+    //var elements = document.querySelectorAll("#footers");
     jQuery(document).ready( function () {
+        // Khoi tao chay slider skitter
+        jQuery('.skitter-large').skitter({
+            dots: false,
+            interval: 5000, //thoi gian chuyen man hinh
+            label: true,
+        });
+
         window.onscroll = function() {
             // phan an hien menu
             // kiem tra header khac none moi thuc hien

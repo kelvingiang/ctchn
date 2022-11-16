@@ -1,4 +1,3 @@
-<?php global $post; ?>
 <div class="skitter skitter-large with-dots">
     <ul>
     <?php

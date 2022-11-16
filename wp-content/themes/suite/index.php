@@ -1,5 +1,7 @@
 <?php get_header(); ?>
     <div>
+        <!-- hien thi slider trang home -->
+        <div><?php mySlider(4); ?></div>
         <div>
             <h2 class="home-title"><?php _e('Articles') ?></h2>
             <div class="hr3"></div>
