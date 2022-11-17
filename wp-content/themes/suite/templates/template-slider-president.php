@@ -6,7 +6,7 @@
                 while ($wp_query->have_posts()):
                     $wp_query->the_post();
                     ?>
-                        <div class="page-item col-md-4">
+                        <div class="page-item col-xl-4 col-lg-4 col-md-12">
                             <div class="page-img">
                                 <?php 
                                 // [0]: url, [1]: width, [2]: height, [4]:is_intermediate

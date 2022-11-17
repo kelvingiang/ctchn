@@ -339,7 +339,6 @@
     }
     &-relate-image-col{
         float: left;
-        width: 33%;
     }
     &-relate-title{
         font-size: 20px;
@@ -357,7 +356,6 @@
         font-size: 15px;
         font-style: italic;
         float: right;
-        width: 67%;
     }
     &-relate-image{
         @extend .img-type;
@@ -400,8 +398,8 @@
     }
     &-president{
         @extend .img-type;
-        height: 350px;
-        width: 80%;
+        height: 400px;
+        width: 100%;
         border-radius: 0.2rem;
         &:hover{
             transition: all 0.4s ease-in-out;

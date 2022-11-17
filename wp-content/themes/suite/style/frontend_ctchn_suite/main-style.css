@@ -261,8 +261,7 @@
     margin: 15px;
     padding: auto; }
   .single-relate-image-col {
-    float: left;
-    width: 33%; }
+    float: left; }
   .single-relate-title {
     font-size: 20px;
     font-weight: bold;
@@ -275,8 +274,7 @@
   .single-relate-content {
     font-size: 15px;
     font-style: italic;
-    float: right;
-    width: 67%; }
+    float: right; }
   .single-relate-image {
     height: 120px;
     width: 100%;
@@ -310,8 +308,8 @@
     -o-transform: scale(1.1, 1.1);
     -ms-transform: scale(1.1, 1.1); }
   .img-president {
-    height: 350px;
-    width: 80%;
+    height: 400px;
+    width: 100%;
     border-radius: 0.2rem; }
     .img-president:hover {
       transition: all 0.4s ease-in-out;
@@ -510,49 +508,48 @@
   height: 10px; }
 
 .owl-carousel .nav-button {
-  height: 20px;
-  width: 20px;
+  height: 25px;
+  width: 25px;
   padding: 1px;
   cursor: pointer;
   position: absolute;
   top: 110px !important;
-  color: #363636;
-  background-color: #fffefe; }
+  color: #b8b4b4; }
 
 .owl-carousel .owl-prev.disabled,
 .owl-carousel .owl-next.disabled {
   pointer-events: none;
   opacity: 0.25; }
 
-/*owl slider*/
-.owl-carousel .sli-left {
-  left: -35px; }
-.owl-carousel .sli-left:hover {
-  background-position: 0px -53px; }
-.owl-carousel .sli-right {
-  right: -35px; }
-.owl-carousel .sli-right:hover {
-  background-position: -24px -53px; }
+/* owl slider advertising */
+.owl-carousel .adv-left {
+  left: -5px; }
+.owl-carousel .adv-left:hover {
+  background-position: 0px 53px; }
+.owl-carousel .adv-right {
+  right: -5px; }
+.owl-carousel .adv-right:hover {
+  background-position: 24px 53px; }
 
-/*owl news*/
-.owl-carousel .news-left {
-  left: -35px; }
-.owl-carousel .news-left:hover {
-  background-position: 0px -53px; }
-.owl-carousel .news-right {
-  right: -35px; }
-.owl-carousel .news-right:hover {
-  background-position: -24px -53px; }
+/*owl slider activity*/
+.owl-carousel .act-left {
+  left: -5px; }
+.owl-carousel .act-left:hover {
+  background-position: 0px 53px; }
+.owl-carousel .act-right {
+  right: -5px; }
+.owl-carousel .act-right:hover {
+  background-position: 24px 53px; }
 
-/*owl articles*/
+/*owl slider articles*/
 .owl-carousel .art-left {
-  left: -35px; }
+  left: -5px; }
 .owl-carousel .art-left:hover {
-  background-position: 0px -53px; }
+  background-position: 0px 53px; }
 .owl-carousel .art-right {
-  right: -35px; }
+  right: -5px; }
 .owl-carousel .art-right:hover {
-  background-position: -24px -53px; }
+  background-position: 24px 53px; }
 
 #header {
   margin-top: 5px; }
