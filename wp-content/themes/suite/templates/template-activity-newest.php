@@ -11,7 +11,7 @@
                 while($wp_query->have_posts()):
                     $wp_query->the_post();
                     ?>
-                        <div class="page-item col-md-3" data_id = "<?php echo $itemCount++; ?>">
+                        <div class="page-item col-md-4" data_id = "<?php echo $itemCount++; ?>">
                             <div class="page-img">
                                 <?php 
                                 // [0]: url, [1]: width, [2]: height, [4]:is_intermediate

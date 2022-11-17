@@ -1,0 +1,27 @@
+/* Menu cho resporst */
+.mobile-menu{
+    margin-bottom: 20px !important;
+}
+
+.mobile-menu ul li {
+    height: 30px;
+    background-color: #040B96;
+    width: 50%;
+    float: left;
+}
+
+.mobile-menu ul li :hover{
+    background-color: #E8E8EA;
+}
+
+.mobile-menu ul li a{
+    color: white;
+    text-decoration:  none;
+    font-weight: bold;
+    padding: 6px 25px; 
+    text-align: center;
+}
+
+.mobile-menu ul li a:hover{
+    color: blue;
+}

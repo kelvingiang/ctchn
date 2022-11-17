@@ -1,5 +1,5 @@
 <!-- Menu Computer -->
-<div class="menu-computer" id="menu-computer">
+<div id="menu-computer">
     <div>
         <?php 
             if($_SESSION['languages'] == 'cn'){

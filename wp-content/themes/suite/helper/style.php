@@ -68,6 +68,10 @@ function style_header_scripts()
                 wp_register_style('superfish-custom-menu-styles', THEME_PART . '/js/superfish-menu/superfish-custom.css', 'all');
                 wp_enqueue_style('superfish-custom-menu-styles');
 
+                //Them vao ngay 17/11/2022
+                wp_register_style('superfish-custom-mobile-styles', THEME_PART . '/js/superfish-menu/superfish-custom-mobile.css', 'all');
+                wp_enqueue_style('superfish-custom-mobile-styles');
+
                 wp_register_script('superfish-menu-js', THEME_PART . '/js/superfish-menu/superfish.js', array('jquery'), '1.0.0'); // Custom scripts
                 wp_enqueue_script('superfish-menu-js');
 

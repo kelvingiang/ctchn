@@ -1,4 +1,3 @@
-@import 'main-color.scss';
 #header {
     @include Respond(md) {
         display: none;

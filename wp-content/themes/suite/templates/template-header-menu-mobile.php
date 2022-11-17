@@ -1,9 +1,9 @@
 <!-- Menu Mobile -->
-<div id="menu-mobile" class="menu-mobile">
-    <div class="menu-mobile-icon">
+<div id="menu-mobile">
+    <div id="menu-mobile-icon">
         <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-    <div class="menu-mobile-content"> 
+    <div id="menu-mobile-content"> 
         <?php
             if($_SESSION['languages'] == 'cn'){
                 mobile_menu('mobile-menu-cn');
