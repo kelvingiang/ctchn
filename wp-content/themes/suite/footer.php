@@ -27,6 +27,7 @@
             label: true,
         });
 
+        var prevScrollpos = window.pageYOffset;
         window.onscroll = function() {
             // phan an hien menu
             // kiem tra header khac none moi thuc hien
@@ -35,6 +36,15 @@
             } 
             // load them du lieu khi gan den footer
             //displayElements();  
+
+            // Phan an hien header trong mobile
+            var currentScrollPos = window.pageYOffset;
+            if(prevScrollpos > currentScrollPos) {
+                document.getElementById("header-mobile").style.top = "0";
+            } else {
+                document.getElementById("header-mobile").style.top = "-320px";
+            }
+            prevScrollpos = currentScrollPos;
         }
     });
 </script>

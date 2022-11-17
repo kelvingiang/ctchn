@@ -3,21 +3,30 @@
     Create date( dd-mm-yy ) : 17/10/2022
     page, template,..
 */
-.about {
-  margin-bottom: 20px;
-  margin-top: 10px;
-  min-height: 350px; }
-  .about-title {
+.about-title {
+  margin: 2rem 0 1rem;
+  text-align: center;
+  width: 100%; }
+  @media (max-width: 992px) {
+    .about-title {
+      margin: 4rem 0 1rem; } }
+  .about-title h2 {
     font-size: 3rem;
     font-weight: bold;
     color: #646668;
     padding: 0.5rem;
     text-align: center; }
-  .about-content {
-    padding: 2rem;
-    border-radius: 0 0 5px 5px;
-    color: #666;
-    word-wrap: break-word; }
+.about-content {
+  padding: 2rem;
+  border-radius: 0 0 5px 5px;
+  color: #666;
+  word-wrap: break-word; }
+  @media (min-width: 1320px) {
+    .about-content {
+      min-height: 400px; } }
+  @media (max-width: 992px) {
+    .about-content {
+      min-height: 780px; } }
 
 .page-head {
   background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 50%, rgba(156, 156, 156, 0.568) 95%);
@@ -32,8 +41,13 @@
 .page-list {
   display: flex;
   flex-wrap: wrap;
-  padding: 10px;
-  min-height: 350px; }
+  padding: 10px; }
+  @media (min-width: 1320px) {
+    .page-list {
+      min-height: 350px; } }
+  @media (max-width: 992px) {
+    .page-list {
+      min-height: 500px; } }
 .page-item {
   float: right;
   margin-top: 10px; }
@@ -485,16 +499,9 @@
   .container_skitter .image_main {
     height: 350px !important; } }
 .label_skitter {
-  z-index: 99999;
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
   color: #f9fbfd !important;
-  display: block !important;
-  opacity: 0.8;
-  background: rgba(255, 255, 255, 0.3) !important;
-  height: 44px !important; }
-  .label_skitter p {
+  background: rgba(255, 255, 255, 0.3) !important; }
+  .label_skitter h2 {
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center; }

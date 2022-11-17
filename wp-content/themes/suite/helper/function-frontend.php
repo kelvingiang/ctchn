@@ -698,7 +698,7 @@ function mySlider($cateID)
                         ?>
                         <img src="<?php echo $url[0]; ?>" class="<?php echo $a[$random_keys] ?>"/> 
                         <div class="label_text">
-                            <p> <?php the_title(); ?> </p>                            
+                            <h2> <?php the_title(); ?> </h2>                            
                         </div>
                     </li>
                     <?php

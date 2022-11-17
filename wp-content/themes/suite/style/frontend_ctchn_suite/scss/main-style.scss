@@ -13,22 +13,35 @@
 
 //==================== PAGE ===================
 .about {
-    margin-bottom: 20px;
-    margin-top: 10px;
-    min-height: 350px;
+    //margin-bottom: 20px;
+    //margin-top: 10px;    
     &-title{
-        font-size: 3rem;
-        font-weight: bold;
-        //font-family: "DFKai-SB", 宋体b8b体, Microsoft YaHei, Arial, sans-serif;
-        color: $about_title_color;
-        padding: 0.5rem;
+        margin: 2rem 0 1rem;
         text-align: center;
+        width: 100%;
+        @include Respond(md) {
+            margin: 4rem 0 1rem;
+        }
+        h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            //font-family: "DFKai-SB", 宋体b8b体, Microsoft YaHei, Arial, sans-serif;
+            color: $about_title_color;
+            padding: 0.5rem;
+            text-align: center;
+        }
     }
     &-content{
         padding: 2rem;
         border-radius: 0 0 5px 5px;
         color: $about_content_color;
         word-wrap: break-word;
+        @include Respond(xl){
+            min-height: 400px;
+        }
+        @include Respond(md){
+            min-height: 780px;
+        }
     }
 }
 
@@ -49,7 +62,12 @@
         display: flex;
         flex-wrap: wrap;
         padding: 10px;
-        min-height: 350px;
+        @include Respond(xl){
+            min-height: 350px;
+        }
+        @include Respond(md){
+            min-height: 500px;
+        }
     }
     &-item{
         float: right;
