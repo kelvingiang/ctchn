@@ -5,7 +5,7 @@
             //$cateName = '政經時事';
             $itemCount = 1;
             $wp_query = new WP_Query(getPostType('post', 6, 12, 0));
-            $counts = $wp_query->found_posts; //dem so bai viet vua goi 
+            //$counts = $wp_query->found_posts; //dem so bai viet vua goi 
             if($wp_query->have_posts()):
                 while($wp_query->have_posts()):
                     $wp_query->the_post();
@@ -81,8 +81,12 @@
                     }, 2000);
 
                     //ẩn button khi không còn bài viết hiển thị 
-                    if(offset >= <?php echo $counts ?> ){
+                    // if(offset >= <?php //echo $counts ?> ){
+                    //     jQuery('#load-more').hide(); 
+                    // }
+                    if('' === res){
                         jQuery('#load-more').hide(); 
+                        return;
                     }
                 },
                 error: function (xhr) {

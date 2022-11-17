@@ -5,7 +5,7 @@
             //$cateName = '法規公告';
             $itemCount = 1;
             $wp_query = new WP_Query(getPostType('post', 7, 12, ''));
-            $counts = $wp_query->found_posts; //dem so bai viet vua goi 
+            //$counts = $wp_query->found_posts; //dem so bai viet vua goi 
             if($wp_query->have_posts()):
                 while($wp_query->have_posts()):
                     $wp_query->the_post();
@@ -57,7 +57,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('#load-more').click(function() {
-            loadNewArticle(<?php echo $counts ?>, 7, '#articles-regulatory-list'); 
+            loadNewArticle(7, '#articles-regulatory-list'); 
         })
     })
 </script>

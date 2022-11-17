@@ -5,7 +5,7 @@
             //$cateName = '最新活動';
             $itemCount = 1;
             $wp_query = new WP_Query(getPostTypeActivity('activity', 10, 12));
-            $counts = $wp_query->found_posts; //dem so bai viet vua goi 
+            //$counts = $wp_query->found_posts; //dem so bai viet vua goi 
             //print_r($counts);
             if($wp_query->have_posts()):
                 while($wp_query->have_posts()):
@@ -53,7 +53,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('#activity-load-more').click(function() {
-            loadNewActivity( <?php echo $counts ?>, 10, '#activity-newest-list');
+            loadNewActivity(10, '#activity-newest-list');
         })
     })
 </script>

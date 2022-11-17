@@ -5,7 +5,7 @@
             //$cateName = '商情資訊';
             $itemCount = 1;
             $wp_query = new WP_Query(getPostType('post', 5, 12, 0));
-            $counts = $wp_query->found_posts; //dem so bai viet vua goi 
+            //$counts = $wp_query->found_posts; //dem so bai viet vua goi 
             //print_r($counts);
             if($wp_query->have_posts()):
                 while($wp_query->have_posts()):
@@ -59,7 +59,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('#load-more').click(function() {
-            loadNewArticle( <?php echo $counts ?>, 5, '#articles-business-list');
+            loadNewArticle(5, '#articles-business-list');
         })
     })
 </script>

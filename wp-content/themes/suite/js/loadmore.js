@@ -47,7 +47,7 @@ function loadmore(e, $cateID, $page, $listID){
 
 
 //function su dung button load more cho article page
-function loadNewArticle($counts, $cateID, $listID)
+function loadNewArticle($cateID, $listID)
 {
     var lastID = jQuery('.page-item:last').attr('data_id');
     var offset = lastID;
@@ -70,8 +70,9 @@ function loadNewArticle($counts, $cateID, $listID)
             }, 2000);
 
             //ẩn button khi không còn bài viết hiển thị 
-            if(offset >= $counts){
+            if('' === res){
                 jQuery('#load-more').hide(); 
+                return;
             }
         },
         error: function (xhr) {
@@ -81,7 +82,7 @@ function loadNewArticle($counts, $cateID, $listID)
 }
 
 //function su dung button load more cho single
-function loadNewSingleArticle($counts, $cateID, $listID)
+function loadNewSingleArticle($cateID, $listID)
 {
     var lastID = jQuery('.single-relate:last').attr('data_id');
     var offset = lastID;
@@ -103,8 +104,9 @@ function loadNewSingleArticle($counts, $cateID, $listID)
             }, 2000);
 
             //ẩn button khi không còn bài viết hiển thị 
-            if(offset >= $counts ){
+            if('' === res){
                 jQuery('#single-load-more').hide(); 
+                return;
             }
         },
         error: function (xhr) {
@@ -114,7 +116,7 @@ function loadNewSingleArticle($counts, $cateID, $listID)
 }
 
 //function su dung button load more cho activity page
-function loadNewActivity($counts, $cateID, $listID)
+function loadNewActivity($cateID, $listID)
 {
     var lastID = jQuery('.page-item:last').attr('data_id');
     var offset = lastID;
@@ -137,8 +139,9 @@ function loadNewActivity($counts, $cateID, $listID)
             }, 2000);
 
             //ẩn button khi không còn bài viết hiển thị 
-            if(offset >= $counts){
+            if('' === res){
                 jQuery('#activity-load-more').hide(); 
+                return;
             }
         },
         error: function (xhr) {
@@ -148,7 +151,7 @@ function loadNewActivity($counts, $cateID, $listID)
 }
 
 //function su dung button load more cho single activity
-function loadNewSingleActivity($counts, $cateID, $listID)
+function loadNewSingleActivity($cateID, $listID)
 {
     var lastID = jQuery('.single-relate:last').attr('data_id');
     var offset = lastID;
@@ -170,8 +173,12 @@ function loadNewSingleActivity($counts, $cateID, $listID)
             }, 2000);
 
             //ẩn button khi không còn bài viết hiển thị 
-            if(offset >= $counts ){
+            // if(offset >= $counts ){
+            //     jQuery('#single-activity-load-more').hide(); 
+            // }
+            if('' === res){
                 jQuery('#single-activity-load-more').hide(); 
+                return; 
             }
         },
         error: function (xhr) {

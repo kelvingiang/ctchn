@@ -11,7 +11,7 @@
             }
             //print_r($cate_id);
             $wp_query = new WP_Query(getRelatePostType(3, $cate_id));
-            $counts = $wp_query->found_posts; //dem so bai viet vua goi 
+            //$counts = $wp_query->found_posts; //dem so bai viet vua goi 
             if ($wp_query->have_posts()) :
                 while ($wp_query->have_posts()) : $wp_query->the_post();
                     ?>
@@ -65,7 +65,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('#single-load-more').click(function() {
-            loadNewSingleArticle(<?php echo $counts ?>, <?php echo $cate_id ?> ,'#single-article-list'); 
+            loadNewSingleArticle(<?php echo $cate_id ?> ,'#single-article-list'); 
         })
     })
 </script>

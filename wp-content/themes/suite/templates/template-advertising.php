@@ -18,7 +18,7 @@
                                 <?php } ?>  
                             </div>
                             <div class="page-title">
-                                <a href="<?php echo get_post_meta($post->ID,'_meta_box_website',true); ?>"><?php the_title() ?></a>
+                                <a href="<?php echo get_post_meta($post->ID,'_meta_box_website',true); ?>" target="_blank"><?php the_title() ?></a>
                             </div>
                         </div>    
                     <?php

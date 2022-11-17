@@ -360,6 +360,7 @@ function getRelatePostType($showNum, $cate_id)
                 'compare' => '=='
             )
         ),
+        'orderby' => '_meta_box_order',
     );
     return $args;
 }
@@ -382,6 +383,7 @@ function getRelatePostTypeActivity($postType, $showNum, $cate_id)
             'field' => 'id',
             'terms' => $cate_id,
         ),
+        'orderby' => '_meta_box_order',
     );
     return $args;
 }
@@ -468,6 +470,7 @@ function prefix_single_article_loadmore(){
                         'compare' => '=='
                     )
                 ),
+                'orderby' => '_meta_box_order',
             )
         );
         if($wp_query->have_posts()) : 
@@ -536,7 +539,7 @@ function prefix_activity_load_more(){
             while ($wp_query->have_posts()):
                 $wp_query->the_post();
                 ?>
-                <div class="page-item col-md-3" data_id = "<?php echo ++$offset; ?>">
+                <div class="page-item col-md-4" data_id = "<?php echo ++$offset; ?>">
                     <div class="page-img">
                         <?php 
                             // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
@@ -586,6 +589,7 @@ function prefix_single_activity_loadmore(){
                     'field' => 'id',
                     'terms' => $cate_id,
                 ),
+                'orderby' => '_meta_box_order',
             )
         );
         if($wp_query->have_posts()) : 
