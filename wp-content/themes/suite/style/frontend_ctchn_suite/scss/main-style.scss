@@ -42,6 +42,48 @@
         @include Respond(md){
             min-height: 780px;
         }
+
+        h3{
+            margin-top: 2rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        div{
+            text-indent: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        table {
+            width: 80%;
+            margin-left: 10%;
+            background-color: rgb(252, 252, 252);
+            @include Respond(md) {
+              width: 100%;
+              margin-left: 0%;
+            }
+        
+            tr td {
+              padding: 0.3rem 1rem;
+              border: 1px solid #999;
+              text-align: center;
+              @include Respond(md) {
+                padding: 0rem;
+              }
+            }
+        }
+        
+        img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 80%;
+        }
+        ul li {
+        margin: 0.5rem 0;
+        list-style: inside;
+        }
+
     }
 }
 
@@ -50,6 +92,10 @@
         background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 50%, rgba(156, 156, 156, 0.568) 95%);
         border-radius: 0.3rem;
         font-size: 2.5rem;
+        margin-top: 2rem;
+        @include Respond(md){
+            margin-top: 4.5rem;
+        }
         h1{
             font-size: 1.5rem;
             letter-spacing: 0.5rem;
@@ -63,10 +109,10 @@
         flex-wrap: wrap;
         padding: 10px;
         @include Respond(xl){
-            min-height: 350px;
+            min-height: 400px;
         }
         @include Respond(md){
-            min-height: 500px;
+            min-height: 780px;
         }
     }
     &-item{
@@ -168,7 +214,14 @@
             text-shadow: 2px 1px #FFF;
             text-decoration: none;
         }
-    }   
+    } 
+    &-industry{
+        @include Respond(md){
+            //offset-position: top;
+            position: relative;
+            //bottom: 3000px;
+        }
+    }
 }
 .member{
     &-head{
@@ -247,6 +300,7 @@
         background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 50%, rgba(37, 156, 236, 0.568) 95%);
         border-radius: 0.3rem;
         font-size: 2.5rem;
+        margin-top: 2rem;
         h1{
           font-size: 1.5rem;
           letter-spacing: 0.5rem;
@@ -338,17 +392,46 @@
         font-size: 16px;
     }
     &-title{
-        font-size: 25px;
+        font-size: 1.8rem;
         font-weight: bold;
         text-align: center;
         color: $sing_title_color;
         margin-bottom: 10px;
     }
     &-content{
-        font-size: 20px;
+        font-size: 1.05rem;
         font-family: 'Times New Roman', Times, serif;
-        padding: 14px;
-        margin: 14px;
+        padding: 1.5rem 2rem;
+        text-indent: 2rem;
+        h1{
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        h2{
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        img{
+            margin: 1rem;
+        }
+        .aligncenter{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .alignnone{
+            clear: both;
+        }
+        .alignright{
+            float: right;
+        }
+        .alignleft{
+            float: left;
+        }
     }
     /* relate */
     &-relate{
@@ -374,6 +457,12 @@
         font-size: 15px;
         font-style: italic;
         float: right;
+        img{
+            margin: 0 1rem 1rem 1rem;
+            @include Respond(md) {
+                margin: 1rem;
+            }
+        }
     }
     &-relate-image{
         @extend .img-type;

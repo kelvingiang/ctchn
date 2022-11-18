@@ -182,6 +182,8 @@ function getPostType($postType,$cateID,$showNum,$offset)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',
@@ -202,6 +204,8 @@ function getPostTypeSlider($postType,$cateID, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'slide_cat' => $cateID,
         'meta_query' => array(
             array(
@@ -220,6 +224,8 @@ function getPostTypeActivity($postType,$cateID, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         //'activity_category' => $cateID,
         'meta_query' => array(
             array(
@@ -237,7 +243,7 @@ function getPostTypeActivity($postType,$cateID, $showNum)
             array(
                 'taxonomy' => 'activity_category',
                 'field' => 'term_id',
-                'terms'    => $cateID
+                'terms' => $cateID
             ),
         ),
     );
@@ -250,6 +256,8 @@ function getPostTypeFriendLink($postType, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',
@@ -260,7 +268,6 @@ function getPostTypeFriendLink($postType, $showNum)
                 'key' => '_meta_box_website',
             )
         ),
-        'order' => 'DESC'
     );
     return $args;
 }
@@ -271,6 +278,8 @@ function getPostTypeAdvertising($postType, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'meta_query' => '_meta_box_website',
     );
     return $args;
@@ -282,6 +291,8 @@ function getPostTypePresidentCurrent($postType, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'meta_query' => array(
             array(
                 'key' => '_meta_box_current',
@@ -304,6 +315,8 @@ function getPostTypePresident($postType, $showNum)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'meta_query' => array(
             // array(
             //     'key' => '_meta_box_current',
@@ -326,6 +339,8 @@ function getPostTypeShowAtHome($postType,$showNum,$offset)
         'post_type' => $postType,
         'posts_per_page' => $showNum,
         'post_status' => 'publish',
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',
@@ -348,10 +363,14 @@ function getPostTypeShowAtHome($postType,$showNum,$offset)
 //================= RELATE POST TYPE =================
 function getRelatePostType($showNum, $cate_id)
 {
+    global $post;
     $args = array(
-        'category__in' => wp_get_post_categories(get_the_ID()),
+        'post_type' => 'post',
+        'category__in' => wp_get_post_categories($post->ID),
         'posts_per_page' => $showNum,
-        'post__not_in' => array(get_the_ID()),
+        'post__not_in' => array($post->ID),
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'cat' => $cate_id,
         'meta_query' => array(
             array(
@@ -360,17 +379,19 @@ function getRelatePostType($showNum, $cate_id)
                 'compare' => '=='
             )
         ),
-        'orderby' => '_meta_box_order',
     );
     return $args;
 }
 
 function getRelatePostTypeActivity($postType, $showNum, $cate_id)
 {
+    global $post;
     $args = array(
         'post_type' => $postType,
         'posts_per_page' => $showNum,
-        'post__not_in' => array(get_the_ID()),
+        'post__not_in' => array($post->ID),
+        'orderby' => '_meta_box_order',
+        'order' => 'DESC',
         'meta_query' => array(
             array(
                 'key' => '_meta_box_language',
@@ -379,11 +400,12 @@ function getRelatePostTypeActivity($postType, $showNum, $cate_id)
             )
         ),
         'tax_query' => array(
-            'taxonomy' => 'activity_category',
-            'field' => 'id',
-            'terms' => $cate_id,
+            array(
+                'taxonomy' => 'activity_category',
+                'field' => 'id',
+                'terms' => $cate_id,
+            ),
         ),
-        'orderby' => '_meta_box_order',
     );
     return $args;
 }
@@ -402,6 +424,9 @@ function prefix_load_more(){
                 'post_type' => 'post',
                 'posts_per_page' => $showNum,
                 'post_status' => 'publish',
+                //'post__not_in' => array(get_the_ID()),
+                'orderby' => '_meta_box_order',
+                'order' => 'DESC',
                 'cat' => $cateID,
                 'offset' => $offset,
                 'meta_query' => array(
@@ -411,7 +436,6 @@ function prefix_load_more(){
                         'compare' => '=='
                     )
                 ),
-                'post__not_in' => array(get_the_ID()),
             )
         );
         if($wp_query->have_posts()) : 
@@ -451,28 +475,29 @@ function prefix_load_more(){
 add_action( 'wp_ajax_nopriv_single_article_loadmore', 'prefix_single_article_loadmore' );
 add_action( 'wp_ajax_single_article_loadmore', 'prefix_single_article_loadmore' );
 function prefix_single_article_loadmore(){
-    $showNum = 2;
+    $id = $_POST['id'];
+    $showNum = 2; 
     $cate_id = $_POST['cateID'];
-    $offset = !empty($_POST['offset']) ? intval( $_POST['offset'] ) : ''; //lay du lieu gui len client 
+    $offset = isset($_POST['offset']) ? (int)( $_POST['offset'] ) : 0; //lay du lieu gui len client 
     if($offset) {
-        $wp_query = new WP_Query(
-            $args = array(
-                'post_type' => 'post',
-                'category__in' => wp_get_post_categories(get_the_ID()),
-                'posts_per_page' => $showNum,
-                'post__not_in' => array(get_the_ID()),
-                'offset' => $offset,
-                'cat' => $cate_id,
-                'meta_query' => array(
-                    array(
-                        'key' => '_meta_box_language',
-                        'value' => $_SESSION['languages'],
-                        'compare' => '=='
-                    )
-                ),
-                'orderby' => '_meta_box_order',
-            )
+        $args = array(
+            'post_type' => 'post',
+            'category__in' => wp_get_post_categories($id),
+            'posts_per_page' => $showNum,
+            'post__not_in' => array($id),
+            'orderby' => '_meta_box_order',
+            'order' => 'DESC',
+            'offset' => $offset,
+            'cat' => $cate_id,
+            'meta_query' => array(
+                array(
+                    'key' => '_meta_box_language',
+                    'value' => $_SESSION['languages'],
+                    'compare' => '=='
+                )
+            ),
         );
+        $wp_query = new WP_Query($args);
         if($wp_query->have_posts()) : 
             while ($wp_query->have_posts()):
                 $wp_query->the_post();
@@ -523,16 +548,30 @@ function prefix_activity_load_more(){
                 'post_type' => 'activity',
                 'posts_per_page' => $showNum,
                 'post_status' => 'publish',
-                'activity-cat' => $cateID,
+                //'post__not_in' => array(get_the_ID()),
+                'orderby' => '_meta_box_order',
+                'order' => 'DESC',
+                //'activity-cat' => $cateID,
                 'offset' => $offset,
                 'meta_query' => array(
                     array(
                         'key' => '_meta_box_language',
                         'value' => $_SESSION['languages'],
                         'compare' => '=='
+                    ),
+                    array(
+                        'key' => '_meta_box_special',
+                        'value' => 1,
+                        'compare' => '='
                     )
                 ),
-                'post__not_in' => array(get_the_ID()),
+                'tax_query' => array(
+                    array(
+                        'taxonomy' => 'activity_category',
+                        'field' => 'term_id',
+                        'terms' => $cateID,
+                    ),
+                ),
             )
         );
         if($wp_query->have_posts()) : 
@@ -568,30 +607,33 @@ add_action( 'wp_ajax_nopriv_single_activity_loadmore', 'prefix_single_activity_l
 add_action( 'wp_ajax_single_activity_loadmore', 'prefix_single_activity_loadmore' );
 function prefix_single_activity_loadmore(){
     $showNum = 2;
-    $cate_id = $_POST['cateID'];
-    $offset = !empty($_POST['offset']) ? intval( $_POST['offset'] ) : ''; //lay du lieu gui len client 
+    $id = $_POST['id'];
+    $cate_id = $_POST['cateID']; 
+    $offset = isset($_POST['offset']) ? (int)( $_POST['offset'] ) : 0; //lay du lieu gui len client 
     if($offset) {
-        $wp_query = new WP_Query(
-            $args = array(
-                'post_type' => 'activity',
-                'posts_per_page' => $showNum,
-                'post__not_in' => array(get_the_ID()),
-                'offset' => $offset,
-                'meta_query' => array(
-                    array(
-                        'key' => '_meta_box_language',
-                        'value' => $_SESSION['languages'],
-                        'compare' => '=='
-                    )
-                ),
-                'tax_query' => array(
+        $args = array(
+            'post_type' => 'activity',
+            'posts_per_page' => $showNum,
+            'post__not_in' => array($id),
+            'orderby' => '_meta_box_order',
+            'order' => 'DESC',
+            'offset' => $offset,
+            'meta_query' => array(
+                array(
+                    'key' => '_meta_box_language',
+                    'value' => $_SESSION['languages'],
+                    'compare' => '=='
+                )
+            ),
+            'tax_query' => array(
+                array(
                     'taxonomy' => 'activity_category',
-                    'field' => 'id',
+                    'field' => 'term_id',
                     'terms' => $cate_id,
                 ),
-                'orderby' => '_meta_box_order',
-            )
+            ),
         );
+        $wp_query = new WP_Query($args);
         if($wp_query->have_posts()) : 
             while ($wp_query->have_posts()):
                 $wp_query->the_post();

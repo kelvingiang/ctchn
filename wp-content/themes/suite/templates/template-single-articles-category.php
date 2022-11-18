@@ -3,11 +3,12 @@
     <div class="hr3"></div>
     <div id="single-article-list">
         <?php 
+            global $post;
             $itemCount = 1;
             $cate_id = array();
-            $current_category = get_the_category();
+            $current_category = get_the_category($post->ID);
             foreach($current_category as $cc){
-                $cate_id[] = $cc->term_id;
+                $cate_id = $cc->term_id;
             }
             //print_r($cate_id);
             $wp_query = new WP_Query(getRelatePostType(3, $cate_id));
@@ -65,7 +66,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('#single-load-more').click(function() {
-            loadNewSingleArticle(<?php echo $cate_id ?> ,'#single-article-list'); 
+            loadNewSingleArticle(<?php echo $cate_id ?> ,'#single-article-list', <?php echo $post->ID ?>); 
         })
     })
 </script>

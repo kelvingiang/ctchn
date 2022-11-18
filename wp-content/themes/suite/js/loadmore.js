@@ -82,7 +82,7 @@ function loadNewArticle($cateID, $listID)
 }
 
 //function su dung button load more cho single
-function loadNewSingleArticle($cateID, $listID)
+function loadNewSingleArticle($cateID, $listID, $postID)
 {
     var lastID = jQuery('.single-relate:last').attr('data_id');
     var offset = lastID;
@@ -95,6 +95,7 @@ function loadNewSingleArticle($cateID, $listID)
             action: 'single_article_loadmore',
             offset : offset,
             cateID : $cateID,
+            id : $postID,
         },
         success: function(res) {
             jQuery($listID).append(res);
@@ -151,7 +152,7 @@ function loadNewActivity($cateID, $listID)
 }
 
 //function su dung button load more cho single activity
-function loadNewSingleActivity($cateID, $listID)
+function loadNewSingleActivity($cateID, $listID, $postID)
 {
     var lastID = jQuery('.single-relate:last').attr('data_id');
     var offset = lastID;
@@ -164,6 +165,7 @@ function loadNewSingleActivity($cateID, $listID)
             action: 'single_activity_loadmore',
             offset : offset,
             cateID : $cateID,
+            id : $postID,
         },
         success: function(res) {
             jQuery($listID).append(res);

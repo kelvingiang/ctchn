@@ -3,13 +3,14 @@
     <div class="hr3"></div>
     <div id="single-activity-list">
         <?php 
+            global $post;
             $itemCount = 1;
             $cate_id = array();
-            $current_category = get_the_terms(get_the_ID() , 'activity_category' );
+            $current_category = get_the_terms($post->ID, 'activity_category' );
             foreach($current_category as $cc){
-                $cate_id[] = $cc->term_id;
+                $cate_id = $cc->term_id;
             }
-            //($cate_id);
+            //print_r($cate_id );
             $wp_query = new WP_Query(getRelatePostTypeActivity('activity', 3, $cate_id));
             //$counts = $wp_query->found_posts; //dem so bai viet vua goi 
             if ($wp_query->have_posts()) :
@@ -65,7 +66,7 @@
 <script type="text/javascript">
     jQuery(document).ready(function() {
         jQuery('#single-activity-load-more').click(function() {
-            loadNewSingleActivity(<?php echo $cate_id ?> ,'#single-activity-list'); 
+            loadNewSingleActivity(<?php echo $cate_id ?> ,'#single-activity-list', <?php echo $post->ID ?>); 
         })
     })
 </script>
