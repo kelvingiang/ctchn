@@ -215,13 +215,6 @@
             text-decoration: none;
         }
     } 
-    &-industry{
-        @include Respond(md){
-            //offset-position: top;
-            position: relative;
-            //bottom: 3000px;
-        }
-    }
 }
 .member{
     &-head{

@@ -1,4 +1,4 @@
-<div class="group-border group-industry">
+<div class="group-border">
     <div class="group-title">
         <a href="<?php echo home_url('members') ?>"><?php _e("Industries") ?></a>
     </div>

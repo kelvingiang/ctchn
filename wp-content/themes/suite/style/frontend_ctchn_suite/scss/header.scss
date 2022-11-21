@@ -1,3 +1,12 @@
+@keyframes show-start {
+    from {
+        margin-top: -10px;
+    }
+    to {
+        margin-top: 0;
+    }
+}
+
 #header {
     @include Respond(md) {
         display: none;
@@ -60,7 +69,7 @@
     }
     
     .lang-color {
-        color: rgb(252, 240, 218);
+        color: rgb(56, 55, 54);
     }
 }
 
