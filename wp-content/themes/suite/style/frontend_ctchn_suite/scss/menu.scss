@@ -6,6 +6,63 @@
         display: none;
         //display: visibility;
     }
+
+    nav {
+        &:after {
+            display: table;
+            content: " ";
+            clear: both;
+        }
+        .sf-menu {
+            background-color: transparent;
+            .menu-item {
+                background-color: transparent;
+                .sf-with-ul {
+                    &:after {
+                        border-top-color: rgba(53, 52, 52, 0.6);
+                    }
+                }
+                a {
+                    color: rgba(53, 52, 52, 0.6);
+                    font-size: 1rem;
+                    font-weight: bold;
+                }
+                &:hover {
+                    .sf-with-ul {
+                        &:after {
+                            border-top-color: rgba(53, 52, 52, 1);
+                        }
+                    }
+                    a {
+                        color: rgba(53, 52, 52, 1);
+                    }
+                }
+            }
+
+            .sub-menu {
+                background-color: #ffffff;
+                .menu-item {
+                    border-bottom: 1px #dad7d7 dotted;
+                    a {
+                        color: rgba(53, 52, 52, 0.6);
+                    }
+                    &:hover {
+                        background-color: #fcfcfc;
+                        a {
+                            color: rgba(53, 52, 52, 1);
+                        }
+                    }
+                }
+            }
+
+            @include Respond(xl) {
+                display: block;
+            }
+            @include Respond(md) {
+                display: none;
+            }
+        }
+    }
 }
 
 @keyframes show_nav_animation {

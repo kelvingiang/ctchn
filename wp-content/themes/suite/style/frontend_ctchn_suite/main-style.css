@@ -465,6 +465,40 @@
   @media (max-width: 992px) {
     #menu-computer {
       display: none; } }
+  #menu-computer nav:after {
+    display: table;
+    content: " ";
+    clear: both; }
+  #menu-computer nav .sf-menu {
+    background-color: transparent; }
+    #menu-computer nav .sf-menu .menu-item {
+      background-color: transparent; }
+      #menu-computer nav .sf-menu .menu-item .sf-with-ul:after {
+        border-top-color: rgba(53, 52, 52, 0.6); }
+      #menu-computer nav .sf-menu .menu-item a {
+        color: rgba(53, 52, 52, 0.6);
+        font-size: 1rem;
+        font-weight: bold; }
+      #menu-computer nav .sf-menu .menu-item:hover .sf-with-ul:after {
+        border-top-color: #353434; }
+      #menu-computer nav .sf-menu .menu-item:hover a {
+        color: #353434; }
+    #menu-computer nav .sf-menu .sub-menu {
+      background-color: #ffffff; }
+      #menu-computer nav .sf-menu .sub-menu .menu-item {
+        border-bottom: 1px #dad7d7 dotted; }
+        #menu-computer nav .sf-menu .sub-menu .menu-item a {
+          color: rgba(53, 52, 52, 0.6); }
+        #menu-computer nav .sf-menu .sub-menu .menu-item:hover {
+          background-color: #fcfcfc; }
+          #menu-computer nav .sf-menu .sub-menu .menu-item:hover a {
+            color: #353434; }
+    @media (min-width: 1320px) {
+      #menu-computer nav .sf-menu {
+        display: block; } }
+    @media (max-width: 992px) {
+      #menu-computer nav .sf-menu {
+        display: none; } }
 
 @keyframes show_nav_animation {
   0% {
