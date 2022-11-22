@@ -351,9 +351,14 @@
         .single-relate-content img {
           margin: 1rem; } }
   .single-relate-image {
-    height: 120px;
+    height: 160px;
     width: 100%;
     border-radius: 0.2rem; }
+    @media (max-width: 992px) {
+      .single-relate-image {
+        height: 200px;
+        width: 100%;
+        border-radius: 0.2rem; } }
     .single-relate-image:hover {
       transform: scale3d(1, 1, 1);
       -webkit-transform: scale3d(1, 1, 1);
@@ -386,6 +391,12 @@
     height: 400px;
     width: 100%;
     border-radius: 0.2rem; }
+    @media (max-width: 992px) {
+      .img-president {
+        margin-top: 1rem;
+        height: 480px;
+        width: 100%;
+        border-radius: 0.2rem; } }
     .img-president:hover {
       transition: all 0.4s ease-in-out;
       transform: scale(1.1, 1.1);
@@ -529,36 +540,28 @@
 @media only screen and (max-device-width: 1920px) {
   .border_box {
     background-color: #fff;
-    height: 560px; }
+    height: 500px; }
 
   .skitter {
     max-width: 100% !important;
-    height: 550px !important; }
+    height: 500px !important; }
 
   .container_skitter .image_main {
-    height: 550px !important; } }
+    height: 500px !important; } }
 @media only screen and (max-device-width: 1366px) {
   .border_box {
     background-color: #fff;
-    height: 410px; }
+    height: 300px; }
 
   .skitter {
     max-width: 100% !important;
-    height: 400px !important; }
+    height: 300px !important; }
 
   .container_skitter .image_main {
-    height: 400px !important; } }
+    height: 300px !important; } }
 @media only screen and (max-device-width: 1280px) {
   .border_box {
-    background-color: #fff;
-    height: 360px; }
-
-  .skitter {
-    max-width: 100% !important;
-    height: 350px !important; }
-
-  .container_skitter .image_main {
-    height: 350px !important; } }
+    display: none; } }
 .label_skitter {
   color: #f9fbfd !important;
   background: rgba(255, 255, 255, 0.3) !important; }

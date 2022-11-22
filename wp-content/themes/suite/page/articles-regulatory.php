@@ -4,7 +4,9 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="row">
-    <?php get_template_part('templates/template', 'articles-regulatory'); ?>
+<div class="container-fluid">
+  <div class="row">
+      <?php get_template_part('templates/template', 'articles-regulatory'); ?>
+  </div>
 </div>
 <?php get_footer();

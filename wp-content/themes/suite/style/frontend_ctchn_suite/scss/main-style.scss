@@ -459,9 +459,14 @@
     }
     &-relate-image{
         @extend .img-type;
-        height: 120px;
+        height: 160px;
         width: 100%;
         border-radius: 0.2rem;
+        @include Respond(md){
+            height: 200px;
+            width: 100%;
+            border-radius: 0.2rem;
+        }
         &:hover{
             transform: scale3d(1,1,1);
             -webkit-transform: scale3d(1, 1, 1);
@@ -501,6 +506,12 @@
         height: 400px;
         width: 100%;
         border-radius: 0.2rem;
+        @include Respond(md){
+            margin-top: 1rem;
+            height: 480px;
+            width: 100%;
+            border-radius: 0.2rem;
+        }
         &:hover{
             transition: all 0.4s ease-in-out;
             transform: scale(1.1,1.1);

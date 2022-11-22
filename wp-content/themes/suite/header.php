@@ -63,4 +63,4 @@
         <div id="wrapper" class="hfeed">
             <div><?php get_template_part('templates/template', 'header'); ?></div>   
   
-        <div id="container" class="container-fluid">
+        <div id="container">

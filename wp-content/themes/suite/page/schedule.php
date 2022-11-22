@@ -4,9 +4,11 @@
  */
 ?>
 <?php get_header(); ?>
-<div class="row">
-  <!-- hien thi slider cua trang schedule -->
-  <div><?php mySlider(4); ?></div>
-  <?php get_template_part('templates/template', 'schedule'); ?>
+<!-- hien thi slider cua trang schedule -->
+<div><?php mySlider(4); ?></div>
+<div class="container-fluid">
+  <div class="row">
+    <?php get_template_part('templates/template', 'schedule'); ?>
+  </div>
 </div>
 <?php get_footer();

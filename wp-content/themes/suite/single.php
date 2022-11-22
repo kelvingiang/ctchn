@@ -1,6 +1,7 @@
 <?php get_header(); ?>
-    <div>
-        <?php get_template_part('templates/template', 'advertising') ?>
+<div class="container-fluid">
+    <?php get_template_part('templates/template', 'advertising') ?>
+    <div class="row">
         <span class="single-head"><?php echo get_the_date(); ?> | <?php _e('By'); echo get_the_author() ?></span>
         <div>
             <h2 class="single-title"><?php the_title() ?></h2>
@@ -8,4 +9,5 @@
             <?php get_template_part('templates/template', 'single-articles-category') ?>
         </div>
     </div>
+</div>
 <?php get_footer(); ?>
