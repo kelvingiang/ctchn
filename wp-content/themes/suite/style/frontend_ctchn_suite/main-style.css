@@ -27,6 +27,10 @@
   @media (max-width: 992px) {
     .about-content {
       min-height: 780px; } }
+  .about-content h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    margin-top: 2rem; }
   .about-content h3 {
     margin-top: 2rem;
     font-size: 1.5rem;
@@ -65,7 +69,7 @@
   margin-top: 2rem; }
   @media (max-width: 992px) {
     .page-head {
-      margin-top: 4.5rem; } }
+      margin-top: 4.3rem; } }
   .page-head h1 {
     font-size: 1.5rem;
     letter-spacing: 0.5rem;
@@ -90,6 +94,10 @@
   position: relative;
   border: 1px solid #eeeeee;
   border-radius: 2px; }
+  @media (max-width: 992px) {
+    .page-img {
+      width: 100%;
+      margin: 3px; } }
 .page-title {
   padding-bottom: 1rem;
   padding-left: 10px;
@@ -225,17 +233,6 @@
       background-color: #e2e5e7; }
 
 /* friend - link */
-.friend-link-head {
-  background-image: linear-gradient(0deg, rgba(255, 255, 255, 0.3) 50%, rgba(37, 156, 236, 0.568) 95%);
-  border-radius: 0.3rem;
-  font-size: 2.5rem;
-  margin-top: 2rem; }
-  .friend-link-head h1 {
-    font-size: 1.5rem;
-    letter-spacing: 0.5rem;
-    font-weight: bold;
-    padding: 1rem 1.5rem;
-    text-shadow: 2px 2px 5px #797878; }
 .friend-link-list {
   padding: 5px; }
   .friend-link-list li {
@@ -248,10 +245,10 @@
   font-weight: bold;
   display: block; }
   .friend-link-item a {
-    color: #2c9ac5;
+    color: #0145A9;
     text-decoration: none; }
   .friend-link-item a:hover {
-    color: #05688f; }
+    color: #4b83d8; }
 
 /* schedule */
 .schedule-head {

@@ -42,7 +42,7 @@ function getTranslate()
         "Industries Challenge" => '管理挑戰',
         "Industries Solution" => '解決方案',
         'Information Request' => '資料索取',
-        "Introduction" => "台灣商會簡介",
+        "Introduction" => "越南河內台灣商會簡介",
         //==== J
         'Join Digiwin' => '加入鼎捷',
 
@@ -78,7 +78,7 @@ function getTranslate()
         'Read More' => "更多",
         "Resources" => "有料資源",
         "Relate Post" => "相關文章", //Xiāngguān wénzhāng
-        "Rules" => "台灣商會規則 ",
+        "Rules" => "越南河內台灣商會章程",
         "Regency" => "位置", //Wèizhì
 
         //==== S
