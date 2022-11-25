@@ -109,11 +109,10 @@
 
     .header-language {
         @include Respond(md){
-            width: 100%;
+            width: 49%;
             display: flex;
             flex-direction: row;
             justify-content: flex-end;
-            margin: 10px 0px 10px 0;
             a{
                 text-align: center;
             }

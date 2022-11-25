@@ -22,6 +22,7 @@ class Controller_Main
             'controller_schedule' => true,
             'controller_member' => true,
             'controller_member_industry' => true,
+            'controller_checkin_setting' => get_current_user_id() == 1 ? true : false,
         );
 
         $this->_controller_options = get_option($this->_controller_name, $default_option);
@@ -35,6 +36,7 @@ class Controller_Main
         $this->page_schedule();
         $this->page_member();
         $this->page_member_industry();
+        $this->page_check_in_setting();
 
         add_action('admin_init', array($this, 'do_output_buffer'));
     }
@@ -71,6 +73,14 @@ class Controller_Main
         if ($this->_controller_options['controller_member_industry'] == true) {
             require_once(DIR_CONTROLLER . 'controller-member-industry.php');
             new Admin_Controller_Member_Industry();
+        }
+    }
+
+    public function page_check_in_setting()
+    {
+        if ($this->_controller_options['controller_checkin_setting'] == TRUE) {
+            require_once(DIR_CONTROLLER . 'controller_check_in_setting.php');
+            new Admin_Controller_Check_In_Setting();
         }
     }
 
