@@ -40,19 +40,24 @@ class Admin_Model_Check_In_Setting{
         global $wpdb;
         $table = $wpdb->prefix . 'member';
         foreach($arraydata as $item) {
-            $phone = $item[5] == null ? "" : $item[5];
-            $email = $item[6] == null ? "" : $item[6];
-            //data con thieu
+            $mobile = $item[8] == null ? "" : $item[8];
+            $phone = $item[9] == null ? "" : $item[9];
+            $tax = $item[10] == null ? "" : $item[10];
+            $email = $item[11] == null ? "" : $item[11];
             $data = array(
-                '',
-                '',
-                'company_cn' => $item[2],
-                'company_vn' => $item[3],
-                'contact' => $item[4],
+                'serial' => $item[1],
+                'company_vn' => $item[2],
+                'company_cn' => $item[3],
+                'address_vn' => $item[4],
+                'address_cn' => $item[5],
+                'contact' => $item[6],
+                'position' => $item[7],
+                'mobile' => $mobile,
+                'tax' => $tax,
                 'phone' => $phone,
                 'email' => $email,
-                'address_vn' => $item[7],
-                'address_cn' => $item[8],
+                'region' => $item[12],
+                'service' => $item[13],
             );
             $wpdb->insert($table, $data);
         }
@@ -65,17 +70,20 @@ class Admin_Model_Check_In_Setting{
         $exExport = new PHPExcel();
 
         // Tao cot title
-        //cot tao con thieu
         $exExport->setActiveSheetIndex(0)
-            ->setCellValue('A1', '')
-            ->setCellValue('B1', '')
+            ->setCellValue('A1', 'serial')
+            ->setCellValue('B1', 'company_vn')
             ->setCellValue('C1', 'company_cn')
-            ->setCellValue('D1', 'company_vn')
-            ->setCellValue('E1', 'contact')
-            ->setCellValue('F1', 'phone')
-            ->setCellValue('G1', 'email')
-            ->setCellValue('H1', 'address_vn')
-            ->setCellValue('I1', 'address_cn');
+            ->setCellValue('D1', 'address_vn')
+            ->setCellValue('E1', 'address_cn')
+            ->setCellValue('F1', 'contact')
+            ->setCellValue('G1', 'position')
+            ->setCellValue('H1', 'mobile')
+            ->setCellValue('I1', 'phone')
+            ->setCellValue('J1', 'tax')
+            ->setCellValue('K1', 'email')
+            ->setCellValue('L1', 'region')
+            ->setCellValue('M1', 'service');
         
         // Tao noi dung chen tu dong 2
         global $wpdb;
@@ -86,15 +94,19 @@ class Admin_Model_Check_In_Setting{
             $i = 2;
             foreach($row as $val){
                 $exExport->setActiveSheetIndex(0)
-                    ->setCellValueExplicit('A' . $i)
-                    ->setCellValue('B' . $i)
+                    ->setCellValueExplicit('A' . $i, $val['serial'], PHPExcel_Cell_DataType::TYPE_STRING)
+                    ->setCellValue('B' . $i, $val['company_vn'])
                     ->setCellValue('C' . $i, $val['company_cn'])
-                    ->setCellValue('D' . $i, $val['company_vn'])
-                    ->setCellValue('E' . $i, $val['contact'])
-                    ->setCellValue('F' . $i, $val['phone'], PHPExcel_Cell_DataType::TYPE_STRING)
-                    ->setCellValue('G' . $i, $val['email'])
-                    ->setCellValue('H' . $i, $val['address_cn'])
-                    ->setCellValue('I' . $i, $val['address_vn']);
+                    ->setCellValue('D' . $i, $val['address_vn'])
+                    ->setCellValue('E' . $i, $val['address_cn'])
+                    ->setCellValue('F' . $i, $val['contact'])
+                    ->setCellValue('G' . $i, $val['position'])
+                    ->setCellValueExplicit('H' . $i, $val['mobile'], PHPExcel_Cell_DataType::TYPE_STRING)
+                    ->setCellValueExplicit('I' . $i, $val['phone'], PHPExcel_Cell_DataType::TYPE_STRING)
+                    ->setCellValueExplicit('J' . $i, $val['tax'], PHPExcel_Cell_DataType::TYPE_STRING)
+                    ->setCellValue('K' . $i, $val['email'])
+                    ->setCellValue('L' . $i, $val['region'])
+                    ->setCellValue('M' . $i, $val['service']);
                 $i++;    
             }
         }
@@ -105,7 +117,7 @@ class Admin_Model_Check_In_Setting{
         //$objWriter->save($full_path);
 
         // Tao file excel va down truc tiep xuong client 
-        //$filename = date("YmdHis") . '_memberlist.xlsx';
+        $filename = date("YmdHis") . '_memberlist.xlsx';
         $objWriter = PHPExcel_IOFactory::createWriter($exExport, 'Excel2007');
         header('Content-Type: application/vnd.ms-excel');
         header("Content-Disposition: attachment;filename=$filename");

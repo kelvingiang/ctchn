@@ -39,6 +39,7 @@ class Admin_Controller_Check_In_Setting{
     //Function dung cho export
     public function exportMemberAction()
     {
+        require_once(DIR_MODEL . 'model-check-in-setting.php');
         $model = new Admin_Model_Check_In_Setting();
         $model->exportMember();
     }
@@ -71,6 +72,7 @@ class Admin_Controller_Check_In_Setting{
                 move_uploaded_file($file_tmp, ($path . $file_name));
 
                 $excelList = $path . $file_name;
+                require_once(DIR_MODEL . 'model-check-in-setting.php');
                 $model = new Admin_Model_Check_In_Setting();
                 $model->importMember($excelList);
 
