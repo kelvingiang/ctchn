@@ -34,6 +34,27 @@
             }
         }
     }
+    .header-name{
+        &-cn{
+            font: {
+                size: 1.4rem;
+                weight: bold;
+            }
+            letter-spacing: 1rem;
+            @include Respond(md){
+                display: none;
+            }
+            color: $head_title_color;
+        }
+        &-vn{
+            font-size: 1.2rem;
+            letter-spacing: 0rem;
+            @include Respond(md){
+                display: none;
+            }
+            color: $head_title_color;
+        }
+    }
     .show-on-scroll{
         display: none;
     }
@@ -54,11 +75,17 @@
     }
 
     .header-language {
-        margin-top: 10px;
-        margin-bottom: 10px;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
         a{
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
             text-decoration: none;
-            text-align: right;
+            text-align: center;
             font-size: 16px;
             font-weight: 400;
             color: $change_lang_color;
@@ -104,6 +131,31 @@
             margin-top: 0.2rem;
             width: 50px;
             height: 50px;
+        }
+    }
+
+    .header-name{
+        &-cn{
+            margin-left: 0.5rem;
+            margin-top: 0.5rem;
+            display: block;
+            font-size: 1rem;
+            font-weight: bold;
+            letter-spacing: 0.7rem;
+            color: $head_title_color;
+            @include Respond(sm){
+                display: none;
+            }
+        }
+        &-vn{
+            margin-left: 0.5rem;
+            display: block;
+            font-size: 0.5rem;
+            font-weight: bold;
+            color: $head_title_color;
+            @include Respond(sm){
+                display: none;
+            }
         }
     }
 

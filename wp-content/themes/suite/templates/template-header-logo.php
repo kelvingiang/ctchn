@@ -2,7 +2,8 @@
     <a href="<?php echo home_url(''); ?>">
         <img src="<?php echo get_image('ctchn_logo.png') ?>" title="ctchn_logo" alt="ctchn_logo"/>
     </a>
-    <?php get_template_part('templates/template', 'header-language') ?>
+    <label class="header-name-cn">越南河内台灣商會</label>
+    <label class="header-name-vn">Hiệp hội thương mại Đài Loan tại Hà Nội</label>
 </div>
 <script>
     var animationElements = document.querySelectorAll("#header-logo");
