@@ -14,7 +14,7 @@ class Admin_Model_Check_In_Setting{
         //$objReader->setReadDataOnly(true);
 
         // Load du lieu sang dang doi tuong
-        $objReader->load("$filename");
+        $objPHPExcel = $objReader->load("$filename");
         // Lay ra so trang
         $total_sheets = $objPHPExcel->getSheetCount();
         // Lay ra ten trang
@@ -40,27 +40,32 @@ class Admin_Model_Check_In_Setting{
         global $wpdb;
         $table = $wpdb->prefix . 'member';
         foreach($arraydata as $item) {
-            $mobile = $item[8] == null ? "" : $item[8];
-            $phone = $item[9] == null ? "" : $item[9];
-            $tax = $item[10] == null ? "" : $item[10];
-            $email = $item[11] == null ? "" : $item[11];
+            $mobile = $item[7] == null ? "" : $item[7];
+            $phone = $item[8] == null ? "" : $item[8];
+            $fax = $item[9] == null ? "" : $item[9];
+            $email = $item[10] == null ? "" : $item[10];
             $data = array(
-                'serial' => $item[1],
-                'company_vn' => $item[2],
-                'company_cn' => $item[3],
-                'address_vn' => $item[4],
-                'address_cn' => $item[5],
-                'contact' => $item[6],
-                'position' => $item[7],
+                'serial' => $item[0],
+                'company_vn' => $item[1],
+                'company_cn' => $item[2],
+                'address_vn' => $item[3],
+                'address_cn' => $item[4],
+                'contact' => $item[5],
+                'position' => $item[6],
                 'mobile' => $mobile,
-                'tax' => $tax,
                 'phone' => $phone,
+                'fax' => $fax,
                 'email' => $email,
-                'region' => $item[12],
-                'service' => $item[13],
+                'region' => $item[11],
+                'service' => $item[12],
             );
             $wpdb->insert($table, $data);
+
+            // echo '<pre>'; 
+            // print_r($data); 
+            // echo'</pre>';
         }
+       // die();
     }
 
     // =================== EXPORT ============================
@@ -103,7 +108,7 @@ class Admin_Model_Check_In_Setting{
                     ->setCellValue('G' . $i, $val['position'])
                     ->setCellValueExplicit('H' . $i, $val['mobile'], PHPExcel_Cell_DataType::TYPE_STRING)
                     ->setCellValueExplicit('I' . $i, $val['phone'], PHPExcel_Cell_DataType::TYPE_STRING)
-                    ->setCellValueExplicit('J' . $i, $val['tax'], PHPExcel_Cell_DataType::TYPE_STRING)
+                    ->setCellValueExplicit('J' . $i, $val['fax'], PHPExcel_Cell_DataType::TYPE_STRING)
                     ->setCellValue('K' . $i, $val['email'])
                     ->setCellValue('L' . $i, $val['region'])
                     ->setCellValue('M' . $i, $val['service']);
