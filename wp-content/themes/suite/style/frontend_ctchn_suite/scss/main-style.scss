@@ -384,8 +384,9 @@
 /* president */
 .president{
     &-item{
+        margin-left: 0.01rem;
         width: 100%;
-        //border-bottom: 1px #969696 solid;
+        border-bottom: 1px #d4d4d4 solid;
         label{
             font-size: 15px;
             padding: 10px 0 2px 10px;
