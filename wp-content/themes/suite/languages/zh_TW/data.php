@@ -26,6 +26,7 @@ function getTranslate()
         "Download" => "下載區",
 
         //==== E
+        'email' => '電子郵件地址',
         'Enterprise model success case' => '企業典範成功案例',
         "Event" => "活動",
         
@@ -55,7 +56,7 @@ function getTranslate()
         "Location" => "服務據點",
 
         //==== M
-        "Member" => "客戶",
+        "Member" => "會員",
 
         //==== N
         'News Center' => '新聞中心',

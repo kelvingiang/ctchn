@@ -552,7 +552,8 @@
       #menu-mobile-content #nav-mobile-menu .sf-mobile-menu li.menu-item-has-children > a::after {
         font-family: FontAwesome;
         content: "\f0d7";
-        padding-left: 1rem; }
+        padding-left: 1rem;
+        font-weight: 900; }
       #menu-mobile-content #nav-mobile-menu .sf-mobile-menu li {
         background-color: #b1b1b1;
         border-bottom: 1px #ccc solid;
