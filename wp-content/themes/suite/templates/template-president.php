@@ -18,7 +18,7 @@
                                 <?php } ?>  
                             </div>
                             <div class="page-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                                <a href="<?php //the_permalink(); ?>"><?php the_title() ?></a>
                             </div>
                             <div class="page-content-president">
                                 <span><?php the_content() ?></span>
@@ -50,7 +50,7 @@
                                 <?php } ?>  
                             </div>
                             <div class="page-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                                <a href="<?php //the_permalink(); ?>"><?php the_title() ?></a>
                             </div>
                             <div class="page-content-president">
                                 <span><?php the_content() ?></span>
