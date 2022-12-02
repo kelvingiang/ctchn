@@ -10,8 +10,9 @@
             foreach ($data as $key => $val) {
                 ?>
                 <div class="member-item" data_id = "<?php echo $itemCount++; ?>" >
-                    <div class="member-head <?php echo $itemCount; ?> " data_id = "<?php echo $itemCount; ?>" 
-                    onclick="showContent(<?php echo $itemCount++; ?>)">
+                    <!-- <div class="member-head <?php //echo $itemCount; ?> " data_id = "<?php //echo $itemCount; ?>" 
+                    onclick="showContent(<?php //echo ++$offset; ?>)"> -->
+                    <div class="member-head">
                         <div class="member-title">
                             <i><?php echo $val['serial'] . ' </i> ' . $val['company_cn'] ?>
                         </div>
@@ -27,7 +28,7 @@
                             <div class="col-lg-6"><label><?php echo _e('Full Name') . ' : ' . $val['contact'] ?></label></div>
                             <div class="col-lg-6"><label><?php echo _e('Regency') . ' : ' . $val['position'] ?></label></div>
                             <div class="col-lg-6"><label><?php echo _e('Phone') . ' : ' . $val['phone'] ?></label></div>
-                            <div class="col-lg-6"><label><?php echo _e('Email') . ' : ' . $val['email'] ?></label></div>
+                            <div class="col-lg-6"><label><?php echo _e('email') . ' : ' . $val['email'] ?></label></div>
                             <div class="col-lg-6"><label><?php echo _e('Service List') . ' : ' . $val['service'] ?></label></div>
                             <div class="col-lg-12">
                                 <?php 
@@ -72,57 +73,75 @@
     </svg>
 </div>
 <script type="text/javascript">
-    function showContent(id){
-        var ids = '.' + id;
-        var contentDisplay = jQuery(ids).siblings(".member-content").css('display');
-        if(contentDisplay == 'none'){
-            //dong cac content dang mo
-            jQuery(".member-content").css('display', 'none');
-            jQuery(ids).siblings(".member-content").slideDown('slow');
-            jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-down');
-            jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-up');     
-        } else {
-            //hien thi content duoc click
-            jQuery(ids).siblings(".member-content").slideUp('30');
-            jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-up');
-            jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-down');
-        }
-    }
+    //function dung de dong mo content khi goi ajax neu jQuery.on('click') khong hoat dong
+    //function showContent(id){
+        //     var ids = '.' + id;
+        //     var contentDisplay = jQuery(ids).siblings(".member-content").css('display');
+        //     if(contentDisplay == 'none'){
+        //         //dong cac content dang mo
+        //         jQuery(".member-content").css('display', 'none');
+        //         jQuery(ids).siblings(".member-content").slideDown('slow');
+        //         jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-down');
+        //         jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-up');     
+        //     } else {
+        //         //hien thi content duoc click
+        //         jQuery(ids).siblings(".member-content").slideUp('30');
+        //         jQuery(ids).children().children().children('i').removeClass('fas fa-angle-double-up');
+        //         jQuery(ids).children().children().children('i').addClass('fas fa-angle-double-down');
+        //     }
+    //}
+
     jQuery(document).ready(function() {
         jQuery('#member-load-more').click(function() {
             loadNewMember('<?php echo $cate ?>', '<?php echo $indus ?>', "#member-list");
             // var lastID = jQuery('.member-item:last-child').attr('data_id');
             // var offset = lastID;
             // jQuery.ajax({
-            //     url: 'http://localhost/ctchn/wp-content/themes/suite/ajax/load_new_member.php',
-            //     //url: $urls, 
-            //     type: "post",
-            //     dataType: 'json',
-            //     cache: false,
-            //     data: {
-            //         id : offset, //offset lay so luong member cuoi cung qua last id
-            //         indus : '<?php //echo $cate ?>',
-            //         indusName : '<?php //echo $indus ?>',
-            //         //action : 'member_loadmore',
-            //     },
-            //     success: function(res) {
-            //         if(res.status === 'done'){
-            //             jQuery("#member-list).append(res.html);
-            //             var $target = jQuery('html,body');
-            //             $target.animate({
-            //                 scrollTop: $target.height()
-            //             }, 2000);
-            //         }
-                    
-            //         //ẩn button khi không còn bài viết hiển thị 
-            //         if(offset == ''){
-            //             jQuery('#member-load-more').hide(); 
-            //         }
-            //     },
-            //     error: function (xhr) {
-            //         console.log(xhr.reponseText);
-            //     }
+                //     url: 'http://localhost/ctchn/wp-content/themes/suite/ajax/load_new_member.php',
+                //     //url: $urls, 
+                //     type: "post",
+                //     dataType: 'json',
+                //     cache: false,
+                //     data: {
+                //         id : offset, //offset lay so luong member cuoi cung qua last id
+                //         indus : '<?php //echo $cate ?>',
+                //         indusName : '<?php //echo $indus ?>',
+                //         //action : 'member_loadmore',
+                //     },
+                //     success: function(res) {
+                //         if(res.status === 'done'){
+                //             jQuery("#member-list").append(res.html);
+                //             var $target = jQuery('html,body');
+                //             $target.animate({
+                //                 scrollTop: $target.height()
+                //             }, 2000);
+                //         }
+                        
+                //         //ẩn button khi không còn bài viết hiển thị 
+                //         if('' === res){
+                //             jQuery('#member-load-more').hide(); 
+                //         }
+                //     },
+                //     error: function (xhr) {
+                //         console.log(xhr.reponseText);
+                //     }
             // });
+        })
+
+        jQuery("body").on("click", ".member-head", function() {
+            var contentDisplay = jQuery(this).siblings(".member-content").css('display');
+            if(contentDisplay == 'none'){
+                //dong cac content dang mo
+                jQuery(".member-content").css('display', 'none');
+                jQuery(this).siblings(".member-content").slideDown('slow');
+                jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-down');
+                jQuery(this).children().children().children('i').addClass('fas fa-angle-double-up');     
+            } else {
+                //hien thi content duoc click
+                jQuery(this).siblings(".member-content").slideUp('30');
+                jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-up');
+                jQuery(this).children().children().children('i').addClass('fas fa-angle-double-down');
+            }
         })
     })
 </script>  

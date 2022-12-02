@@ -29,6 +29,10 @@ function style_header_scripts()
                 wp_register_style('font-awesome-css', THEME_PART . '/style/aweone-all.min.css', array(), '1.0', 'all');
                 wp_enqueue_style('font-awesome-css');
 
+                //them vao 1/12/2022, chua su dung
+                // wp_register_style('font-awesome-min-css', THEME_PART . '/style/fontawesome.min.css', array(), '1.0', 'all');
+                // wp_enqueue_style('font-awesome-min-css');
+
                 wp_register_script('font-awesome-script', THEME_PART . '/js/aweone-all.min.js', array('jquery'));
                 wp_enqueue_script('font-awesome-script');
 

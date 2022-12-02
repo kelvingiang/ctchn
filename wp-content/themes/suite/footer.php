@@ -22,7 +22,14 @@
     jQuery(document).ready( function () {
         // Khoi tao chay slider skitter
         jQuery('.skitter-large').skitter({
+            thumbs: false,
+            theme: 'Minimalist',
+            numbers_align: 'center',
+            numbers: false,
+            progressbar: false,
             dots: false,
+            navigation: false,
+            preview: false,
             interval: 5000, //thoi gian chuyen man hinh
             label: true,
         });

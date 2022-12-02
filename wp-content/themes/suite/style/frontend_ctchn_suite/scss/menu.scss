@@ -117,9 +117,10 @@
                 flex-direction: column;
 
                 li.menu-item-has-children > a::after {
-                    font-family: FontAwesome;
+                    font-family: "Font Awesome 5 Pro";
                     content: "\f0d7";
                     padding-left: 1rem;
+                    //font-weight: 900;
                 }
 
                 li {

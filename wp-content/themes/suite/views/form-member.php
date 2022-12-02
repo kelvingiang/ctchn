@@ -57,7 +57,7 @@ if ((getParams('action')=='edit')) {
         </div>
         <div class="text-cell">
             <input type="text" name="txt_mem_company_cn" id="txt_mem_company_cn" class="type-text"  
-                value="<?php echo $data['company_vn']; ?>"  />
+                value="<?php echo $data['company_cn']; ?>"  />
         </div>
     </div>
     <!-- company_vn -->

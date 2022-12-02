@@ -675,7 +675,7 @@ function prefix_single_activity_loadmore(){
 add_action( 'wp_ajax_nopriv_member_loadmore', 'prefix_member_loadmore' );
 add_action( 'wp_ajax_member_loadmore', 'prefix_member_loadmore' );
 function prefix_member_loadmore(){
-    $offset = $_POST['id']; 
+    $offset = $_POST['id'];
     $industry = $_POST['indus'];
     $industryName = $_POST['indusName'];
 
@@ -686,8 +686,9 @@ function prefix_member_loadmore(){
         foreach ($data as $key => $val) {
             ?>
             <div class="member-item" data_id = "<?php echo ++$offset; ?>">
-            <div class="member-head <?php echo $offset; ?> " data_id = "<?php echo $offset; ?>" 
-                onclick="showContent(<?php echo $offset++; ?>)">
+            <!-- <div class="member-head <?php //echo $offset; ?> " data_id = "<?php //echo $offset; ?>" 
+                onclick="showContent(<?php //echo $offset++; ?>)"> -->
+                <div class="member-head">
                     <div class="member-title">
                         <i><?php echo $val['serial'] . ' </i> ' . $val['company_cn'] ?>
                     </div>

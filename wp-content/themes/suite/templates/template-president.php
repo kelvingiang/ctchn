@@ -18,7 +18,7 @@
                                 <?php } ?>  
                             </div>
                             <div class="page-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                                <a href="<?php //the_permalink(); ?>"><?php the_title() ?></a>
                             </div>
                             <div class="page-content-president">
                                 <span><?php the_content() ?></span>
@@ -51,7 +51,7 @@
                                 <?php } ?>  
                             </div>
                             <div class="page-title">
-                                <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>
+                                <a href="<?php //the_permalink(); ?>"><?php the_title() ?></a>
                             </div>
                             <div class="page-content-president">
                                 <span><?php the_content() ?></span>
@@ -62,6 +62,29 @@
             endif;
             wp_reset_postdata();
             wp_reset_query();        
+        ?>
+    </div>
+    <div class="group-border">
+        <div class="group-title"><label><?php _e('President') ?></label></div>
+        <?php
+            $wp_query_2 = new WP_Query(getPostTypePresident('president', -1));
+            if ($wp_query_2->have_posts()):
+                while ($wp_query_1->have_posts()):
+                    $wp_query_1->the_post();
+                    ?>
+                        <div class="row president-item">
+                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                <label><?php the_title(); ?></label>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-12">
+                                <label><?php the_content(); ?></label>
+                            </div>
+                        </div>
+                    <?php
+                endwhile;    
+            endif;
+            wp_reset_postdata();
+            wp_reset_query();
         ?>
     </div>
 </div>

@@ -111,6 +111,9 @@ function getTranslate()
         'Note' => '備註',
 
         'President' => '會長',
+        'Export Member' => '導出會員',
+        'Import Member' => '導入會員',
+        'Check In Setting' => '報到設定',
     );
     return array_merge($data);
 }

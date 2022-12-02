@@ -2,7 +2,8 @@
 if (!isset($_SESSION)) {
     session_start();
 }
-
+//========================= PHAN CUA THEME =========================
+// Khai bao hang so
 define('THEME_URL', get_stylesheet_directory());  // hang lay path thu muc theme
 define('THEME_PART', get_template_directory_uri());
 
@@ -19,7 +20,7 @@ require_once(HELPER . 'function-frontend.php');
 require_once(DIR_CLASS . 'rewrite.class.php');
 new Rewrite_Url();
 
-//================ CHANGE LANGUAGE =================
+//=========================== CHANGE LANGUAGE ==========================
 if (!isset($_SESSION['languages'])) {
     $_SESSION['languages'] = 'cn';
 }
@@ -53,7 +54,7 @@ function change_translate_text($translated)
 add_filter('gettext', 'change_translate_text', 20);
 add_theme_support('post-thumbnails');
 
-//================= COT MAC DINH CUA POST ====================
+//========================= COT MAC DINH CUA POST =============================
 // thay doi cac cot mac dinh cua post, cac cot home,language,setorder se duoc dung chung
 // nen ta khong can khai bao chung trong cac slider, news,... dung metabox
 add_filter('manage_posts_columns', 'set_custom_edit_columns');

@@ -27,7 +27,7 @@ function getTranslate()
         "Download" => "DownLoad",
 
         //==== E
-        "Email" => "Email",
+        "email" => "Email",
         "Event" => "Hoạt Động",
         'Enterprise model success case' => 'Mô Hình Doanh Nghiệp Thành Công',
 
@@ -58,7 +58,7 @@ function getTranslate()
         "Location" => "Trung Tâm Dịch Vụ",
 
         //==== M
-        'Member' => "Khách Hàng",
+        'Member' => "Thành Viên",
 
         //==== N
         'News Center' => 'Tin Tức',
