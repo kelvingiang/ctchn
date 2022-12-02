@@ -52,7 +52,7 @@
             loop: true,
             margin: 10,
             nav: true,
-            autoplay: true,
+            autoplay: false,
             auotplayTimeout: 5000,
             dots: false,
             autoplayHoverPause: true,

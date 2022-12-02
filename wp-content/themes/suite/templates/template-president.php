@@ -33,7 +33,8 @@
     </div>
     <div class="page-list">
         <?php
-            $wp_query_1 = new WP_Query(getPostTypePresident('president', -1,));
+             //getPostTypePresident('president', -1);
+            $wp_query_1 = new WP_Query(getPostTypePresident('president', -1));
             if ($wp_query_1->have_posts()):
                 while ($wp_query_1->have_posts()):
                     $wp_query_1->the_post();
