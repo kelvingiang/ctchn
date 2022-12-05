@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12" style="padding-top: 0.5rem;">
-        <div id="articles">
+        <div id="slider-articles">
             <div class="owl-carousel owl-theme">
                 <?php
                     $wp_query = new WP_Query(getPostTypeShowAtHome('post', 10, ''));
@@ -37,7 +37,7 @@
     jQuery(document).ready(function() {
         //so luong item hien thi thong qua responsive
         var count = 0;
-        bodyContainerWidth = jQuery("body").width();
+        bodyContainerWidth = jQuery("#slider-articles").width();
         if(bodyContainerWidth <= 500) {
             var count = 1;
         }else if(bodyContainerWidth <= 950) {
@@ -48,7 +48,7 @@
             var count = 4;
         }
 
-        jQuery('#articles .owl-carousel').owlCarousel({
+        jQuery('#slider-articles .owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
