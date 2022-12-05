@@ -2,9 +2,9 @@
   font-family: 'Times New Roman', Times, serif; }
 
 /*
-    This file use frontend
+    This file use frontend (page, template,..)
     Create date( dd-mm-yy ) : 17/10/2022
-    page, template,..
+    Last update( dd-mm-yy ) : 05/12/2022
 */
 .about-title {
   font-family: 'Times New Roman', Times, serif;
@@ -142,13 +142,6 @@
   .page-read-more a:hover {
     color: #839fee; }
 
-.home-title {
-  font-size: 25px;
-  font-weight: bold;
-  text-align: center;
-  color: #afaaaa;
-  padding-top: 2rem; }
-
 /* member */
 .group-border {
   display: flex;
@@ -189,8 +182,8 @@
     line-height: 40px;
     border-bottom: 1px solid #f7f2f2;
     cursor: pointer; }
-  .member-head:hover {
-    background-color: #f1f1f1; }
+    .member-head:hover {
+      background-color: #f1f1f1; }
   .member-title {
     position: absolute;
     left: 5px;
@@ -263,8 +256,8 @@
   line-height: 40px;
   border-top: 1px solid #f7f2f2;
   cursor: pointer; }
-.schedule-head:hover {
-  background-color: #e9eaeb; }
+  .schedule-head:hover {
+    background-color: #e9eaeb; }
 .schedule-title {
   position: absolute;
   left: 5px;
@@ -853,3 +846,5 @@
       font-size: 18px;
       font-weight: 300;
       color: white; }
+
+/*# sourceMappingURL=main-style.css.map */

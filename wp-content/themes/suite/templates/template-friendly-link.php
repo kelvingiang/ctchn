@@ -1,4 +1,4 @@
-<div class="col-xl-12 col-lg-12 col-md-12">
+<div class="col-xl-12 col-lg-12 col-md-12 friend-link">
     <ul class="friend-link-list">
     <?php 
         $wp_query = new WP_Query(getPostTypeFriendLink('friendly-link', -1));

@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <div class="container-fluid">
-    <?php get_template_part('templates/template', 'advertising') ?>
-    <div class="row">
+    <?php get_template_part('templates/template', 'slider-advertising') ?>
+    <div class="row single">
         <span class="single-head"><?php //echo get_the_date(); ?> | <?php //_e('By'); echo get_the_author() ?></span>
         <div>
             <h2 class="single-title"><?php the_title() ?></h2>

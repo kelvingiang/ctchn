@@ -1,4 +1,4 @@
-<div class="col-xl-12 col-lg-12 col-md-12">
+<div class="col-xl-12 col-lg-12 col-md-12 group">
     <div class="group-border">
         <?php
         require_once(DIR_MODEL . 'model-schedule-function.php');
@@ -22,21 +22,21 @@
         $ids = array();
         foreach ($output as $val) {
             $ids = $val['id'];
-        ?><div class="group-title"><label><?php echo $val['month'] ?></label></div><?php
-                                                                                            //dua theo ids, ta co dinh dang Array[0][column] => value
-                                                                                            foreach ($ids as $id) {
-                                                                                                $data1 = $model->getDataScheduleByID($id);
-                                                                                                //lay thoi gian dau cuoi
-                                                                                                if ($data1[0]['time']) {
-                                                                                                    $time = explode('-', $data1[0]['time']);
-                                                                                                    $vTimeStart = $time[0];
-                                                                                                    $vTimeEnd = $time[1];
-                                                                                                } else {
-                                                                                                    $vTimeStart = $data1[0]['timeStart'];
-                                                                                                    $vTimeEnd = $data1[0]['timeEnd'];
-                                                                                                }
-                                                                                            ?>
-                <div class="schedule-item">
+            ?><div class="group-title"><label><?php echo $val['month'] ?></label></div><?php
+            //dua theo ids, ta co dinh dang Array[0][column] => value
+            foreach ($ids as $id) {
+                $data1 = $model->getDataScheduleByID($id);
+                //lay thoi gian dau cuoi
+                if ($data1[0]['time']) {
+                    $time = explode('-', $data1[0]['time']);
+                    $vTimeStart = $time[0];
+                    $vTimeEnd = $time[1];
+                } else {
+                    $vTimeStart = $data1[0]['timeStart'];
+                    $vTimeEnd = $data1[0]['timeEnd'];
+                }
+                ?>
+                <div class="schedule schedule-item">
                     <div class="schedule-head">
                         <div class="schedule-title">
                             <div class="schedule-title-text"><?php echo $data1[0]['title'] ?></div>
@@ -47,7 +47,7 @@
                             </div>
                         </div>
                         <div class="schedule-icon">
-                                <i class="fas fa-angle-double-down"></i>
+                            <a class="show-icon"><i class="fas fa-angle-double-down"></i></a>
                         </div>
                     </div>
                     <div class="schedule-content">
@@ -55,9 +55,9 @@
                         <div><?php _e('Note') ?> :</b></label> <?php echo $data1[0]['note'] ?></div>
                     </div>
                 </div>
-        <?php
-                                                                                            }
-                                                                                        }
+                <?php
+            }
+        }
         ?>
     </div>
 </div>
@@ -71,13 +71,13 @@
             if (contentDisplay === 'none') {
                 jQuery(this).addClass('show');
                 jQuery(this).next(".schedule-content").slideDown('slow');
-                jQuery(this).children('div').children('i').removeClass('fas fa-angle-double-down');
-                jQuery(this).children('div').children('i').addClass('fas fa-angle-double-up');
+                jQuery(this).children().children().children('svg').removeClass('fas fa-angle-double-down');
+                jQuery(this).children().children().children('svg').addClass('fas fa-angle-double-up');
             } else {
                 jQuery(this).removeClass('show');
                 jQuery(this).next(".schedule-content").slideUp('80')
-                jQuery(this).children('div').children('i').removeClass('fas fa-angle-double-up');
-                jQuery(this).children('div').children('i').addClass('fas fa-angle-double-down');
+                jQuery(this).children().children().children('svg').removeClass('fas fa-angle-double-up');
+                jQuery(this).children().children().children('svg').addClass('fas fa-angle-double-down');
             }
         });
     });

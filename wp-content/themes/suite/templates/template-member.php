@@ -1,4 +1,4 @@
-<div class="group-border" id="member-list">
+<div class="group group-border" id="member-list">
     <div class="group-title" aria-current="true"><label><?php _e('Member') ?></label></div>
     <?php  
         require_once(DIR_MODEL . 'model-member-function.php');
@@ -9,7 +9,7 @@
         if (!empty($data)) {
             foreach ($data as $key => $val) {
                 ?>
-                <div class="member-item" data_id = "<?php echo $itemCount++; ?>" >
+                <div class="member member-item" data_id = "<?php echo $itemCount++; ?>" >
                     <!-- <div class="member-head <?php //echo $itemCount; ?> " data_id = "<?php //echo $itemCount; ?>" 
                     onclick="showContent(<?php //echo ++$offset; ?>)"> -->
                     <div class="member-head">
@@ -140,14 +140,14 @@
                 jQuery(this).addClass('show');
              
                 jQuery(this).siblings(".member-content").slideDown('slow');
-                jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-down');
-                jQuery(this).children().children().children('i').addClass('fas fa-angle-double-up');     
+                jQuery(this).children().children().children('svg').removeClass('fas fa-angle-double-down');
+                jQuery(this).children().children().children('svg').addClass('fas fa-angle-double-up');     
             } else {
                 //hien thi content duoc click
                 jQuery(this).removeClass('show');
                 jQuery(this).siblings(".member-content").slideUp('30');
-                jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-up');
-                jQuery(this).children().children().children('i').addClass('fas fa-angle-double-down');
+                jQuery(this).children().children().children('svg').removeClass('fas fa-angle-double-up');
+                jQuery(this).children().children().children('svg').addClass('fas fa-angle-double-down');
             }
         })
     })

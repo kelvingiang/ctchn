@@ -1,4 +1,4 @@
-<div>
+<div class="single">
     <h2 class="single-relate-title"><?php _e('Relate Post') ?></h2>
     <div class="hr3"></div>
     <div id="single-activity-list">

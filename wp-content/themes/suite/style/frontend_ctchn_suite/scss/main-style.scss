@@ -3,9 +3,9 @@
 }
 @import 'main-color.scss';
 /*
-    This file use frontend
+    This file use frontend (page, template,..)
     Create date( dd-mm-yy ) : 17/10/2022
-    page, template,..
+    Last update( dd-mm-yy ) : 05/12/2022
 */
 // #container {
 //     margin: 0 auto;
@@ -196,15 +196,13 @@
     }
 }
 
-.home{
-    &-title{
-        font-size: 25px;
-        font-weight: bold;
-        text-align: center;
-        color: $home_title_color;
-        padding-top: 2rem;
-    }
-}
+// .home-title{
+//     font-size: 25px;
+//     font-weight: bold;
+//     text-align: center;
+//     color: $home_title_color;
+//     padding-top: 2rem; 
+// }
 
 /* member */
 .group{
@@ -254,9 +252,9 @@
         line-height: 40px;
         border-bottom: 1px solid #f7f2f2;
         cursor:  pointer;
-    }
-    &-head:hover{
-        background-color: rgb(241, 241, 241);
+        &:hover{
+            background-color: rgb(241, 241, 241);
+        }
     }
     &-title{
         position: absolute;
@@ -359,11 +357,10 @@
         line-height: 40px;
        border-top: 1px solid #f7f2f2;
         cursor:  pointer;
+        &:hover{
+            background-color: $list_show;
+        }
     }    
-    &-head:hover{
-        background-color: $list_show;
-    }
-
     &-title{
         position: absolute;
         left: 5px;
@@ -379,7 +376,6 @@
         font-size: 15px;
         padding-left: 1.5rem;
     }
-
     &-icon{
         position: absolute;
         right: 10px;

@@ -1,4 +1,4 @@
-<div class="col-xl-12 col-lg-12 col-md-12">
+<div class="col-xl-12 col-lg-12 col-md-12 page">
     <div class="page-head"><h1></h1></div>
     <div class="page-list" id="articles-life-list">
         <?php 
