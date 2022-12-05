@@ -130,14 +130,21 @@
 
         jQuery("body").on("click", ".member-head", function() {
             var contentDisplay = jQuery(this).siblings(".member-content").css('display');
+            jQuery(".member-item").children('.member-head').removeClass('show');
+      
             if(contentDisplay == 'none'){
                 //dong cac content dang mo
                 jQuery(".member-content").css('display', 'none');
+
+
+                jQuery(this).addClass('show');
+             
                 jQuery(this).siblings(".member-content").slideDown('slow');
                 jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-down');
                 jQuery(this).children().children().children('i').addClass('fas fa-angle-double-up');     
             } else {
                 //hien thi content duoc click
+                jQuery(this).removeClass('show');
                 jQuery(this).siblings(".member-content").slideUp('30');
                 jQuery(this).children().children().children('i').removeClass('fas fa-angle-double-up');
                 jQuery(this).children().children().children('i').addClass('fas fa-angle-double-down');

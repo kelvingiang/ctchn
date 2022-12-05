@@ -1,6 +1,6 @@
 <div class="row">
-    <div class="col-xl-12 col-lg-12 col-md-12" style="padding-top: 2rem;">
-        <div id="president-articles">
+    <div class="col-xl-12 col-lg-12 col-md-12" style="padding-top: 0.5rem;">
+        <div id="articles">
             <div class="owl-carousel owl-theme">
                 <?php
                     $wp_query = new WP_Query(getPostTypeShowAtHome('post', 10, ''));
@@ -48,7 +48,7 @@
             var count = 4;
         }
 
-        jQuery('#president-articles .owl-carousel').owlCarousel({
+        jQuery('#articles .owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,

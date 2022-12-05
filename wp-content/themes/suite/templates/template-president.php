@@ -1,5 +1,5 @@
 <div class="col-xl-12 col-lg-12 col-md-12">
-    <div class="page-list" style="background-color: #efefef;">
+    <div class="page-list president-list" style="background-color: #efefef;">
         <?php
             $wp_query = new WP_Query(getPostTypePresidentCurrent('president', -1));
             if ($wp_query->have_posts()):
@@ -18,11 +18,10 @@
                                 <?php } ?>  
                             </div>
                             <div class="page-title">
-                                <a href="<?php //the_permalink(); ?>"><?php the_title() ?></a>
+                                <h5><?php the_title() ?></h5>
+                                <label><?php the_content() ?></label>
                             </div>
-                            <div class="page-content-president">
-                                <span><?php the_content() ?></span>
-                            </div>
+                            
                         </div>    
                     <?php
                 endwhile;
@@ -31,7 +30,7 @@
             wp_reset_query();        
         ?>
     </div>
-    <div class="page-list">
+    <div class="page-list president-list">
         <?php
              //getPostTypePresident('president', -1);
             $wp_query_1 = new WP_Query(getPostTypePresident('president', -1));
@@ -51,11 +50,10 @@
                                 <?php } ?>  
                             </div>
                             <div class="page-title">
-                                <a href="<?php //the_permalink(); ?>"><?php the_title() ?></a>
+                                <h5><?php the_title() ?></h5>
+                                <label><?php the_content() ?></label>
                             </div>
-                            <div class="page-content-president">
-                                <span><?php the_content() ?></span>
-                            </div>
+                          
                         </div>    
                     <?php
                 endwhile;

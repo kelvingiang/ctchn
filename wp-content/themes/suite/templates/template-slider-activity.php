@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-xl-12 col-lg-12 col-md-12" style="padding-top: 2rem;">
-        <div id="president-activity">
+        <div id="activity">
             <div class="owl-carousel owl-theme">
                 <?php
                     $wp_query = new WP_Query(getPostTypeShowAtHome('activity', 10, ''));
@@ -14,7 +14,7 @@
                                         // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
                                         $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
                                         if($url != '') {?>
-                                            <img src="<?php echo $url[0]; ?>" class="w-100 img" title="<?php the_title() ?>"/>
+                                            <img src="<?php echo $url[0]; ?>" class="img" title="<?php the_title() ?>"/>
                                         <?php } else{ ?>
                                             <img src="<?php echo PART_IMAGES . 'no-image.jpg'; ?>" class="w-100 img" title="<?php the_title() ?>" />
                                         <?php } ?>  
@@ -48,7 +48,7 @@
             var count = 4;
         }
 
-         jQuery('#president-activity .owl-carousel').owlCarousel({
+         jQuery('#activity .owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,
@@ -57,8 +57,8 @@
             dots: false,
             autoplayHoverPause: true,
             items: count,
-            navText: ["<i class='fas fa-chevron-circle-left nav-button act-left'></i>",
-                "<i class='fas fa-chevron-circle-right nav-button act-right'></i>"
+            navText: ["<i class='fas fa-chevron-circle-left nav-button art-left'></i>",
+                "<i class='fas fa-chevron-circle-right nav-button art-right'></i>"
             ],
         });
     })

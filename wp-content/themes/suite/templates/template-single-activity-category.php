@@ -25,10 +25,10 @@
                             // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
                             $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
                             if($url != ''){ ?>
-                                <div class="col-xl-4 col-lg-4 col-md-12 single-relate-image-col">
+                                <div class="col-xl-3 col-lg-3 col-md-12 single-relate-image-col">
                                     <img src="<?php echo $url[0]; ?>" class="single-relate-image" title="<?php the_title(); ?>" />
                                 </div>
-                                <div class="col-xl-8 col-lg-8 col-md-12 single-relate-content">
+                                <div class="col-xl-9 col-lg-9 col-md-12 single-relate-content">
                                     <?php the_content(); ?>
                                 </div>
                                 <hr class="hr2">

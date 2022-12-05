@@ -8,16 +8,16 @@
             <label><?php //_e('Email'); ?><i class="fas fa-envelope"></i> : <?php echo get_option('about_email') ?></label>
         </div>
         <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
-            <div>
+            <!-- <div>
                 <label>
-                    <i><?php _e('Online User'); ?> :</i>
+                    <i><?php //_e('Online User'); ?> :</i>
                 </label>
             </div>
             <div>
                 <label>
-                    <i><?php _e('Total User'); ?> :</i>
+                    <i><?php //_e('Total User'); ?> :</i>
                 </label>
-            </div>
+            </div> -->
         </div>
         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 copyright">
             <a href="http://digiwin.com.vn" target="blank">

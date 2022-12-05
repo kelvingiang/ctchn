@@ -57,8 +57,8 @@
             dots: false,
             autoplayHoverPause: true,
             items: count,
-            navText: ["<i class='fas fa-chevron-circle-left nav-button adv-left'></i>",
-                "<i class='fas fa-chevron-circle-right nav-button adv-right'></i>"
+            navText: ["<i class='fas fa-chevron-circle-left nav-button art-left'></i>",
+                "<i class='fas fa-chevron-circle-right nav-button art-right'></i>"
             ],
         });
     })

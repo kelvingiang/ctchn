@@ -1,6 +1,6 @@
 <div class="group-border">
     <div class="group-title">
-        <a href="<?php echo home_url('members') ?>"><?php _e("Industries") ?></a>
+        <label><?php _e("Industries") ?></label>
     </div>
         <div class="member-industry-list">
             <?php 

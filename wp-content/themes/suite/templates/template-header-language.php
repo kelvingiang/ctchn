@@ -1,10 +1,10 @@
 <div class="header-language"> 
     <a href="" class="link-languages" data-type="cn" onclick="changeLanguages(this)">
         中 文
-    </a> |
+    </a> 
     <a href="" class="link-languages" data-type="vn" onclick="changeLanguages(this)">
         Tiếng Việt
-    </a> |
+    </a> 
     <a href="" class="link-languages" data-type="en" onclick="changeLanguages(this)">
         English
     </a>
