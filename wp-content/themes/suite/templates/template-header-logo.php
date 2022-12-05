@@ -3,7 +3,7 @@
         <img src="<?php echo get_image('ctchn_logo.png') ?>" title="ctchn_logo" alt="ctchn_logo"/>
     </a>
     <label class="header-name-cn">越南河内台灣商會</label>
-    <label class="header-name-vn"> The Council of Taiwanese Chambers of Commerce in Vietnam, Hanoi Branch</label>
+    <label class="header-name-vn">The Council of Taiwanese Chambers of Commerce in Vietnam, Hanoi Branch</label>
 </div>
 <script>
     var animationElements = document.querySelectorAll("#header-logo");

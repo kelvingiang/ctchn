@@ -6,6 +6,6 @@
     </div>
     <div>
         <label class="header-name-cn">越南河内台灣商會</label>
-        <label class="header-name-vn">Hiệp hội thương mại Đài Loan tại Hà Nội</label>
+        <label class="header-name-vn">The Council of Taiwanese Chambers of Commerce in Vietnam, Hanoi Branch</label>
     </div>
 </div>
