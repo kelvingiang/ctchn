@@ -25,7 +25,7 @@
                 if (res.status === 'ok') {
                     //window.location = location.href;
                     //location.reload();
-                    window.location = 'http://localhost/ctchn/';
+                    window.location = '<?php echo get_option('home') ?>';
                     //jQuery('.link-languages').addClass('lang-color');
                 }
             }

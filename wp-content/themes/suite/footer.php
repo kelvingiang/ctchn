@@ -44,6 +44,11 @@
             // load them du lieu khi gan den footer
             //displayElements();  
 
+            // phan show hinh anh khi re chuot xuong toi
+            if(document.querySelector('.animation-item')) {
+                animationShow();
+            }
+
             // Phan an hien header trong mobile
             var currentScrollPos = window.pageYOffset;
             if(prevScrollpos > currentScrollPos) {
@@ -54,6 +59,28 @@
             prevScrollpos = currentScrollPos;
         }
     });
+</script>
+<script>
+    var myAnimationElements = document.querySelectorAll('.animation-item');
+    // tao hieu ung khi cuon noi dung trang web
+    function myCheck1(el){
+        // lay vi tri top va bottom cua element
+        var rect = el.getClientRects()[0];
+        // xac dinh do cao man hinh
+        var heiscre = window.innerHeight;
+        if(!(rect.bottom < 0 || rect.top > heiscre)) {
+            el.classList.add('animation-show');
+        }
+    }
+    function animationShow(){
+        //lay tat ca cac doi tuong co class .show-on-scroll
+        //var animationElements = document.querySelectorAll('.show-on-scroll')
+        //chay vong lap de them class
+        myAnimationElements.forEach((el) => {
+            myCheck1(el);
+        });
+        //animationElements.myCheck1();
+    }
 </script>
 </body>
 </html>
