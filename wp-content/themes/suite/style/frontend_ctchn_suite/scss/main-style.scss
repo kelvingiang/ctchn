@@ -572,6 +572,9 @@
 .president-list{
     .page-img{
         margin: 1rem;
+        @include Respond(md){
+            margin: 0;
+        }
     }
     h5{
         font-size: 1.2rem;

@@ -1,7 +1,4 @@
 <?php
-
-use function PHPSTORM_META\type;
-
 define('WP_USE_THEMES', false);
 require('../../../../wp-load.php');
 
@@ -13,6 +10,8 @@ require('../../../../wp-load.php');
 //     $_SESSION['languages'] = $_POST['type'];
 // }
 // $respone = array('status' => 'ok'); 
+
+$response = array('status' => 'error');
 
 if(isset($_POST)) {
     $_SESSION['languages'] = $_POST['type'];

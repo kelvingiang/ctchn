@@ -417,6 +417,9 @@
 
 .president-list .page-img {
   margin: 1rem; }
+  @media (max-width: 992px) {
+    .president-list .page-img {
+      margin: 0; } }
 .president-list h5 {
   font-size: 1.2rem;
   color: #666; }
