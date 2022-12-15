@@ -1,4 +1,5 @@
 <div class="col-xl-12 col-lg-12 col-md-12 page">
+    <!-- current president -->
     <div class="page-list president-list" style="background-color: #efefef;">
         <?php
             $wp_query = new WP_Query(getPostTypePresidentCurrent('president', -1));
@@ -30,6 +31,7 @@
             wp_reset_query();        
         ?>
     </div>
+    <!-- president -->
     <div class="page-list president-list">
         <?php
              //getPostTypePresident('president', -1);
@@ -62,7 +64,8 @@
             wp_reset_query();        
         ?>
     </div>
-    <div class=" group group-border">
+    <!-- president no image -->
+    <div class="group group-border">
         <div class="group-title"><label><?php _e('President') ?></label></div>
         <?php
             $wp_query_2 = new WP_Query(getPostTypePresident('president', -1));

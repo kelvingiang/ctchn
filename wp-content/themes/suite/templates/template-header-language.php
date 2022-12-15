@@ -17,9 +17,7 @@
             url: '<?php echo get_template_directory_uri() . '/ajax/change_languages.php' ?>',
             dataType: 'json',
             type: 'post',
-            data: {
-                type: type
-            },
+            data: {type: type},
             success: function(res) {
                 // alert(res.status);
                 if (res.status === 'ok') {

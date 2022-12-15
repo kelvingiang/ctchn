@@ -25,11 +25,11 @@
                             <div class="col-lg-12"><label><?php echo $val['company_vn'] ?></label></div>
                             <div class="col-lg-12"><label><?php echo $val['address_cn'] ?></label></div>
                             <div class="col-lg-12"><label><?php echo $val['address_vn'] ?></label></div>
-                            <div class="col-lg-6"><label><?php echo _e('Full Name') . ' : ' . $val['contact'] ?></label></div>
-                            <div class="col-lg-6"><label><?php echo _e('Regency') . ' : ' . $val['position'] ?></label></div>
-                            <div class="col-lg-6"><label><?php echo _e('Phone') . ' : ' . $val['phone'] ?></label></div>
-                            <div class="col-lg-6"><label><?php echo _e('email') . ' : ' . $val['email'] ?></label></div>
-                            <div class="col-lg-6"><label><?php echo _e('Service List') . ' : ' . $val['service'] ?></label></div>
+                            <!-- <div class="col-lg-6"><label><?php //echo _e('Full Name') . ' : ' . $val['contact'] ?></label></div>
+                            <div class="col-lg-6"><label><?php //echo _e('Regency') . ' : ' . $val['position'] ?></label></div>
+                            <div class="col-lg-6"><label><?php //echo _e('Phone') . ' : ' . $val['phone'] ?></label></div>
+                            <div class="col-lg-6"><label><?php //echo _e('email') . ' : ' . $val['email'] ?></label></div>
+                            <div class="col-lg-6"><label><?php //echo _e('Service List') . ' : ' . $val['service'] ?></label></div> -->
                             <div class="col-lg-12">
                                 <?php 
                                     global $wpdb;

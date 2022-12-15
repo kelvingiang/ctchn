@@ -200,6 +200,7 @@ if ((getParams('action')=='edit')) {
         </div>
     </div>
     <div style="clear: both"></div>
+    <!-- note -->
     <div class="meta-row">
         <div class="title-cell">
             <label><?php echo __('Note'); ?></label>

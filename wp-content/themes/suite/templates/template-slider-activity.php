@@ -48,7 +48,7 @@
             var count = 4;
         }
 
-         jQuery('#slider-activity .owl-carousel').owlCarousel({
+        jQuery('#slider-activity .owl-carousel').owlCarousel({
             loop: true,
             margin: 10,
             nav: true,

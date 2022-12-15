@@ -3,6 +3,7 @@
 define('WP_USE_THEMES', false);
 require('../../../../wp-load.php');
 
+// code chua hoan chinh
 $offset = $_POST['id']; 
 $industry = $_POST['indus'];
 $industryName = $_POST['indusName'];

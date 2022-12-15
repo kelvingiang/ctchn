@@ -26,6 +26,6 @@
         </div>
     </div>
 </footer>
-<div id="back-top-wrapper" >
+<div id="back-top-wrapper">
     <a id="back-top"><i class="fas fa-chevron-circle-up"></i></a>
 </div>

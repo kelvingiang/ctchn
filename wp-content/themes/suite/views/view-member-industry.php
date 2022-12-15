@@ -81,7 +81,7 @@ if(getParams('action') == 'edit' && !empty(getParams('id'))) {
                         }
                         ?>
                         <?php if (!$flag) { ?>
-                            <a   onclick="myFunction('<?php echo __('do you sure to delete this industry ?') ?>', 'del', 
+                            <a onclick="myFunction('<?php echo __('Do you sure to delete this industry ?') ?>', 'del', 
                             <?php echo $val['ID'] ?>)"style="color: red" > <?php _e('Delete') ?></a>
                     <?php } ?>    
                     </div>

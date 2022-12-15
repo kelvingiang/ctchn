@@ -14,13 +14,13 @@ if(getParams('msg') == 1){
 ?>
 <div class="wrap">
      <h2 style="font-weight: bold">
-         <?php echo esc_html__($lbl); ?>
-         <a href ="<?php echo esc_url($linkAdd); ?>"  class ="add-new-h2"><?php  echo esc_html__($lblAdd); ?></a>
+        <?php echo esc_html__($lbl); ?>
+        <a href ="<?php echo esc_url($linkAdd); ?>"  class ="add-new-h2"><?php  echo esc_html__($lblAdd); ?></a>
      </h2>
      <?php echo @$msg; ?>
      <form action ="" method="post" name="<?php echo $page; ?>" id="<?php echo $page; ?>">
-         <?php $dataList->search_box(__('Search'), 'search_id') ?>
-         <?php  $dataList->views(); ?>
-         <?php $dataList->display(); ?>
+        <?php $dataList->search_box(__('Search'), 'search_id') ?>
+        <?php  $dataList->views(); ?>
+        <?php $dataList->display(); ?>
      </form>
 </div>

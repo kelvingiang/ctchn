@@ -9,7 +9,9 @@
             $data = $model->getDataIndustry();
             foreach ($data as $key => $val) { ?>
             <li>
-                <a class="member-industry-item" href="<?php echo home_url('members') . '/industry/' . $val['ID'] ?>"><?php echo $val['name'] ?></a>  
+                <a class="member-industry-item" href="<?php echo home_url('members') . '/industry/' . $val['ID'] ?>">
+                    <?php echo $val['name'] ?>
+                </a>  
             </li>
         <?php } ?>
     </div>

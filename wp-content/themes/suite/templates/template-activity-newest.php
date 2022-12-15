@@ -16,7 +16,7 @@
                                 <?php 
                                 // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
                                 $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
-                                if($url != '') {?>
+                                if($url != '') { ?>
                                     <img src="<?php echo $url[0]; ?>" class="w-100 img" />
                                 <?php } else{ ?>
                                     <img src="<?php echo PART_IMAGES . 'no-image.jpg'; ?>" class="w-100 img" />

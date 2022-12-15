@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <div class="container-fluid">
   <div class="row">
-      <?php get_template_part('templates/template', 'articles-life'); ?>
+    <?php get_template_part('templates/template', 'articles-life'); ?>
   </div>
 </div>
 <?php get_footer();

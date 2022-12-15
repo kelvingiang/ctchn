@@ -30,7 +30,7 @@ if ($param['action'] == 'edit') {
 
     <form action="" method="post" enctype="multipart/form-data" id="f1" name="f1">
         <input name="id" value="<?php echo $param['id'] ?>" type="hidden">
-
+        <!-- title -->
         <div class="row-one-column">
             <div class="title-cell">
                 <label><?php echo __('Title') ?></label>
@@ -40,7 +40,7 @@ if ($param['action'] == 'edit') {
                 <input type="text" class="type-text" id='title' name='title' class="my-input" value="<?php echo $vTitle ?>" />
             </div>
         </div>
-
+        <!-- date -->
         <div class="row-one-column">
             <div class="title-cell">
                 <label><?php echo __('Date'); ?></label>
@@ -51,7 +51,7 @@ if ($param['action'] == 'edit') {
                 <input type="text" class="type-date" id='dayOfWeek' name='weekdays' value="<?php echo $vWeekdays ?>" />
             </div>
         </div>
-
+        <!-- time -->
         <div class="row-one-column">
             <div class="title-cell">
                 <label><?php echo __('Time')  ?></label>
@@ -62,7 +62,7 @@ if ($param['action'] == 'edit') {
                 <input type="text" id='timeEnd' name='timeEnd' class="type-time" maxlength="5" value="<?php echo $vTimeEnd ?>" />
             </div>
         </div>
-
+        <!-- place -->
         <div class="row-one-column">
             <div class="title-cell">
                 <label><?php echo __('地點')  ?></label>
@@ -71,7 +71,7 @@ if ($param['action'] == 'edit') {
                 <input type="text" class="type-text" id='place' name='place' class="my-input" value="<?php echo $vPlace ?>" />
             </div>
         </div>
-
+        <!-- note -->
         <div class="row-one-column">
             <div class="title-cell">
                 <label><?php echo __('備註')  ?></label>
@@ -82,9 +82,7 @@ if ($param['action'] == 'edit') {
         </div>
         <div class="button-space ">
             <button type="submit" name="submit" id='submit' class="button button-primary"><?php _e('Submit') ?></button>
-
         </div>
-
     </form>
 
 </div>
