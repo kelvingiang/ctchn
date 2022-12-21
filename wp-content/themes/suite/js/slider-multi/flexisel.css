@@ -89,28 +89,63 @@ root {
     max-height:150px;
     border-radius: 3px; */
 }
-.nbs-flexisel-item img:hover {
+/* .nbs-flexisel-item img:hover {
     opacity: 0.5;
-}
+} */
 /*** Navigation ***/
 
 .nbs-flexisel-nav-left,
 .nbs-flexisel-nav-right {
-    width: 22px;
-    height: 22px; 
+    /* width: 22px;
+    height: 22px;  */
     position: absolute;
     cursor: pointer;
-    z-index: 100;
+    /* z-index: 100;
     margin-top: 0%;
-    opacity: 0.5;
+    opacity: 0.5; */
+
+    /* them vao ngay 21/12/2022 */
+    padding: 1px 7px;
+    border-radius: 25px;
+    -moz-border-radius: 25px;
+    -webkit-border-radius: 25px; 
+    z-index: 4;
+    top: 50%;
+    transform: translateY(-55%);   
+    background: #e1e1e1;
+    color: #fff;  
 }
 
 .nbs-flexisel-nav-left {
     left: 10px;
-    background: url(./images/button-previous.png) no-repeat;
+    /* background: url(./images/button-previous.png) no-repeat; */
+}
+
+/* them vao ngay 21/12/2022 */
+.nbs-flexisel-nav-left:before {
+    content: "\f053";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: bold;
+    padding-right: 1px;
+}
+/* them vao ngay 21/12/2022 */
+.nbs-flexisel-nav-left.disabled {
+    opacity: 0.5;
 }
 
 .nbs-flexisel-nav-right {
     right: 5px;
-    background: url(./images/button-next.png) no-repeat;
+    /* background: url(./images/button-next.png) no-repeat; */
+}
+
+/* them vao ngay 21/12/2022 */
+.nbs-flexisel-nav-right:before {
+    content: "\f054";
+    font-family: "Font Awesome 5 Pro";
+    font-weight: bold;
+    padding-right: 1px;
+}
+/* them vao ngay 21/12/2022 */
+.nbs-flexisel-nav-right.disabled {
+    opacity: 0.5;
 }
