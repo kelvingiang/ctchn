@@ -17,7 +17,8 @@ root {
     clear:both;
 }
 
-#flexisel{
+/* them ngay 21/12/2022 */
+#flexisel, #slider-single-image{
     display:none;
     
 }
@@ -36,6 +37,7 @@ root {
     padding:0px;
     list-style-type:none;   
     text-align:center;  
+    overflow: auto;
 }
 .nbs-flexisel-title{
     margin-top: 10px;
@@ -46,19 +48,20 @@ root {
     overflow:hidden;
     float:left;
     width:100%;
-    background:#FFFFFF;
-    background: #FFFFFF -moz-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* FF3.6+ */
-    background: #FFFFFF -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#FFFFFF)); /* Chrome,Safari4+ */
-    background: #FFFFFF -webkit-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* Chrome10+,Safari5.1+ */
-    background: #FFFFFF -o-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* Opera11.10+ */
-    background: #FFFFFF -ms-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* IE10+ */
-    background: #FFFFFF linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* W3C */
-    border:1px solid #ccc;
+    /*background:#FFFFFF;
+    background: #FFFFFF -moz-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%);*/ /* FF3.6+ */
+    /*background: #FFFFFF -webkit-gradient(linear, left top, left bottom, color-stop(0%,#FFFFFF), color-stop(100%,#FFFFFF)); /* Chrome,Safari4+ */
+    /*background: #FFFFFF -webkit-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* Chrome10+,Safari5.1+ */
+    /*background: #FFFFFF -o-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* Opera11.10+ */
+    /*background: #FFFFFF -ms-linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* IE10+ */
+    /*background: #FFFFFF linear-gradient(top, #fcfcfc 0%, #FFFFFF 100%); /* W3C */
+    /* border:1px solid #ccc; 
     border-radius:5px;
     -moz-border-radius:5px;
-    -webkit-border-radius:5px;  
+    -webkit-border-radius:5px;    */
 
-
+    /* them ngay 21/12/2022 */
+    position: relative;
 }
 
 .nbs-flexisel-item {
@@ -68,9 +71,13 @@ root {
     cursor:pointer;
     position:relative;
     line-height:0px;
-    height: 180px;
-    border-left: 1px solid #ddd;
-    background-color:#ededed;
+    /* height: 180px;
+    border-left: 1px solid #ddd; 
+    background-color:#ededed;  */
+
+    /* them ngay 21/12/2022 */
+    overflow: visible;
+    height: 100%;
 }
 .nbs-flexisel-item img {
     width: 100%;
@@ -78,9 +85,9 @@ root {
     position: relative;
     margin-top: 10px;
     margin-bottom: 10px;
-    max-width:200px;
+    /* max-width:200px;
     max-height:150px;
-    border-radius: 3px;
+    border-radius: 3px; */
 }
 .nbs-flexisel-item img:hover {
     opacity: 0.5;

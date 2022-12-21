@@ -16,6 +16,7 @@ class Meta_box_Main
             'meta_box_website' => TRUE,
             'meta_box_current' => TRUE,
             'meta_box_show_at_home' => TRUE,
+            'meta_box_image' => TRUE,
         );
 
         $this->_controller_options = get_option($this->_controller_name, $default_option);
@@ -27,6 +28,7 @@ class Meta_box_Main
         $this->meta_box_website();
         $this->meta_box_current();
         $this->meta_box_show_at_home();
+        $this->meta_box_image();
 
 
         add_action('admin_init', array($this, 'do_output_buffer'));
@@ -86,6 +88,14 @@ class Meta_box_Main
         if ($this->_controller_options['meta_box_show_at_home'] == true) {
             require_once(DIR_META_BOX . 'metabox-home.php');
             new Meta_Box_Home();
+        }
+    }
+
+    public function meta_box_image()
+    {
+        if ($this->_controller_options['meta_box_image'] == true) {
+            require_once(DIR_META_BOX . 'metabox-image.php');
+            new Meta_Box_Image();
         }
     }
 

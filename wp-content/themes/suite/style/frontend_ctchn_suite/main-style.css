@@ -376,6 +376,11 @@
       -moz-transform: scale3d(1, 1, 1);
       -o-transform: scale3d(1, 1, 1);
       -ms-transform: scale3d(1, 1, 1); }
+  .single .alignnone {
+    overflow: hidden;
+    border: 1px solid #eeeeee;
+    box-shadow: 2px 2px 5px 2px #c4c2c2;
+    border-radius: 5px; }
 
 /* img - type */
 .img-type, .single-relate-image, .img, .img-president {

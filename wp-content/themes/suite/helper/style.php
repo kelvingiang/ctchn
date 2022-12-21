@@ -51,7 +51,7 @@ function style_header_scripts()
                 wp_enqueue_script('jquery.skitter-js');
 
 
-                //==== SLIDER FOR MULTY ITEMS =====
+                //============== SLIDER FOR MULTY ITEMS USE OWL CAROUSEL ===============
                 wp_register_style('owl-css', THEME_PART . '/js/slider-owl/css/owl.carousel.css', array(), '1.0', 'all');
                 wp_enqueue_style('owl-css');
 
@@ -103,15 +103,15 @@ function style_header_scripts()
                 // wp_enqueue_script('mobile.customized-js');
                 //        
                 //        
-                //==== MULTY SLIDER============================================
-                // wp_register_style('flexisel-style', THEME_PART . '/js/slider-multi/flexisel.css', array(), '1.0', 'all');
-                // wp_enqueue_style('flexisel-style');
+                //================= MULTY SLIDER USE FLEXISEL ==================
+                wp_register_style('flexisel-style', THEME_PART . '/js/slider-multi/flexisel.css', array(), '1.0', 'all');
+                wp_enqueue_style('flexisel-style');
 
-                // wp_register_script('flexisel-js', THEME_PART . '/js/slider-multi/jquery.flexisel.js', array('jquery'), '1.0.0'); // Custom scripts
-                // wp_enqueue_script('flexisel-js');
+                wp_register_script('flexisel-js', THEME_PART . '/js/slider-multi/jquery.flexisel.js', array('jquery'), '1.0.0'); // Custom scripts
+                wp_enqueue_script('flexisel-js');
 
-                // wp_register_script('jcarousel-js', THEME_PART . '/js/jquery.jcarousellite-1.0.1.js', array('jquery'), '1.0.0'); // Custom scripts
-                // wp_enqueue_script('jcarousel-js');
+                wp_register_script('jcarousel-js', THEME_PART . '/js/jquery.jcarousellite-1.0.1.js', array('jquery'), '1.0.0'); // Custom scripts
+                wp_enqueue_script('jcarousel-js');
 
 
                 //=====  ZOOM    =\================================

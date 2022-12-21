@@ -517,6 +517,13 @@
             -ms-transform: scale3d(1, 1, 1);
         }
     }
+    .alignnone{
+        //margin: 1rem;
+        overflow: hidden;
+        border: 1px solid rgb(238, 238, 238);
+        box-shadow: 2px 2px 5px 2px rgb(196, 194, 194);
+        border-radius: 5px;
+    }
 }
 
 //============== IMAGE ==============

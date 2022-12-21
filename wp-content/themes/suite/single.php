@@ -6,6 +6,7 @@
         <div>
             <h2 class="single-title"><?php the_title() ?></h2>
             <div class="single-content"><?php the_content() ?></div>
+            <?php get_template_part('templates/template', 'slider-single-image') ?>
             <?php get_template_part('templates/template', 'single-articles-category') ?>
         </div>
     </div>
