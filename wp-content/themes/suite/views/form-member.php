@@ -28,7 +28,7 @@ if ((getParams('action')=='edit')) {
             </div>
             <div class="text-cell">
                 <input type="text" name="txt_mem_serial" id="txt_mem_serial" class="type-text"  
-                value="<?php echo $data['serial']; ?>"  />
+                value="<?php echo $data['serial']; ?>" />
             </div>
         </div>
         <div class="col">

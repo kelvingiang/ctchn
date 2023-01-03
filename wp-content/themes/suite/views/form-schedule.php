@@ -54,7 +54,7 @@ if ($param['action'] == 'edit') {
         <!-- time -->
         <div class="row-one-column">
             <div class="title-cell">
-                <label><?php echo __('Time')  ?></label>
+                <label><?php echo __('Time') ?></label>
             </div>
             <div class="text-cell">
                 <input type="text" id='timeStart' name='timeStart' class="type-time" maxlength="5" value="<?php echo $vTimeStart ?>" /> 
@@ -65,7 +65,7 @@ if ($param['action'] == 'edit') {
         <!-- place -->
         <div class="row-one-column">
             <div class="title-cell">
-                <label><?php echo __('地點')  ?></label>
+                <label><?php echo __('地點') ?></label>
             </div>
             <div class="text-cell">
                 <input type="text" class="type-text" id='place' name='place' class="my-input" value="<?php echo $vPlace ?>" />
@@ -74,13 +74,13 @@ if ($param['action'] == 'edit') {
         <!-- note -->
         <div class="row-one-column">
             <div class="title-cell">
-                <label><?php echo __('備註')  ?></label>
+                <label><?php echo __('備註') ?></label>
             </div>
             <div class="text-cell">
                 <textarea id='note' class="type-text"  name="note" rows='5' style="height: 80%;"><?php echo $vNote ?></textarea>
             </div>
         </div>
-        <div class="button-space ">
+        <div class="button-space">
             <button type="submit" name="submit" id='submit' class="button button-primary"><?php _e('Submit') ?></button>
         </div>
     </form>

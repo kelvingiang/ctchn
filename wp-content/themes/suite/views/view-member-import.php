@@ -5,7 +5,7 @@
             <input type="file" id="myfile" name="myfile" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" />
             <label id="mess"></label>
             <input type="hidden" value="<?php time() ?>" />
-            <input type="submit" value="<?php _e('Submit', 'suite'); ?>"  id="btn_changeImg"  class="button button-primary" >
+            <input type="submit" value="<?php _e('Submit', 'suite'); ?>" id="btn_changeImg" class="button button-primary">
         </div>
     </form>
 </div>

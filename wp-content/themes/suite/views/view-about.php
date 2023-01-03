@@ -110,7 +110,7 @@
                 e.preventDefault();
             }
             if (name_vn === '') {
-                jQuery('#error-name-vn').text('<?php echo __('Tên không được để trống !'); ?>');
+                jQuery('#error-name-vn').text('<?php echo __('請輸入商會名稱 !'); ?>');
                 e.preventDefault();
             }
 
@@ -121,7 +121,7 @@
                 e.preventDefault();
             }
             if (address_vn === '') {
-                jQuery('#error-address-vn').text('<?php echo __('Địa chỉ không được để trống !'); ?>');
+                jQuery('#error-address-vn').text('<?php echo __('請輸入地址 !'); ?>');
                 e.preventDefault();
             }
         })
