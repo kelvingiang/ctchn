@@ -102,7 +102,7 @@
     jQuery(document).ready(function(){
         jQuery('#tabs_about').tabs();
         jQuery('#btn_submit').click(function(e) {
-            //kiểm tra các trường không được rỗng
+            //kiem tra các truong khong duoc rong
             var name_cn = jQuery('#txt_name_cn').val();
             var name_vn = jQuery('#txt_name_vn').val();
             if (name_cn === '') {

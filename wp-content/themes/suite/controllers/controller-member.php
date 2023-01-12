@@ -99,7 +99,7 @@ class Admin_Controller_Member {
             $this->model_F()->saveItem($_POST,$arr); 
             ToBack();
         }
-        //show phần form dữ liệu
+        //show phan form du lieu
         require_once(DIR_VIEW . 'form-member.php');
     }
 
@@ -115,7 +115,7 @@ class Admin_Controller_Member {
             $this->model_F()->saveItem($_POST, $arr);
             ToBack(); 
         }
-        //show phần form dữ liệu
+        //show phan form du lieu
         require_once(DIR_VIEW . 'form-member.php');
     }
 

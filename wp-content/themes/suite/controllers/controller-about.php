@@ -25,7 +25,7 @@ class Admin_Controller_About{
 
     }
 
-    //điều hướng
+    //phan dieu huong
     public function dispatchActive() 
     {
         $action = getParams('action');
@@ -35,7 +35,7 @@ class Admin_Controller_About{
                 break;
         }
     }
-    //khởi tạo url
+    //khoi tao url
     public function createUrl()
     {
         echo $url = 'admin.php?page=' . getParams('page'); //admin.php?page=page_about
@@ -51,7 +51,7 @@ class Admin_Controller_About{
      * CAC CHUC NANG THEM , XOA, SUA , HIEN THI
      * ===================================================
      */
-    //Hiển thị trang
+    //hien thi trang
     public function displayPage() 
     {   
         /**

@@ -10,17 +10,13 @@
             if($wp_query->have_posts()):
                 while($wp_query->have_posts()):
                     $wp_query->the_post();
+                    // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
+                    $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                    $img = $url[0] != '' ? $url[0] : PART_IMAGES . 'no-image.jpg';
                     ?>
                         <div class="page-item col-md-4" data_id = "<?php echo $itemCount++; ?>">
                             <div class="page-img">
-                                <?php 
-                                // [0]: url, [1]: width, [2]: height, [4]:is_intermediate
-                                $url = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
-                                if($url != '') { ?>
-                                    <img src="<?php echo $url[0]; ?>" class="w-100 img" />
-                                <?php } else{ ?>
-                                    <img src="<?php echo PART_IMAGES . 'no-image.jpg'; ?>" class="w-100 img" />
-                                <?php } ?>  
+                                <img src="<?php echo $img ?>" class="w-100 img" /> 
                             </div>
                             <div class="page-title">
                                 <a href="<?php the_permalink(); ?>"><?php the_title() ?></a>

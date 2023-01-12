@@ -9,11 +9,11 @@ class Admin_Controller_Member_Industry {
     //PHAN TAO MENU CON TRON MENU CHA CUNG LA POST TYOE
     public function AddSubMenu()
     {
-        $parent_slug = 'page_member';  //giống slug $menu_slug của member
+        $parent_slug = 'page_member';  //giong slug $menu_slug cua member
         $page_title = __('Industry');
         $menu_title = __('Industry');
         $capability = 'manage_categories';
-        $menu_slug = 'page_member_industry'; //tên slug của member industry
+        $menu_slug = 'page_member_industry'; //ten slug cua member industry
         add_submenu_page($parent_slug, $page_title, $menu_title, $capability, $menu_slug, array($this, 'dispatchActive'));
     }
 
@@ -34,8 +34,7 @@ class Admin_Controller_Member_Industry {
     }
 
     public function displayPage() {
-        //nếu có post
-        if (isPost()) {
+        if (isPost()) { //neu co post
             require_once (DIR_MODEL . 'model-member-industry.php');
             $model = new Admin_Model_Member_Industry();
             $option = 'add';
@@ -46,8 +45,7 @@ class Admin_Controller_Member_Industry {
     }
 
     public function editAction() {
-        //nếu có post
-        if (isPost()) {
+        if (isPost()) { //neu co post
             require_once (DIR_MODEL . 'model-member-industry.php');
             $model = new Admin_Model_Member_Industry();
             $model->save($_POST, 'update');

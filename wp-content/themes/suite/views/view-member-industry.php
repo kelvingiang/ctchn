@@ -71,7 +71,7 @@ if(getParams('action') == 'edit' && !empty(getParams('id'))) {
                     <div>
                     <?php
                         $flag = FALSE;
-                        foreach ($arr_id as $key => $valID) {
+                        foreach ($arr_id as $key => $valID) { //hien thi so luong industry duoc chon 
                             if ($key == $val['ID']) {
                                 ?>
                                 <a href="<?php echo "admin.php?page=page_member&filter_industry=" . $val['ID'] ?>"> <?php echo $valID; ?></a>  

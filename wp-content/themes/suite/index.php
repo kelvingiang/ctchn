@@ -17,8 +17,6 @@
             <div class="hr3"></div>
             <?php get_template_part('templates/template', 'slider-articles'); ?>
         </div>
-  
-   
         <div style="margin-top: 2rem;">
             <?php get_template_part('templates/template', 'map'); ?>
         </div>

@@ -135,12 +135,12 @@ class Admin_Model_Member_Function {
 
         $dataInsert = array_merge($data,$dataAdd);
 
-        //kiểm tra action update hay insert
+        //kiem tra action update hay insert
         if($option['action'] == 'update'){
             $where = array('ID' => $option['ID']);
-            $wpdb->update($this->table,$data,$where);    
+            $wpdb->update($this->table, $data, $where);    
         }elseif ($option['action'] == 'insert'){
-            $wpdb->insert($this->table,$dataInsert);
+            $wpdb->insert($this->table, $dataInsert);
         }
     }
 
