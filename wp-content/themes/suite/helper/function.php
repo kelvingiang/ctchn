@@ -92,7 +92,7 @@ if (!is_admin()) {
     function custom_login_logo()
     {
         echo '<style type="text/css">
-	h1 a { background-image: url(' . PART_IMAGES . 'logo.png' . ') !important; }
+	h1 a { background-image: url(' . PART_IMAGES . 'ctchn_logo.png' . ') !important; }
 	</style>';
     }
 
