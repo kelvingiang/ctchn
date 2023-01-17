@@ -37,6 +37,12 @@ class Admin_Model_Schedule_Function
         $date = $arrData['getdate'];
         $arrDate = explode('/', $date);
 
+        //KIEM TRA STATUS
+        if(isset($arrData['cb-status'])){
+            $status = $arrData['cb-status'];
+        } else{
+            $status = '1';
+        }
 
         // kIEM ADD NEW OR UPDATE
         $data = array(
@@ -49,7 +55,7 @@ class Admin_Model_Schedule_Function
             'branch' => $arrData['branch'],
             'place' => $arrData['place'],
             'note' => $arrData['note'],
-            'status' => 1,
+            'status' => $status,
             // cac muc save gia tri co su ly
             'date' => $date,
             'create-date' => date('Y-m-d'),

@@ -1,5 +1,5 @@
 <?php
-require_once(DIR_MODEL . 'model-schedule.php');
+require_once(DIR_MODEL . 'model-schedule-function.php');
 
 class Admin_Controller_Schedule
 {

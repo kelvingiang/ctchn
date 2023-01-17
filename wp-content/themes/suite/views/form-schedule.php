@@ -30,12 +30,27 @@ if ($param['action'] == 'edit') {
 
     <form action="" method="post" enctype="multipart/form-data" id="f1" name="f1">
         <input name="id" value="<?php echo $param['id'] ?>" type="hidden">
+        <!-- status -->
+        <div class="row-one-column">
+            <div class="title-cell">
+                <label><?php echo __('Status'); ?></label>
+            </div>
+            <div class="text-cell">
+                <input type="checkbox" id="cb-status" name="cb-status" value="1"
+                    <?php 
+                        if($page == 'edit'){
+                            echo $data['status'] == '1' ? 'checked' : '';
+                        }else{
+                            echo 'checked';
+                        }
+                    ?>/>
+            </div>
+        </div>
         <!-- title -->
         <div class="row-one-column">
             <div class="title-cell">
                 <label><?php echo __('Title') ?></label>
             </div>
-
             <div class="text-cell">
                 <input type="text" class="type-text" id='title' name='title' class="my-input" value="<?php echo $vTitle ?>" />
             </div>
